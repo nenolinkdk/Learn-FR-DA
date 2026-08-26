@@ -1,0 +1,37 @@
+plugins {
+    id "com.android.application"
+}
+
+android {
+    namespace "dk.nenolink.learnfrda"
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "dk.nenolink.learnfrda"
+        minSdk 23
+        targetSdk 35
+        versionCode 1
+        versionName "0.1.0-skeleton"
+    }
+
+    sourceSets {
+        main.assets.srcDir "../linguistic/testdata"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+tasks.register("copyDebugApkForManualTesting", Copy) {
+    from(layout.buildDirectory.file("outputs/apk/debug/app-debug.apk"))
+    into(layout.buildDirectory.dir("outputs/manual-debug"))
+    rename { "Learn-FR-DA-debug.apk" }
+}
+
+tasks.configureEach { task ->
+    if (task.name == "assembleDebug") {
+        task.finalizedBy("copyDebugApkForManualTesting")
+    }
+}
