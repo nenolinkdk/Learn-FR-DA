@@ -1,0 +1,316 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "0.0.1-test",
+  "course": {
+    "id": "course.fr-da",
+    "courseLocale": "fr-FR",
+    "languages": {
+      "support": { "language": "fr", "locale": "fr-FR" },
+      "target": { "language": "da", "locale": "da-DK" }
+    },
+    "tts": {
+      "primaryRole": "target",
+      "targetLocale": "da-DK",
+      "supportLocale": "fr-FR"
+    },
+    "title": {
+      "support": "Danois pratique — données de test",
+      "target": "Praktisk dansk — testdata"
+    },
+    "modules": [
+      {
+        "id": "module.level-1",
+        "type": "level",
+        "level": 1,
+        "audience": "general",
+        "title": {
+          "support": "Niveau 1 — test de visite",
+          "target": "Niveau 1 — testbesøg"
+        },
+        "tags": ["synthetic", "beginner"],
+        "lessons": [
+          {
+            "id": "lesson.level-1.arrival-test",
+            "moduleId": "module.level-1",
+            "order": 1,
+            "title": {
+              "support": "Arrivée fictive",
+              "target": "Opdigtet ankomst"
+            },
+            "situation": {
+              "support": "Une courte scène fictive sert uniquement à tester l’affichage.",
+              "target": "En kort opdigtet scene bruges kun til at teste visningen."
+            },
+            "tags": ["synthetic", "arrival"],
+            "items": [
+              {
+                "id": "item.level-1.arrival-test.greeting",
+                "order": 1,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": { "support": "Bonjour.", "target": "Goddag." },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "pronunciation": {
+                    "support": "Conseil synthétique pour tester l’affichage de la prononciation.",
+                    "targetText": "Goddag"
+                  }
+                },
+                "tags": ["greeting"]
+              },
+              {
+                "id": "item.level-1.arrival-test.station",
+                "order": 2,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": { "support": "Où est la gare ?", "target": "Hvor er stationen?" },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "grammar": {
+                    "support": "Exemple synthétique d’une question avec hvor.",
+                    "targetExample": "Hvor er stationen?"
+                  }
+                },
+                "tags": ["transport", "question"]
+              },
+              {
+                "id": "item.level-1.arrival-test.ticket",
+                "order": 3,
+                "type": "digital-scenario",
+                "speaker": "A",
+                "text": {
+                  "support": "J’achète un billet de test dans l’application.",
+                  "target": "Jeg køber en testbillet i appen."
+                },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "digital": {
+                    "support": "Note synthétique : aucune vente ni donnée de paiement réelle n’est utilisée."
+                  }
+                },
+                "tags": ["ticket", "digital"]
+              },
+              {
+                "id": "item.level-1.arrival-test.thanks",
+                "order": 4,
+                "type": "phrase",
+                "speaker": "B",
+                "text": { "support": "Merci beaucoup.", "target": "Mange tak." },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "cultural": {
+                    "support": "Note culturelle synthétique destinée uniquement au test du champ."
+                  }
+                },
+                "tags": ["politeness"]
+              }
+            ],
+            "quiz": {
+              "id": "quiz.level-1.arrival-test",
+              "title": {
+                "support": "Mini-quiz synthétique d’arrivée",
+                "target": "Syntetisk ankomstquiz"
+              },
+              "questions": [
+                {
+                  "id": "question.level-1.arrival-test.greeting",
+                  "order": 1,
+                  "type": "single-choice",
+                  "prompt": {
+                    "support": "Choisissez la salutation danoise du test.",
+                    "target": "Vælg testens danske hilsen."
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.level-1.arrival-test.greeting.correct",
+                      "text": { "support": "Bonjour", "target": "Goddag" },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.level-1.arrival-test.greeting.wrong",
+                      "text": { "support": "Au revoir", "target": "Farvel" },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "Goddag est la salutation attendue dans ce test.",
+                    "target": "Goddag er den forventede hilsen i denne test."
+                  },
+                  "tags": ["greeting"]
+                },
+                {
+                  "id": "question.level-1.arrival-test.station",
+                  "order": 2,
+                  "type": "single-choice",
+                  "prompt": {
+                    "support": "Choisissez la question qui demande où se trouve la gare.",
+                    "target": "Vælg spørgsmålet, der spørger, hvor stationen er."
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.level-1.arrival-test.station.correct",
+                      "text": { "support": "Où est la gare ?", "target": "Hvor er stationen?" },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.level-1.arrival-test.station.wrong",
+                      "text": { "support": "Merci beaucoup.", "target": "Mange tak." },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "Hvor introduit ici la question sur le lieu.",
+                    "target": "Hvor indleder her spørgsmålet om stedet."
+                  },
+                  "tags": ["transport", "question"]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "module.children",
+        "type": "children",
+        "audience": "children",
+        "title": {
+          "support": "Enfants — module de test",
+          "target": "Børn — testmodul"
+        },
+        "tags": ["synthetic", "children"],
+        "lessons": [
+          {
+            "id": "lesson.children.playground-test",
+            "moduleId": "module.children",
+            "order": 1,
+            "title": {
+              "support": "Jeu fictif",
+              "target": "Opdigtet leg"
+            },
+            "situation": {
+              "support": "Deux personnages fictifs testent de courtes phrases pour enfants.",
+              "target": "To opdigtede personer tester korte sætninger til børn."
+            },
+            "tags": ["synthetic", "playground"],
+            "items": [
+              {
+                "id": "item.children.playground-test.hello",
+                "order": 1,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": { "support": "Salut !", "target": "Hej!" },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "tags": ["greeting", "children"]
+              },
+              {
+                "id": "item.children.playground-test.play",
+                "order": 2,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": { "support": "Tu veux jouer ?", "target": "Vil du lege?" },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "grammar": {
+                    "support": "Exemple synthétique avec le verbe modal vil.",
+                    "targetExample": "Vil du lege?"
+                  }
+                },
+                "tags": ["play", "question"]
+              },
+              {
+                "id": "item.children.playground-test.yes",
+                "order": 3,
+                "type": "phrase",
+                "speaker": "A",
+                "text": { "support": "Oui, volontiers.", "target": "Ja, gerne." },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "pronunciation": {
+                    "support": "Conseil synthétique destiné à tester la note de prononciation.",
+                    "targetText": "gerne"
+                  }
+                },
+                "tags": ["play", "answer"]
+              },
+              {
+                "id": "item.children.playground-test.stop",
+                "order": 4,
+                "type": "phrase",
+                "speaker": "B",
+                "text": { "support": "Stop, s’il te plaît.", "target": "Stop, tak." },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "cultural": {
+                    "support": "Note synthétique sur une limite claire et respectueuse."
+                  }
+                },
+                "tags": ["safety", "boundary"]
+              }
+            ],
+            "quiz": {
+              "id": "quiz.children.playground-test",
+              "title": {
+                "support": "Mini-quiz synthétique pour enfants",
+                "target": "Syntetisk børnequiz"
+              },
+              "questions": [
+                {
+                  "id": "question.children.playground-test.play",
+                  "order": 1,
+                  "type": "single-choice",
+                  "prompt": {
+                    "support": "Choisissez la question danoise pour proposer de jouer.",
+                    "target": "Vælg det danske spørgsmål om at lege."
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.children.playground-test.play.correct",
+                      "text": { "support": "Tu veux jouer ?", "target": "Vil du lege?" },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.children.playground-test.play.wrong",
+                      "text": { "support": "Où est la gare ?", "target": "Hvor er stationen?" },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "Vil du lege? est la question de jeu dans ce test.",
+                    "target": "Vil du lege? er spørgsmålet om leg i denne test."
+                  },
+                  "tags": ["play"]
+                },
+                {
+                  "id": "question.children.playground-test.stop",
+                  "order": 2,
+                  "type": "single-choice",
+                  "prompt": {
+                    "support": "Choisissez la phrase danoise qui demande d’arrêter.",
+                    "target": "Vælg den danske sætning, der beder om at stoppe."
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.children.playground-test.stop.correct",
+                      "text": { "support": "Stop, s’il te plaît.", "target": "Stop, tak." },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.children.playground-test.stop.wrong",
+                      "text": { "support": "Oui, volontiers.", "target": "Ja, gerne." },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "Stop, tak. exprime ici la limite attendue.",
+                    "target": "Stop, tak. udtrykker her den forventede grænse."
+                  },
+                  "tags": ["safety", "boundary"]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
