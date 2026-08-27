@@ -1,0 +1,389 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "0.1.0-linguistic-model",
+  "course": {
+    "id": "course.fr-da",
+    "courseLocale": "fr-FR",
+    "languages": {
+      "support": { "language": "fr", "locale": "fr-FR" },
+      "target": { "language": "da", "locale": "da-DK" }
+    },
+    "tts": {
+      "primaryRole": "target",
+      "targetLocale": "da-DK",
+      "supportLocale": "fr-FR"
+    },
+    "title": { "support": "Danois pratique", "target": "Praktisk dansk" },
+    "modules": [
+      {
+        "id": "module.level-1",
+        "type": "level",
+        "level": 1,
+        "audience": "general",
+        "title": { "support": "Niveau 1 — Visiter le Danemark", "target": "Niveau 1 — Besøg i Danmark" },
+        "tags": ["travel", "beginner"],
+        "lessons": [
+          {
+            "id": "lesson.level-1.arrival",
+            "moduleId": "module.level-1",
+            "order": 1,
+            "title": { "support": "Arrivée au Danemark", "target": "Ankomst til Danmark" },
+            "situation": {
+              "support": "Vous venez d’arriver à Copenhague. Vous cherchez la sortie et les transports vers le centre-ville, puis vous vérifiez votre trajet sur votre téléphone.",
+              "target": "Du er lige ankommet til København. Du leder efter udgangen og transport ind til centrum og tjekker derefter din rejse på telefonen."
+            },
+            "tags": ["arrival", "directions", "transport"],
+            "items": [
+              {
+                "id": "item.level-1.arrival.exit",
+                "order": 1,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": { "support": "Excusez-moi, où est la sortie ?", "target": "Undskyld, hvor er udgangen?" },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "grammar": { "support": "« Hvor er …? » est une structure très fréquente pour demander où se trouve quelque chose.", "targetExample": "Hvor er udgangen?" },
+                  "pronunciation": { "support": "Dans « hvor », le h n’est pas prononcé comme un h français. Écoutez surtout la phrase entière plutôt que de prononcer lettre par lettre.", "targetText": "Hvor er udgangen?" }
+                },
+                "tags": ["directions", "question"]
+              },
+              {
+                "id": "item.level-1.arrival.straight",
+                "order": 2,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": { "support": "Tout droit, puis à droite.", "target": "Ligeud og så til højre." },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "grammar": { "support": "« Så » signifie ici « puis/ensuite » et sert à enchaîner deux indications.", "targetExample": "Ligeud og så til højre." }
+                },
+                "tags": ["directions"]
+              },
+              {
+                "id": "item.level-1.arrival.transport",
+                "order": 3,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": { "support": "Comment puis-je aller au centre-ville ?", "target": "Hvordan kommer jeg ind til centrum?" },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "grammar": { "support": "« Hvordan kommer jeg …? » est une manière naturelle de demander comment se rendre quelque part.", "targetExample": "Hvordan kommer jeg ind til centrum?" }
+                },
+                "tags": ["transport", "question"]
+              },
+              {
+                "id": "item.level-1.arrival.metro-train",
+                "order": 4,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": { "support": "Vous pouvez prendre le métro ou le train.", "target": "Du kan tage metroen eller toget." },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "grammar": { "support": "Après le verbe modal « kan », le verbe suivant reste à l’infinitif sans « at » : « kan tage ».", "targetExample": "Du kan tage metroen." }
+                },
+                "tags": ["transport", "modal"]
+              },
+              {
+                "id": "item.level-1.arrival.station",
+                "order": 5,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": { "support": "Où est la station de métro ?", "target": "Hvor er metrostationen?" },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "grammar": { "support": "Le danois forme facilement des mots composés : « metro » + « station » devient « metrostation ».", "targetExample": "metrostationen" }
+                },
+                "tags": ["transport", "compound"]
+              },
+              {
+                "id": "item.level-1.arrival.follow-signs",
+                "order": 6,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": { "support": "Suivez les panneaux indiquant le métro.", "target": "Følg skiltene til metroen." },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "grammar": { "support": "« Følg » est l’impératif de « følge » : suivre.", "targetExample": "Følg skiltene." }
+                },
+                "tags": ["instructions", "transport"]
+              },
+              {
+                "id": "item.level-1.arrival.ticket",
+                "order": 7,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": { "support": "Est-ce que je dois acheter un billet avant de monter ?", "target": "Skal jeg købe en billet, før jeg stiger på?" },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "grammar": { "support": "Une question oui/non place ici « skal » avant le sujet : « Skal jeg …? ».", "targetExample": "Skal jeg købe en billet?" },
+                  "digital": { "support": "Au Danemark, les billets de transport sont souvent achetés ou présentés sous forme numérique. Les applications et solutions exactes peuvent évoluer ; l’app Learn FR-DA enseigne surtout le vocabulaire nécessaire pour comprendre la situation." }
+                },
+                "tags": ["ticket", "digital", "question"]
+              },
+              {
+                "id": "item.level-1.arrival.phone",
+                "order": 8,
+                "type": "digital-scenario",
+                "speaker": "B",
+                "text": { "support": "Vous pouvez aussi vérifier le trajet sur votre téléphone.", "target": "Du kan også tjekke rejsen på din telefon." },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "digital": { "support": "Les voyageurs au Danemark utilisent couramment leur téléphone pour consulter les horaires, planifier un trajet et afficher des billets numériques." }
+                },
+                "tags": ["digital", "journey-planning"]
+              },
+              {
+                "id": "item.level-1.arrival.correct-direction",
+                "order": 9,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": { "support": "C’est bien dans cette direction ?", "target": "Er det den rigtige vej?" },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "grammar": { "support": "« Den rigtige vej » signifie littéralement « le bon chemin/la bonne direction » et est une expression très utile pour vérifier son itinéraire.", "targetExample": "Er det den rigtige vej?" }
+                },
+                "tags": ["directions", "confirmation"]
+              },
+              {
+                "id": "item.level-1.arrival.thanks",
+                "order": 10,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": { "support": "Oui. Bon voyage !", "target": "Ja. God tur!" },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "cultural": { "support": "« God tur! » est une formule simple et naturelle pour souhaiter un bon trajet ou une bonne excursion." }
+                },
+                "tags": ["politeness", "farewell"]
+              }
+            ],
+            "quiz": {
+              "id": "quiz.level-1.arrival",
+              "title": { "support": "Mini-quiz — Arrivée", "target": "Miniquiz — Ankomst" },
+              "questions": [
+                {
+                  "id": "question.level-1.arrival.exit",
+                  "order": 1,
+                  "type": "single-choice",
+                  "prompt": { "support": "Comment demande-t-on où se trouve la sortie ?", "target": "Hvordan spørger man, hvor udgangen er?" },
+                  "answers": [
+                    { "id": "answer.level-1.arrival.exit.correct", "text": { "support": "Où est la sortie ?", "target": "Hvor er udgangen?" }, "correct": true },
+                    { "id": "answer.level-1.arrival.exit.wrong-1", "text": { "support": "Où est le billet ?", "target": "Hvor er billetten?" }, "correct": false },
+                    { "id": "answer.level-1.arrival.exit.wrong-2", "text": { "support": "Je prends le métro.", "target": "Jeg tager metroen." }, "correct": false }
+                  ],
+                  "explanation": { "support": "« Hvor er …? » sert à demander où se trouve quelque chose.", "target": "‘Hvor er …?’ bruges til at spørge, hvor noget er." },
+                  "tags": ["directions"]
+                },
+                {
+                  "id": "question.level-1.arrival.modal",
+                  "order": 2,
+                  "type": "single-choice",
+                  "prompt": { "support": "Quelle phrase signifie « Vous pouvez prendre le métro » ?", "target": "Hvilken sætning betyder ‘Vous pouvez prendre le métro’?" },
+                  "answers": [
+                    { "id": "answer.level-1.arrival.modal.correct", "text": { "support": "Vous pouvez prendre le métro.", "target": "Du kan tage metroen." }, "correct": true },
+                    { "id": "answer.level-1.arrival.modal.wrong-1", "text": { "support": "Vous devez acheter le métro.", "target": "Du skal købe metroen." }, "correct": false },
+                    { "id": "answer.level-1.arrival.modal.wrong-2", "text": { "support": "Le métro est fermé.", "target": "Metroen er lukket." }, "correct": false }
+                  ],
+                  "explanation": { "support": "« Kan » exprime ici la possibilité : « Du kan tage … ».", "target": "‘Kan’ udtrykker her en mulighed: ‘Du kan tage …’." },
+                  "tags": ["modal", "transport"]
+                },
+                {
+                  "id": "question.level-1.arrival.direction",
+                  "order": 3,
+                  "type": "single-choice",
+                  "prompt": { "support": "Que signifie « Ligeud og så til højre » ?", "target": "Hvad betyder ‘Ligeud og så til højre’?" },
+                  "answers": [
+                    { "id": "answer.level-1.arrival.direction.correct", "text": { "support": "Tout droit, puis à droite.", "target": "Ligeud og så til højre." }, "correct": true },
+                    { "id": "answer.level-1.arrival.direction.wrong-1", "text": { "support": "À gauche, puis tout droit.", "target": "Til venstre og så ligeud." }, "correct": false },
+                    { "id": "answer.level-1.arrival.direction.wrong-2", "text": { "support": "Revenez demain.", "target": "Kom tilbage i morgen." }, "correct": false }
+                  ],
+                  "explanation": { "support": "« Ligeud » signifie tout droit et « til højre » à droite.", "target": "‘Ligeud’ betyder lige frem, og ‘til højre’ angiver retningen." },
+                  "tags": ["directions"]
+                }
+              ]
+            }
+          },
+          {
+            "id": "lesson.level-1.airport-station",
+            "moduleId": "module.level-1",
+            "order": 2,
+            "title": { "support": "À l’aéroport et à la gare", "target": "I lufthavnen og på stationen" },
+            "situation": {
+              "support": "Vous avez trouvé les transports. Vous vérifiez maintenant le départ, le quai et les arrêts avant de monter dans le bon train.",
+              "target": "Du har fundet transporten. Nu tjekker du afgang, spor og stoppesteder, før du stiger på det rigtige tog."
+            },
+            "tags": ["station", "departures", "time"],
+            "items": [
+              {
+                "id": "item.level-1.airport-station.central",
+                "order": 1,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": { "support": "Est-ce que ce train va à la gare centrale ?", "target": "Kører det her tog til Hovedbanegården?" },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "grammar": { "support": "Dans la langue parlée, « det her tog » est une façon très naturelle de dire « ce train-ci ».", "targetExample": "det her tog" },
+                  "cultural": { "support": "À Copenhague, « Hovedbanegården » désigne la gare centrale. Dans d’autres villes, on rencontre aussi « hovedbanegård » ou simplement le nom de la gare." }
+                },
+                "tags": ["train", "question"]
+              },
+              {
+                "id": "item.level-1.airport-station.yes",
+                "order": 2,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": { "support": "Oui, il va directement à la gare centrale.", "target": "Ja, det kører direkte til Hovedbanegården." },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "grammar": { "support": "« Direkte » est un adverbe très utile dans les transports : sans changement ou détour dans ce contexte.", "targetExample": "Det kører direkte." }
+                },
+                "tags": ["train", "confirmation"]
+              },
+              {
+                "id": "item.level-1.airport-station.when",
+                "order": 3,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": { "support": "À quelle heure part-il ?", "target": "Hvornår kører det?" },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "grammar": { "support": "« Hvornår » demande quand quelque chose se produit. Pour un train, le danois courant emploie souvent « kører ».", "targetExample": "Hvornår kører det?" }
+                },
+                "tags": ["time", "question"]
+              },
+              {
+                "id": "item.level-1.airport-station.minutes",
+                "order": 4,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": { "support": "Dans dix minutes.", "target": "Om ti minutter." },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "grammar": { "support": "« Om ti minutter » signifie « dans dix minutes ». « Om » sert ici à indiquer un délai futur.", "targetExample": "Om ti minutter." },
+                  "pronunciation": { "support": "Les nombres danois demandent une attention particulière. Écoutez « ti » dans la phrase complète.", "targetText": "ti minutter" }
+                },
+                "tags": ["time", "numbers"]
+              },
+              {
+                "id": "item.level-1.airport-station.platform",
+                "order": 5,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": { "support": "De quel quai part le train ?", "target": "Hvilket spor kører toget fra?" },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "grammar": { "support": "Dans les gares danoises, « spor » correspond au numéro de voie/quai indiqué pour le train.", "targetExample": "Hvilket spor?" }
+                },
+                "tags": ["platform", "question"]
+              },
+              {
+                "id": "item.level-1.airport-station.platform-two",
+                "order": 6,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": { "support": "Du quai numéro deux.", "target": "Fra spor to." },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "tags": ["platform", "numbers"]
+              },
+              {
+                "id": "item.level-1.airport-station.stop",
+                "order": 7,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": { "support": "Est-ce qu’il s’arrête à Nørreport ?", "target": "Stopper det på Nørreport?" },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "grammar": { "support": "La question oui/non commence par le verbe : « Stopper det …? ».", "targetExample": "Stopper det på Nørreport?" },
+                  "pronunciation": { "support": "Les noms de lieux danois sont souvent difficiles à deviner à partir de l’orthographe. Utilisez le bouton audio pour mémoriser le nom comme une unité.", "targetText": "Nørreport" }
+                },
+                "tags": ["stop", "place-name"]
+              },
+              {
+                "id": "item.level-1.airport-station.change",
+                "order": 8,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": { "support": "Oui. Vous n’avez pas besoin de changer de train.", "target": "Ja. Du behøver ikke at skifte tog." },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "grammar": { "support": "« Behøver ikke at … » signifie « ne pas avoir besoin de … ». La négation « ikke » suit ici « behøver ».", "targetExample": "Du behøver ikke at skifte tog." }
+                },
+                "tags": ["negation", "connection"]
+              },
+              {
+                "id": "item.level-1.airport-station-delay",
+                "order": 9,
+                "type": "digital-scenario",
+                "speaker": "A",
+                "text": { "support": "L’écran indique que le train a cinq minutes de retard.", "target": "Skærmen viser, at toget er fem minutter forsinket." },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "grammar": { "support": "Après « viser », on peut introduire l’information avec « at » : « Skærmen viser, at … ».", "targetExample": "Skærmen viser, at toget er forsinket." },
+                  "digital": { "support": "Les écrans de départ et les applications de transport donnent normalement les changements de voie, retards et suppressions. Il est utile de reconnaître « forsinket » (en retard) et « aflyst » (annulé)." }
+                },
+                "tags": ["delay", "digital", "information"]
+              },
+              {
+                "id": "item.level-1.airport-station-thanks",
+                "order": 10,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": { "support": "D’accord, merci pour l’information.", "target": "Okay, tak for informationen." },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "cultural": { "support": "« Okay » est extrêmement courant en danois parlé et peut naturellement accompagner « tak » dans une interaction pratique." }
+                },
+                "tags": ["politeness"]
+              }
+            ],
+            "quiz": {
+              "id": "quiz.level-1.airport-station",
+              "title": { "support": "Mini-quiz — Aéroport et gare", "target": "Miniquiz — Lufthavn og station" },
+              "questions": [
+                {
+                  "id": "question.level-1.airport-station.when",
+                  "order": 1,
+                  "type": "single-choice",
+                  "prompt": { "support": "Comment demande-t-on quand le train part ?", "target": "Hvordan spørger man, hvornår toget kører?" },
+                  "answers": [
+                    { "id": "answer.level-1.airport-station.when.correct", "text": { "support": "À quelle heure part-il ?", "target": "Hvornår kører det?" }, "correct": true },
+                    { "id": "answer.level-1.airport-station.when.wrong-1", "text": { "support": "Où est le train ?", "target": "Hvor er toget?" }, "correct": false },
+                    { "id": "answer.level-1.airport-station.when.wrong-2", "text": { "support": "Le train est grand.", "target": "Toget er stort." }, "correct": false }
+                  ],
+                  "explanation": { "support": "« Hvornår » signifie « quand ».", "target": "‘Hvornår’ bruges til at spørge om tidspunkt." },
+                  "tags": ["time"]
+                },
+                {
+                  "id": "question.level-1.airport-station.platform",
+                  "order": 2,
+                  "type": "single-choice",
+                  "prompt": { "support": "Quel mot faut-il reconnaître pour trouver la voie du train ?", "target": "Hvilket ord skal man genkende for at finde togets spor?" },
+                  "answers": [
+                    { "id": "answer.level-1.airport-station.platform.correct", "text": { "support": "voie/quai", "target": "spor" }, "correct": true },
+                    { "id": "answer.level-1.airport-station.platform.wrong-1", "text": { "support": "sortie", "target": "udgang" }, "correct": false },
+                    { "id": "answer.level-1.airport-station.platform.wrong-2", "text": { "support": "billet", "target": "billet" }, "correct": false }
+                  ],
+                  "explanation": { "support": "Dans une gare danoise, le numéro de « spor » indique la voie de départ.", "target": "På en dansk station angiver ‘spor’ togets afgangsspor." },
+                  "tags": ["platform"]
+                },
+                {
+                  "id": "question.level-1.airport-station.delay",
+                  "order": 3,
+                  "type": "single-choice",
+                  "prompt": { "support": "Que signifie « Toget er forsinket » ?", "target": "Hvad betyder ‘Toget er forsinket’?" },
+                  "answers": [
+                    { "id": "answer.level-1.airport-station.delay.correct", "text": { "support": "Le train est en retard.", "target": "Toget er forsinket." }, "correct": true },
+                    { "id": "answer.level-1.airport-station.delay.wrong-1", "text": { "support": "Le train est direct.", "target": "Toget kører direkte." }, "correct": false },
+                    { "id": "answer.level-1.airport-station.delay.wrong-2", "text": { "support": "Le train est plein.", "target": "Toget er fyldt." }, "correct": false }
+                  ],
+                  "explanation": { "support": "« Forsinket » signifie « en retard ».", "target": "‘Forsinket’ betyder, at noget kommer eller sker senere end planlagt." },
+                  "tags": ["delay"]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
