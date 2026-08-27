@@ -1,0 +1,735 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "0.1.0-l1-03-06",
+  "course": {
+    "id": "course.fr-da",
+    "courseLocale": "fr-FR",
+    "languages": {
+      "support": { "language": "fr", "locale": "fr-FR" },
+      "target": { "language": "da", "locale": "da-DK" }
+    },
+    "tts": {
+      "primaryRole": "target",
+      "targetLocale": "da-DK",
+      "supportLocale": "fr-FR"
+    },
+    "title": { "support": "Danois pratique", "target": "Praktisk dansk" },
+    "modules": [
+      {
+        "id": "module.level-1",
+        "type": "level",
+        "level": 1,
+        "audience": "general",
+        "title": { "support": "Niveau 1 — Visiter le Danemark", "target": "Niveau 1 — Besøg i Danmark" },
+        "tags": ["travel", "beginner"],
+        "lessons": [
+          {
+            "id": "lesson.level-1.public-transport",
+            "moduleId": "module.level-1",
+            "order": 3,
+            "title": { "support": "Métro, train et bus", "target": "Metro, tog og bus" },
+            "situation": {
+              "support": "Vous devez rejoindre votre destination en transports publics. Vous vérifiez le billet, le changement et l’arrêt où vous devez descendre.",
+              "target": "Du skal frem til din destination med offentlig transport. Du tjekker billet, skift og det stoppested, hvor du skal af."
+            },
+            "tags": ["transport", "ticket", "journey"],
+            "items": [
+              {
+                "id": "item.level-1.public-transport.ticket-needed",
+                "order": 1,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": { "support": "De quel billet ai-je besoin ?", "target": "Hvilken billet skal jeg bruge?" },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "grammar": { "support": "« Hvilken » s’emploie ici avec le nom commun de genre commun « billet ».", "targetExample": "Hvilken billet?" }
+                },
+                "tags": ["ticket", "question"]
+              },
+              {
+                "id": "item.level-1.public-transport.destination",
+                "order": 2,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": { "support": "Où allez-vous ?", "target": "Hvor skal du hen?" },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "grammar": { "support": "« Hvor skal du hen? » est une question très courante pour demander la destination.", "targetExample": "Hvor skal du hen?" }
+                },
+                "tags": ["destination", "question"]
+              },
+              {
+                "id": "item.level-1.public-transport.city-hall",
+                "order": 3,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": { "support": "Je vais à l’Hôtel de Ville.", "target": "Jeg skal til Rådhuspladsen." },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "cultural": { "support": "À Copenhague, « Rådhuspladsen » est la place de l’Hôtel de Ville. Dans l’app, les noms de lieux servent aussi d’entraînement à l’écoute." },
+                  "pronunciation": { "support": "Les noms de lieux danois sont souvent mieux appris comme des unités sonores. Utilisez le TTS plutôt que de déduire la prononciation lettre par lettre.", "targetText": "Rådhuspladsen" }
+                },
+                "tags": ["destination", "place-name"]
+              },
+              {
+                "id": "item.level-1.public-transport.change",
+                "order": 4,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": { "support": "Vous devez changer à Kongens Nytorv.", "target": "Du skal skifte på Kongens Nytorv." },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "grammar": { "support": "« Skifte » signifie changer de ligne, de train, de métro ou de bus selon le contexte.", "targetExample": "Du skal skifte." }
+                },
+                "tags": ["connection", "modal"]
+              },
+              {
+                "id": "item.level-1.public-transport-which-line",
+                "order": 5,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": { "support": "Quelle ligne dois-je prendre ensuite ?", "target": "Hvilken linje skal jeg tage bagefter?" },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "grammar": { "support": "« Bagefter » signifie « ensuite/après » dans une séquence d’actions.", "targetExample": "Hvad skal jeg gøre bagefter?" }
+                },
+                "tags": ["connection", "question"]
+              },
+              {
+                "id": "item.level-1.public-transport-get-off",
+                "order": 6,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": { "support": "Descendez au troisième arrêt.", "target": "Stå af ved det tredje stop." },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "grammar": { "support": "« Stå af » est un verbe à particule très courant : descendre d’un moyen de transport.", "targetExample": "Stå af ved næste stop." }
+                },
+                "tags": ["instructions", "stop"]
+              },
+              {
+                "id": "item.level-1.public-transport-right-bus",
+                "order": 7,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": { "support": "Est-ce que c’est le bon bus ?", "target": "Er det den rigtige bus?" },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "grammar": { "support": "« Den rigtige » signifie « le bon/la bonne » avec un nom de genre commun.", "targetExample": "den rigtige bus" }
+                },
+                "tags": ["confirmation", "bus"]
+              },
+              {
+                "id": "item.level-1.public-transport-app",
+                "order": 8,
+                "type": "digital-scenario",
+                "speaker": "B",
+                "text": { "support": "Oui. Vous pouvez aussi suivre le trajet dans l’application.", "target": "Ja. Du kan også følge rejsen i appen." },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "digital": { "support": "Les solutions danoises de transport évoluent. L’objectif linguistique est de reconnaître des mots comme « rejse », « billet », « afgang », « spor » et « stop » dans une application." }
+                },
+                "tags": ["digital", "journey-planning"]
+              },
+              {
+                "id": "item.level-1.public-transport-check-in",
+                "order": 9,
+                "type": "digital-scenario",
+                "speaker": "A",
+                "text": { "support": "Dois-je valider ou m’enregistrer avant le trajet ?", "target": "Skal jeg checke ind, før jeg rejser?" },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "digital": { "support": "Dans certaines solutions de transport, l’utilisateur doit effectuer une action de check-in/check-out. Les procédures exactes doivent être vérifiées au moment de la publication, car les systèmes peuvent changer." },
+                  "grammar": { "support": "Le danois courant utilise aussi le verbe emprunté « checke ind ».", "targetExample": "Skal jeg checke ind?" }
+                },
+                "tags": ["digital", "ticket"]
+              },
+              {
+                "id": "item.level-1.public-transport-thanks",
+                "order": 10,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": { "support": "Oui, et gardez votre billet pendant le trajet.", "target": "Ja, og behold din billet under rejsen." },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "tags": ["instructions", "ticket"]
+              }
+            ],
+            "quiz": {
+              "id": "quiz.level-1.public-transport",
+              "title": { "support": "Mini-quiz — Transports publics", "target": "Miniquiz — Offentlig transport" },
+              "questions": [
+                {
+                  "id": "question.level-1.public-transport.destination",
+                  "order": 1,
+                  "type": "single-choice",
+                  "prompt": { "support": "Que signifie « Hvor skal du hen? » ?", "target": "Hvad betyder ‘Hvor skal du hen?’?" },
+                  "answers": [
+                    { "id": "answer.level-1.public-transport.destination.correct", "text": { "support": "Où allez-vous ?", "target": "Hvor skal du hen?" }, "correct": true },
+                    { "id": "answer.level-1.public-transport.destination.wrong-1", "text": { "support": "Quel âge avez-vous ?", "target": "Hvor gammel er du?" }, "correct": false },
+                    { "id": "answer.level-1.public-transport.destination.wrong-2", "text": { "support": "Où habitez-vous ?", "target": "Hvor bor du?" }, "correct": false }
+                  ],
+                  "explanation": { "support": "« Hvor skal du hen? » demande la destination.", "target": "‘Hvor skal du hen?’ spørger til destinationen." },
+                  "tags": ["destination"]
+                },
+                {
+                  "id": "question.level-1.public-transport-get-off",
+                  "order": 2,
+                  "type": "single-choice",
+                  "prompt": { "support": "Quel verbe signifie « descendre » d’un bus ou d’un train ?", "target": "Hvilket udtryk betyder at forlade en bus eller et tog?" },
+                  "answers": [
+                    { "id": "answer.level-1.public-transport-get-off.correct", "text": { "support": "descendre", "target": "stå af" }, "correct": true },
+                    { "id": "answer.level-1.public-transport-get-off.wrong-1", "text": { "support": "monter", "target": "stå på" }, "correct": false },
+                    { "id": "answer.level-1.public-transport-get-off.wrong-2", "text": { "support": "changer", "target": "skifte" }, "correct": false }
+                  ],
+                  "explanation": { "support": "« Stå af » = descendre ; « stå på » = monter.", "target": "‘Stå af’ betyder at forlade transportmidlet." },
+                  "tags": ["transport"]
+                },
+                {
+                  "id": "question.level-1.public-transport-right",
+                  "order": 3,
+                  "type": "single-choice",
+                  "prompt": { "support": "Comment vérifiez-vous que c’est le bon bus ?", "target": "Hvordan spørger man, om det er den rigtige bus?" },
+                  "answers": [
+                    { "id": "answer.level-1.public-transport-right.correct", "text": { "support": "Est-ce que c’est le bon bus ?", "target": "Er det den rigtige bus?" }, "correct": true },
+                    { "id": "answer.level-1.public-transport-right.wrong-1", "text": { "support": "Le bus est en retard.", "target": "Bussen er forsinket." }, "correct": false },
+                    { "id": "answer.level-1.public-transport-right.wrong-2", "text": { "support": "Je prends le bus demain.", "target": "Jeg tager bussen i morgen." }, "correct": false }
+                  ],
+                  "explanation": { "support": "« Den rigtige bus » signifie « le bon bus ».", "target": "‘Den rigtige bus’ betyder den bus, man skal bruge." },
+                  "tags": ["confirmation"]
+                }
+              ]
+            }
+          },
+          {
+            "id": "lesson.level-1.hotel",
+            "moduleId": "module.level-1",
+            "order": 4,
+            "title": { "support": "À l’hôtel", "target": "På hotellet" },
+            "situation": {
+              "support": "Vous arrivez à l’hôtel, vous vous enregistrez et demandez quelques informations pratiques. Plus tard, vous signalez un petit problème dans la chambre.",
+              "target": "Du ankommer til hotellet, checker ind og spørger om nogle praktiske ting. Senere fortæller du om et mindre problem på værelset."
+            },
+            "tags": ["hotel", "check-in", "accommodation"],
+            "items": [
+              {
+                "id": "item.level-1.hotel-reservation",
+                "order": 1,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": { "support": "Bonjour, j’ai une réservation au nom de Martin.", "target": "Hej, jeg har en reservation i navnet Martin." },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "grammar": { "support": "« Jeg har en reservation » est une formulation directe et naturelle à la réception.", "targetExample": "Jeg har en reservation." }
+                },
+                "tags": ["check-in", "reservation"]
+              },
+              {
+                "id": "item.level-1.hotel-id",
+                "order": 2,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": { "support": "Puis-je voir une pièce d’identité ?", "target": "Må jeg se legitimation?" },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "grammar": { "support": "« Må jeg …? » demande la permission d’une façon très courante.", "targetExample": "Må jeg se …?" }
+                },
+                "tags": ["politeness", "check-in"]
+              },
+              {
+                "id": "item.level-1.hotel-phone-confirmation",
+                "order": 3,
+                "type": "digital-scenario",
+                "speaker": "A",
+                "text": { "support": "Oui. J’ai aussi la confirmation sur mon téléphone.", "target": "Ja. Jeg har også bekræftelsen på min telefon." },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "digital": { "support": "Les confirmations d’hôtel sont souvent montrées directement sur le téléphone. « Bekræftelse » signifie confirmation." }
+                },
+                "tags": ["digital", "reservation"]
+              },
+              {
+                "id": "item.level-1.hotel-breakfast",
+                "order": 4,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": { "support": "À quelle heure est le petit déjeuner ?", "target": "Hvornår er der morgenmad?" },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "grammar": { "support": "« Der er » correspond souvent à « il y a ». Ici : quand y a-t-il le petit déjeuner ?", "targetExample": "Der er morgenmad fra klokken syv." }
+                },
+                "tags": ["breakfast", "time"]
+              },
+              {
+                "id": "item.level-1.hotel-wifi",
+                "order": 5,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": { "support": "Quel est le mot de passe du Wi-Fi ?", "target": "Hvad er koden til wi-fi?" },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "digital": { "support": "Dans une situation publique, il est courant de demander « koden til wi-fi ». L’app ne doit jamais stocker de véritables mots de passe ou identifiants personnels." }
+                },
+                "tags": ["wifi", "digital"]
+              },
+              {
+                "id": "item.level-1.hotel-luggage",
+                "order": 6,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": { "support": "Est-ce que je peux laisser mes bagages ici après le départ ?", "target": "Kan jeg lade min bagage stå her efter check-out?" },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "grammar": { "support": "« Kan jeg …? » peut demander si quelque chose est possible. « Lade … stå » = laisser quelque chose rester à un endroit.", "targetExample": "Kan jeg lade min bagage stå her?" }
+                },
+                "tags": ["luggage", "question"]
+              },
+              {
+                "id": "item.level-1.hotel-checkout",
+                "order": 7,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": { "support": "Oui, bien sûr. Le départ est avant onze heures.", "target": "Ja, selvfølgelig. Check-out er senest klokken elleve." },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "grammar": { "support": "« Senest » signifie « au plus tard ».", "targetExample": "senest klokken elleve" }
+                },
+                "tags": ["checkout", "time"]
+              },
+              {
+                "id": "item.level-1.hotel-problem",
+                "order": 8,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": { "support": "Excusez-moi, il y a un problème dans ma chambre.", "target": "Undskyld, der er et problem på mit værelse." },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "grammar": { "support": "« Der er et problem » est une structure très utile pour signaler calmement un problème.", "targetExample": "Der er et problem." }
+                },
+                "tags": ["problem", "room"]
+              },
+              {
+                "id": "item.level-1.hotel-heating",
+                "order": 9,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": { "support": "Le chauffage ne fonctionne pas.", "target": "Varmen virker ikke." },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "grammar": { "support": "« Virker ikke » = ne fonctionne pas. Cette construction est utile pour beaucoup d’objets et systèmes.", "targetExample": "Det virker ikke." }
+                },
+                "tags": ["problem", "negation"]
+              },
+              {
+                "id": "item.level-1.hotel-fix",
+                "order": 10,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": { "support": "Nous allons regarder cela tout de suite.", "target": "Vi kigger på det med det samme." },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "cultural": { "support": "Dans le service quotidien, le danois est souvent direct et simple. « Vi kigger på det » signifie qu’on va examiner le problème." }
+                },
+                "tags": ["service", "problem"]
+              }
+            ],
+            "quiz": {
+              "id": "quiz.level-1.hotel",
+              "title": { "support": "Mini-quiz — Hôtel", "target": "Miniquiz — Hotel" },
+              "questions": [
+                {
+                  "id": "question.level-1.hotel-reservation",
+                  "order": 1,
+                  "type": "single-choice",
+                  "prompt": { "support": "Comment dites-vous que vous avez une réservation ?", "target": "Hvordan siger man, at man har en reservation?" },
+                  "answers": [
+                    { "id": "answer.level-1.hotel-reservation.correct", "text": { "support": "J’ai une réservation.", "target": "Jeg har en reservation." }, "correct": true },
+                    { "id": "answer.level-1.hotel-reservation.wrong-1", "text": { "support": "Je cherche la gare.", "target": "Jeg leder efter stationen." }, "correct": false },
+                    { "id": "answer.level-1.hotel-reservation.wrong-2", "text": { "support": "Je prends le bus.", "target": "Jeg tager bussen." }, "correct": false }
+                  ],
+                  "explanation": { "support": "« Jeg har en reservation » est la formulation de base à la réception.", "target": "‘Jeg har en reservation’ bruges ved check-in." },
+                  "tags": ["reservation"]
+                },
+                {
+                  "id": "question.level-1.hotel-wifi",
+                  "order": 2,
+                  "type": "single-choice",
+                  "prompt": { "support": "Comment demande-t-on le code du Wi-Fi ?", "target": "Hvordan spørger man om wi-fi-koden?" },
+                  "answers": [
+                    { "id": "answer.level-1.hotel-wifi.correct", "text": { "support": "Quel est le code du Wi-Fi ?", "target": "Hvad er koden til wi-fi?" }, "correct": true },
+                    { "id": "answer.level-1.hotel-wifi.wrong-1", "text": { "support": "Où est le petit déjeuner ?", "target": "Hvor er morgenmaden?" }, "correct": false },
+                    { "id": "answer.level-1.hotel-wifi.wrong-2", "text": { "support": "Le Wi-Fi est cher.", "target": "Wi-fi er dyrt." }, "correct": false }
+                  ],
+                  "explanation": { "support": "« Koden til wi-fi » = le code du Wi-Fi.", "target": "‘Koden til wi-fi’ betyder adgangskoden til netværket." },
+                  "tags": ["wifi"]
+                },
+                {
+                  "id": "question.level-1.hotel-problem",
+                  "order": 3,
+                  "type": "single-choice",
+                  "prompt": { "support": "Que signifie « Det virker ikke » ?", "target": "Hvad betyder ‘Det virker ikke’?" },
+                  "answers": [
+                    { "id": "answer.level-1.hotel-problem.correct", "text": { "support": "Cela ne fonctionne pas.", "target": "Det virker ikke." }, "correct": true },
+                    { "id": "answer.level-1.hotel-problem.wrong-1", "text": { "support": "C’est fermé.", "target": "Det er lukket." }, "correct": false },
+                    { "id": "answer.level-1.hotel-problem.wrong-2", "text": { "support": "C’est prêt.", "target": "Det er klar." }, "correct": false }
+                  ],
+                  "explanation": { "support": "« Virker ikke » est une expression pratique pour un appareil ou service qui ne fonctionne pas.", "target": "‘Virker ikke’ bruges om noget, der ikke fungerer." },
+                  "tags": ["problem"]
+                }
+              ]
+            }
+          },
+          {
+            "id": "lesson.level-1.cafe",
+            "moduleId": "module.level-1",
+            "order": 5,
+            "title": { "support": "Au café", "target": "På café" },
+            "situation": {
+              "support": "Vous entrez dans un café avec une autre personne. Vous commandez des boissons et quelque chose à manger, puis vous payez.",
+              "target": "Du går ind på en café sammen med en anden. I bestiller drikkevarer og noget at spise og betaler bagefter."
+            },
+            "tags": ["cafe", "ordering", "payment"],
+            "items": [
+              {
+                "id": "item.level-1.cafe-order",
+                "order": 1,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": { "support": "Je voudrais un café, s’il vous plaît.", "target": "Jeg vil gerne have en kaffe, tak." },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "grammar": { "support": "« Jeg vil gerne have … » est une structure très naturelle pour commander. Le danois emploie souvent « tak » à la fin plutôt qu’une traduction littérale de « s’il vous plaît ».", "targetExample": "Jeg vil gerne have en kaffe, tak." },
+                  "cultural": { "support": "Le danois n’utilise pas un équivalent direct de « s’il vous plaît » aussi systématiquement que le français. Le ton, « tak » et des structures comme « jeg vil gerne » portent souvent la politesse." }
+                },
+                "tags": ["ordering", "politeness"]
+              },
+              {
+                "id": "item.level-1.cafe-type",
+                "order": 2,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": { "support": "Un café filtre, un americano ou un cappuccino ?", "target": "Filterkaffe, americano eller cappuccino?" },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "tags": ["coffee", "choice"]
+              },
+              {
+                "id": "item.level-1.cafe-cappuccino",
+                "order": 3,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": { "support": "Un cappuccino, s’il vous plaît.", "target": "En cappuccino, tak." },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "tags": ["ordering", "coffee"]
+              },
+              {
+                "id": "item.level-1.cafe-what-is",
+                "order": 4,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": { "support": "Qu’est-ce que c’est, ce gâteau ?", "target": "Hvad er det for en kage?" },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "grammar": { "support": "« Hvad er det for en …? » est une structure idiomatique courante pour demander de quel type de chose il s’agit.", "targetExample": "Hvad er det for en kage?" }
+                },
+                "tags": ["food", "question"]
+              },
+              {
+                "id": "item.level-1.cafe-cinnamon",
+                "order": 5,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": { "support": "C’est une brioche à la cannelle.", "target": "Det er en kanelsnegl." },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "cultural": { "support": "« Kanelsnegl » est un terme danois courant pour une pâtisserie à la cannelle en forme d’escargot." }
+                },
+                "tags": ["food", "culture"]
+              },
+              {
+                "id": "item.level-1.cafe-one",
+                "order": 6,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": { "support": "Alors, j’en prends une aussi.", "target": "Så tager jeg også en." },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "grammar": { "support": "« Så » au début place le verbe avant le sujet : « Så tager jeg … ». C’est un premier exemple naturel de l’ordre V2.", "targetExample": "Så tager jeg også en." }
+                },
+                "tags": ["v2", "ordering"]
+              },
+              {
+                "id": "item.level-1.cafe-here-or-go",
+                "order": 7,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": { "support": "C’est pour ici ou à emporter ?", "target": "Er det her eller to go?" },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "cultural": { "support": "Dans les cafés danois, l’anglais « to go » est fréquent dans la langue quotidienne. Une formulation plus entièrement danoise peut aussi être utilisée selon le lieu." }
+                },
+                "tags": ["cafe", "spoken-language"]
+              },
+              {
+                "id": "item.level-1.cafe-here",
+                "order": 8,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": { "support": "Pour ici, merci.", "target": "Her, tak." },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "tags": ["cafe", "politeness"]
+              },
+              {
+                "id": "item.level-1.cafe-pay-card",
+                "order": 9,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": { "support": "Je peux payer par carte ?", "target": "Kan jeg betale med kort?" },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "digital": { "support": "Le paiement par carte et sans contact est très courant au Danemark. MobilePay est également très répandu parmi les utilisateurs qui disposent du service, mais un touriste ne doit pas supposer qu’il peut toujours l’utiliser." },
+                  "grammar": { "support": "« Betale med kort » = payer par carte.", "targetExample": "Kan jeg betale med kort?" }
+                },
+                "tags": ["payment", "card"]
+              },
+              {
+                "id": "item.level-1.cafe-terminal",
+                "order": 10,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": { "support": "Oui, posez simplement la carte sur le terminal.", "target": "Ja, læg bare kortet på terminalen." },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "grammar": { "support": "« Bare » peut adoucir une instruction et signifie ici « simplement ».", "targetExample": "Læg bare kortet på terminalen." }
+                },
+                "tags": ["payment", "instructions"]
+              }
+            ],
+            "quiz": {
+              "id": "quiz.level-1.cafe",
+              "title": { "support": "Mini-quiz — Café", "target": "Miniquiz — Café" },
+              "questions": [
+                {
+                  "id": "question.level-1.cafe-order",
+                  "order": 1,
+                  "type": "single-choice",
+                  "prompt": { "support": "Quelle phrase est naturelle pour commander ?", "target": "Hvilken sætning er naturlig, når man bestiller?" },
+                  "answers": [
+                    { "id": "answer.level-1.cafe-order.correct", "text": { "support": "Je voudrais un café.", "target": "Jeg vil gerne have en kaffe." }, "correct": true },
+                    { "id": "answer.level-1.cafe-order.wrong-1", "text": { "support": "Je suis un café.", "target": "Jeg er en kaffe." }, "correct": false },
+                    { "id": "answer.level-1.cafe-order.wrong-2", "text": { "support": "Je vais au café demain.", "target": "Jeg går på café i morgen." }, "correct": false }
+                  ],
+                  "explanation": { "support": "« Jeg vil gerne have … » est une structure de commande très courante.", "target": "‘Jeg vil gerne have …’ bruges ofte ved bestilling." },
+                  "tags": ["ordering"]
+                },
+                {
+                  "id": "question.level-1.cafe-cake",
+                  "order": 2,
+                  "type": "single-choice",
+                  "prompt": { "support": "Que signifie « kanelsnegl » ?", "target": "Hvad er en kanelsnegl?" },
+                  "answers": [
+                    { "id": "answer.level-1.cafe-cake.correct", "text": { "support": "une pâtisserie à la cannelle", "target": "en kage med kanel" }, "correct": true },
+                    { "id": "answer.level-1.cafe-cake.wrong-1", "text": { "support": "un café froid", "target": "en kold kaffe" }, "correct": false },
+                    { "id": "answer.level-1.cafe-cake.wrong-2", "text": { "support": "un sandwich", "target": "en sandwich" }, "correct": false }
+                  ],
+                  "explanation": { "support": "« Kanelsnegl » désigne une pâtisserie à la cannelle.", "target": "En kanelsnegl er et stykke bagværk med kanel." },
+                  "tags": ["food"]
+                },
+                {
+                  "id": "question.level-1.cafe-card",
+                  "order": 3,
+                  "type": "single-choice",
+                  "prompt": { "support": "Comment demande-t-on si l’on peut payer par carte ?", "target": "Hvordan spørger man, om man kan betale med kort?" },
+                  "answers": [
+                    { "id": "answer.level-1.cafe-card.correct", "text": { "support": "Je peux payer par carte ?", "target": "Kan jeg betale med kort?" }, "correct": true },
+                    { "id": "answer.level-1.cafe-card.wrong-1", "text": { "support": "Où est la carte ?", "target": "Hvor er kortet?" }, "correct": false },
+                    { "id": "answer.level-1.cafe-card.wrong-2", "text": { "support": "La carte est rouge.", "target": "Kortet er rødt." }, "correct": false }
+                  ],
+                  "explanation": { "support": "« Betale med kort » = payer par carte.", "target": "‘Betale med kort’ betyder at betale med betalingskort." },
+                  "tags": ["payment"]
+                }
+              ]
+            }
+          },
+          {
+            "id": "lesson.level-1.restaurant",
+            "moduleId": "module.level-1",
+            "order": 6,
+            "title": { "support": "Au restaurant", "target": "På restaurant" },
+            "situation": {
+              "support": "Vous êtes deux au restaurant. Vous demandez une table, choisissez le repas, posez une question sur un ingrédient et demandez l’addition.",
+              "target": "I er to på restaurant. I spørger efter et bord, vælger mad, spørger om en ingrediens og beder om regningen."
+            },
+            "tags": ["restaurant", "food", "ordering"],
+            "items": [
+              {
+                "id": "item.level-1.restaurant-table",
+                "order": 1,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": { "support": "Avez-vous une table pour deux ?", "target": "Har I et bord til to?" },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "grammar": { "support": "« I » est le pronom sujet pluriel « vous » en danois. Ici, on s’adresse au restaurant comme établissement/personnel.", "targetExample": "Har I et bord til to?" }
+                },
+                "tags": ["table", "question"]
+              },
+              {
+                "id": "item.level-1.restaurant-reservation",
+                "order": 2,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": { "support": "Oui. Avez-vous réservé ?", "target": "Ja. Har I bestilt bord?" },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "grammar": { "support": "« Bestille bord » signifie réserver une table.", "targetExample": "Har I bestilt bord?" }
+                },
+                "tags": ["reservation", "restaurant"]
+              },
+              {
+                "id": "item.level-1.restaurant-no",
+                "order": 3,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": { "support": "Non, mais nous pouvons attendre un peu.", "target": "Nej, men vi kan godt vente lidt." },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "grammar": { "support": "Dans « vi kan godt vente », « godt » renforce l’idée que cela convient/est possible.", "targetExample": "Vi kan godt vente." }
+                },
+                "tags": ["modal", "waiting"]
+              },
+              {
+                "id": "item.level-1.restaurant-menu",
+                "order": 4,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": { "support": "Voici la carte. Vous pouvez aussi voir le menu avec le code QR.", "target": "Her er menukortet. I kan også se menuen med QR-koden." },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "digital": { "support": "Certains restaurants utilisent des QR codes pour afficher un menu. L’usage varie ; le vocabulaire est utile même lorsque le menu papier existe aussi." }
+                },
+                "tags": ["menu", "digital"]
+              },
+              {
+                "id": "item.level-1.restaurant-dish",
+                "order": 5,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": { "support": "Qu’est-ce que vous recommandez ?", "target": "Hvad kan du anbefale?" },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "grammar": { "support": "« Hvad kan du anbefale? » est une demande simple et naturelle de recommandation.", "targetExample": "Hvad kan du anbefale?" }
+                },
+                "tags": ["recommendation", "question"]
+              },
+              {
+                "id": "item.level-1.restaurant-salmon",
+                "order": 6,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": { "support": "Le saumon est très populaire aujourd’hui.", "target": "Laksen er meget populær i dag." },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "grammar": { "support": "« Laksen » est la forme définie de « laks » : le saumon.", "targetExample": "laks — laksen" }
+                },
+                "tags": ["food", "definiteness"]
+              },
+              {
+                "id": "item.level-1.restaurant-dairy",
+                "order": 7,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": { "support": "Est-ce qu’il y a des produits laitiers dans la sauce ?", "target": "Er der mælkeprodukter i saucen?" },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "grammar": { "support": "« Er der …? » demande s’il y a quelque chose.", "targetExample": "Er der mælk i?" },
+                  "cultural": { "support": "Pour une allergie ou une restriction médicale, il faut formuler la demande clairement et ne pas se fier uniquement à une leçon de langue. Le personnel doit confirmer les ingrédients." }
+                },
+                "tags": ["ingredients", "question"]
+              },
+              {
+                "id": "item.level-1.restaurant-without",
+                "order": 8,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": { "support": "Oui, mais nous pouvons la servir sans crème.", "target": "Ja, men vi kan servere den uden fløde." },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "grammar": { "support": "« Med » = avec ; « uden » = sans. Ce contraste est très utile pour les commandes.", "targetExample": "uden fløde" }
+                },
+                "tags": ["ingredients", "without"]
+              },
+              {
+                "id": "item.level-1.restaurant-order",
+                "order": 9,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": { "support": "Alors je prends le saumon sans crème, merci.", "target": "Så tager jeg laksen uden fløde, tak." },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "grammar": { "support": "Comme au café, « Så tager jeg … » montre l’ordre V2 après « så ».", "targetExample": "Så tager jeg laksen." }
+                },
+                "tags": ["ordering", "v2"]
+              },
+              {
+                "id": "item.level-1.restaurant-bill",
+                "order": 10,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": { "support": "Nous pouvons avoir l’addition, s’il vous plaît ?", "target": "Må vi bede om regningen?" },
+                "tts": { "role": "target", "locale": "da-DK", "enabled": true },
+                "notes": {
+                  "grammar": { "support": "« Må vi bede om …? » est une formulation polie et utile pour demander quelque chose au restaurant.", "targetExample": "Må vi bede om regningen?" }
+                },
+                "tags": ["bill", "politeness"]
+              }
+            ],
+            "quiz": {
+              "id": "quiz.level-1.restaurant",
+              "title": { "support": "Mini-quiz — Restaurant", "target": "Miniquiz — Restaurant" },
+              "questions": [
+                {
+                  "id": "question.level-1.restaurant-table",
+                  "order": 1,
+                  "type": "single-choice",
+                  "prompt": { "support": "Comment demande-t-on une table pour deux ?", "target": "Hvordan spørger man efter et bord til to?" },
+                  "answers": [
+                    { "id": "answer.level-1.restaurant-table.correct", "text": { "support": "Avez-vous une table pour deux ?", "target": "Har I et bord til to?" }, "correct": true },
+                    { "id": "answer.level-1.restaurant-table.wrong-1", "text": { "support": "Nous sommes deux tables.", "target": "Vi er to borde." }, "correct": false },
+                    { "id": "answer.level-1.restaurant-table.wrong-2", "text": { "support": "Où est le train ?", "target": "Hvor er toget?" }, "correct": false }
+                  ],
+                  "explanation": { "support": "« Et bord til to » = une table pour deux.", "target": "‘Et bord til to’ betyder et bord til to personer." },
+                  "tags": ["table"]
+                },
+                {
+                  "id": "question.level-1.restaurant-without",
+                  "order": 2,
+                  "type": "single-choice",
+                  "prompt": { "support": "Quel mot signifie « sans » ?", "target": "Hvilket ord betyder ‘sans’?" },
+                  "answers": [
+                    { "id": "answer.level-1.restaurant-without.correct", "text": { "support": "sans", "target": "uden" }, "correct": true },
+                    { "id": "answer.level-1.restaurant-without.wrong-1", "text": { "support": "avec", "target": "med" }, "correct": false },
+                    { "id": "answer.level-1.restaurant-without.wrong-2", "text": { "support": "après", "target": "efter" }, "correct": false }
+                  ],
+                  "explanation": { "support": "« Uden » = sans ; « med » = avec.", "target": "‘Uden’ betyder, at noget ikke er med." },
+                  "tags": ["ingredients"]
+                },
+                {
+                  "id": "question.level-1.restaurant-bill",
+                  "order": 3,
+                  "type": "single-choice",
+                  "prompt": { "support": "Comment demande-t-on l’addition ?", "target": "Hvordan beder man om regningen?" },
+                  "answers": [
+                    { "id": "answer.level-1.restaurant-bill.correct", "text": { "support": "Nous pouvons avoir l’addition ?", "target": "Må vi bede om regningen?" }, "correct": true },
+                    { "id": "answer.level-1.restaurant-bill.wrong-1", "text": { "support": "Nous prenons le menu.", "target": "Vi tager menuen." }, "correct": false },
+                    { "id": "answer.level-1.restaurant-bill.wrong-2", "text": { "support": "Nous allons au café.", "target": "Vi går på café." }, "correct": false }
+                  ],
+                  "explanation": { "support": "« Regningen » est l’addition/la note.", "target": "‘Regningen’ er det beløb, man skal betale." },
+                  "tags": ["bill"]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
