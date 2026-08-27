@@ -2,10 +2,9 @@
 <resources>
     <string name="app_name">Learn FR-DA</string>
     <string name="modules_title">Choisissez un module</string>
-    <string name="modules_intro">Prototype hors ligne : français → danois</string>
-    <string name="planned_level_2">Niveau 2 — bientôt disponible</string>
+    <string name="modules_intro">Apprendre hors ligne : français → danois</string>
     <string name="planned_grammar">Grammaire — bientôt disponible</string>
-    <string name="planned_message">Ce module sera ajouté après la validation du prototype.</string>
+    <string name="planned_message">Ce module sera ajouté ultérieurement.</string>
     <string name="back">Retour</string>
     <string name="home">Modules</string>
     <string name="previous">Précédent</string>
@@ -21,8 +20,7 @@
     <string name="next_question">Question suivante</string>
     <string name="correct">Correct.</string>
     <string name="incorrect">Pas encore.</string>
-    <string name="content_error">Le contenu de test n’a pas pu être chargé.</string>
+    <string name="content_error">Le contenu n’a pas pu être chargé.</string>
     <string name="tts_unavailable">La voix %1$s n’est pas disponible sur cet appareil.</string>
     <string name="tts_failed">La lecture audio n’a pas pu démarrer.</string>
-    <string name="synthetic_badge">DONNÉES SYNTHÉTIQUES</string>
 </resources>

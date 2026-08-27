@@ -50,7 +50,7 @@ public final class MainActivity extends Activity implements SpeechController.Lis
         progress = new ProgressStore(this);
         speech = new SpeechController(this);
         try {
-            course = new ContentRepository(this).loadSyntheticCourse();
+            course = new ContentRepository(this).loadProductionCourse();
             setContentView(buildShell());
             showModules();
         } catch (ContentContractException exception) {
@@ -70,11 +70,6 @@ public final class MainActivity extends Activity implements SpeechController.Lis
         TextView appTitle = text(getString(R.string.app_name), 28, R.color.primary_dark, true);
         appTitle.setGravity(Gravity.CENTER);
         shell.addView(appTitle, matchWrap());
-
-        TextView badge = text(getString(R.string.synthetic_badge), 12, R.color.accent, true);
-        badge.setGravity(Gravity.CENTER);
-        badge.setPadding(0, dp(4), 0, dp(16));
-        shell.addView(badge, matchWrap());
 
         content = new LinearLayout(this);
         content.setOrientation(LinearLayout.VERTICAL);
@@ -96,10 +91,6 @@ public final class MainActivity extends Activity implements SpeechController.Lis
             button.setOnClickListener(view -> showLessons(module));
             content.addView(button, matchWrapWithTop());
         }
-
-        Button levelTwo = secondaryButton(getString(R.string.planned_level_2));
-        levelTwo.setOnClickListener(view -> planned());
-        content.addView(levelTwo, matchWrapWithTop());
 
         Button grammar = secondaryButton(getString(R.string.planned_grammar));
         grammar.setOnClickListener(view -> planned());
@@ -133,7 +124,6 @@ public final class MainActivity extends Activity implements SpeechController.Lis
         backButton(this::showModules);
         heading(module.title.support);
         targetLabel(module.title.target);
-        if (module.isChildren()) panel("Module Enfants identifié par type/audience, pas par son titre.", R.color.primary);
 
         for (Lesson lesson : module.lessons) {
             int completed = progress.countCompleted(course.id, module.id, lesson.id);
@@ -156,7 +146,7 @@ public final class MainActivity extends Activity implements SpeechController.Lis
         int completed = progress.countCompleted(course.id, selectedModule.id, lesson.id);
         centered(completed + "/" + lesson.items.size() + " éléments terminés");
 
-        Button start = primaryButton("Commencer la leçon test");
+        Button start = primaryButton("Commencer la leçon");
         start.setOnClickListener(view -> showItem(0));
         content.addView(start, matchWrapWithTop());
 
@@ -201,7 +191,7 @@ public final class MainActivity extends Activity implements SpeechController.Lis
 
         if (item.speech.enabled) {
             Button danish = primaryButton(getString(R.string.listen_danish));
-            danish.setOnClickListener(view -> speech.speak(item.text.target, item.speech.locale, this));
+            danish.setOnClickListener(view -> speech.speak("support".equals(item.speech.role) ? item.text.support : item.text.target, item.speech.locale, this));
             content.addView(danish, matchWrapWithTop());
         }
         Button french = secondaryButton(getString(R.string.listen_french));

@@ -1,163 +1,199 @@
 # Build and Test
 
-## Current implementation status
+## Production integration — 2026-08-27
 
-The first Android skeleton is implemented as a single native Java `app` module. It deliberately validates architecture rather than final linguistic scope.
+The canonical production course is `app/src/main/assets/content/fr-da/course.json`.
+Both debug and release applications load this asset through `ContentRepository.loadProductionCourse()`.
+It contains Level 1, Level 2 and Children, with ten lessons each. Module titles and counts come from JSON.
+Level 2 is no longer a placeholder; Grammar remains a placeholder. No standalone Grammar or global quiz content was generated.
 
-Implemented:
+The seven source files in `linguistic/production/` remain unchanged.
+`linguistic/testdata/course.synthetic.json` remains unchanged and is mapped only into `androidTest` assets, never application assets.
+Tests can load it with `new ContentRepository(instrumentationContext).loadCourse("course.synthetic.json")`.
 
-- Generic version-1 Nenoling content models and strict JSON parser.
-- The existing `linguistic/testdata/course.synthetic.json` is included directly as a bundled Android asset; it is not duplicated into production content.
-- French support/interface text and Danish target text.
-- Explicit language configuration from the course document: `fr-FR` support and `da-DK` target.
-- Level 1 synthetic lesson flow.
-- Children / Enfants synthetic lesson flow selected through module `type` and `audience`, not a translated title.
-- Lesson overview, ordered items, previous/next navigation, optional notes, and quiz.
-- Lazy, locale-driven Android TTS for Danish target text, plus optional French support playback.
-- Graceful TTS unavailable/failure messages.
-- `SharedPreferences` progress using stable course/module/lesson/entity IDs.
-- Local item completion, latest-position restore information, and saved quiz result.
-- French Android string resources and a minimal off-white/soft-blue/muted-red identity.
-- Offline bundled content with no Android network permission or runtime service.
-- Placeholder navigation for Level 2 and Grammar; no final content is implied.
+## Exact content counts
 
-Not implemented in this phase:
+| Scope | Modules | Lessons | Items | Quizzes | Questions | Answers | Grammar notes | Cultural notes | Digital notes | Pronunciation notes |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Level 1 | 1 | 10 | 100 | 10 | 30 | 90 | 69 | 12 | 13 | 5 |
+| Level 2 | 1 | 10 | 100 | 10 | 30 | 90 | 58 | 11 | 11 | 0 |
+| Children | 1 | 10 | 100 | 10 | 30 | 90 | 9 | 7 | 4 | 0 |
+| Total | 3 | 30 | 300 | 30 | 90 | 270 | 136 | 30 | 28 | 5 |
 
-- Final Level 1/2, Children, grammar, or quiz content.
-- Full UI redesign, production accessibility QA, accounts, sync, analytics, or cloud services.
-- LP2 legacy JSON compatibility; canonical FR-DA code accepts only the generic contract.
+Notes are counted as present note objects, not separate grammar lessons.
 
-## Project structure
+## Automated validation — PASS
 
-```text
-app/
-  build.gradle
-  src/main/
-    AndroidManifest.xml
-    java/dk/nenolink/learnfrda/
-      MainActivity.java
-      content/
-        ContentModels.java
-        ContentContractException.java
-        ContentRepository.java
-      progress/ProgressStore.java
-      speech/SpeechController.java
-    res/
-linguistic/testdata/course.synthetic.json
+Run with Node.js (no npm packages required):
+
+```powershell
+node tools/production-content.mjs
+node --test tools/production-content.test.mjs
 ```
 
-The Gradle source set maps `linguistic/testdata` into debug/application assets. The parser opens `course.synthetic.json` from Android `AssetManager` at runtime.
+To deliberately regenerate the asset after editing production sources:
 
-## Build command
+```powershell
+node tools/production-content.mjs --write
+```
 
-From the repository root:
+The normal command validates all seven files and requires the checked-in canonical asset to equal the merged source records.
+The writer validates the entire result before replacing the asset.
+
+Checks include strict UTF-8 decoding, JSON parsing, version 1, required/unknown/null fields, value types,
+course identity, French support and Danish target configuration, module type/audience, bilingual text,
+ID/tag regexes, global ID uniqueness, parent references, unique positive integer orders, note shapes,
+TTS roles/locales and exactly one correct answer per single-choice question.
+Production additionally requires the three module IDs, lesson orders 1–10, three questions per lesson
+and enabled target/da-DK speech for every item.
+
+There are **724 globally unique canonical IDs and zero duplicate entity IDs**.
+Course and module IDs intentionally recur as matching metadata in separate source documents;
+these shared headers are consolidated, not renamed. No lesson, item, quiz, question or answer IDs recur.
+Answer arrays retain their source order; the contract does not define answer or quiz-level `order` fields.
+
+The 18 Node tests cover successful validation, exact preservation of every source lesson,
+and rejection of unknown fields, null notes, duplicate/invalid IDs, duplicate/fractional orders,
+invalid references, empty text, incorrect/missing TTS, invalid/duplicate tags,
+zero/multiple correct answers, reversed languages and invalid Children audience.
+These are static content tests, not Android runtime tests.
+
+## Language and structural review
+
+All 300 item text pairs were reviewed for obvious reversed FR/DA roles; none were found.
+An explicit search of production JSON and runtime source found no `textPt`, `pt-PT`, Portuguese naming
+or Portuguese lesson IDs. French quotations in Danish quiz prompts are intentional translation exercises.
+This review is not a full linguistic, safety or factual certification.
+
+No linguistic record, ID, tag, translation, note or quiz answer was changed.
+No JSON contract change was needed. The merged package uses `contentVersion: 1.0.0-production`.
+The runtime now sorts lessons, items and questions by documented order (using Android 23-compatible APIs),
+rejects fractional integer fields and malformed UTF-8, and reports the actual asset name on errors.
+Progress identity remains course/module/lesson/entity IDs, independent of titles and positions.
+
+The source Level 2 and Children topic sequences differ from the planning outline in LESSON_STRUCTURE.md.
+Source order and content were preserved as requested. An editorial follow-up may reconcile the outline.
+One translation to review separately: `item.level-1.public-transport.city-hall` has French
+“Je vais à l’Hôtel de Ville.” and Danish “Jeg skal til Rådhuspladsen.” (town hall versus town hall square).
+It was not rewritten because this task only authorizes structural corrections.
+
+## TTS — static configuration PASS; device playback NOT RUN
+
+Primary speech is Danish (`da-DK`). The separate optional French button uses `fr-FR` and does not alter
+course defaults. Item speech now selects text using its declared role.
+All 300 production items use enabled target/da-DK speech.
+Representative Unicode samples checked in the asset:
+
+| Module | Samples covering æ, ø, å |
+|---|---|
+| Level 1 | “Skærmen viser, at toget er fem minutter forsinket.”; “Ligeud og så til højre.” |
+| Level 2 | “Ja, i mange tilfælde. Du kan også få hjælp hos kommunen.”; “Du skal følge vejledningen, der passer til din situation.”; “Jeg skal arbejde her i mindst et år.” |
+| Children | “Må jeg være med?”; “Ja, selvfølgelig!” |
+
+Actual voice availability, speech dispatch and audible pronunciation remain unverified.
+
+## Build — FAIL (execution environment)
+
+Requested command:
 
 ```powershell
 .\gradlew.bat assembleDebug
 ```
 
-When the build succeeds, Gradle produces:
+An initial pre-integration invocation returned success with cached skeleton outputs; that is **not**
+a successful production build. The final integration build did not complete.
+After resolving local Java/cache selection, the concrete blocker was:
+
+```text
+java.nio.file.AccessDeniedException:
+C:\Users\henri\AppData\Local\Android\Sdk\platforms\android-35\package.xml
+Failed to find target with hash string 'android-35'
+```
+
+Explicit SDK read permission was requested and granted, but Windows still denied byte access.
+Do not reinstall the SDK or accept licenses to conceal this access-control failure.
+No production APK is verified. Any existing APK in the output directories is stale skeleton output.
+
+Local environment used for the final attempt:
+
+```powershell
+$env:JAVA_HOME='C:\Program Files\Android\Android Studio\jbr'
+$env:GRADLE_USER_HOME=Join-Path (Get-Location) '.gradle-user'
+$env:ANDROID_USER_HOME=Join-Path (Get-Location) '.android-user'
+.\gradlew.bat assembleDebug --offline
+```
+
+Expected APK paths after a successful build:
 
 ```text
 app/build/outputs/apk/debug/app-debug.apk
 app/build/outputs/manual-debug/Learn-FR-DA-debug.apk
 ```
 
-The second path is a stable manual-testing copy generated after `assembleDebug`.
+The manual-testing copy is generated by the existing assembleDebug finalizer.
+The deprecated `android.useAndroidX=false` warning remains unrelated to this integration.
 
-## Build result in this task
+## Device / emulator — NOT RUN
 
-Gradle wrapper generation succeeded with Gradle 9.6.1, and the Android project/plugin configuration was reached. The full debug build could not proceed to resource or Java compilation in the Codex sandbox because Windows denied the Gradle process byte access to the already installed SDK files under:
+`adb devices` could not start because Windows denied execution of
+`C:\Users\henri\AppData\Local\Android\Sdk\platform-tools\adb.exe`, even after permissions were granted.
+No device availability, installation, screenshot or runtime result is claimed.
 
-```text
-C:\Users\henri\AppData\Local\Android\Sdk
-```
+Static flow review confirms that all loaded modules open their JSON lessons; every lesson has a quiz,
+the final item routes to that quiz, scoring increments on the selected correct answer with a repeated-answer guard,
+and completed items/latest position/quiz scores use SharedPreferences stable keys.
+The manifest has no network permission, and course content is bundled locally.
+Long titles use wrapping, content-sized buttons inside a ScrollView; visual clipping remains unverified.
 
-The concrete failure occurred while reading `platforms/android-35/package.xml`; the same sandbox ACL also denied reads of `android.jar`, `aapt2.exe`, and the SDK license file. Gradle consequently reported platform/build-tools licenses as unavailable. This is an execution-environment access failure, not a diagnosed project compile error. No debug APK was generated in this task.
+Required follow-up on an accessible emulator or device:
 
-Run the build command in a normal local PowerShell or Android Studio session with access to the installed SDK. Do not accept or reinstall SDK licenses merely to work around the Codex sandbox unless the local SDK Manager independently reports them missing.
+1. Build and install the new APK; confirm offline startup.
+2. Verify the three production titles and ten lessons per module.
+3. Open first and last lessons of each module; inspect French/Danish text and long titles at normal and large font sizes.
+4. Exercise previous/next/back and reach the quiz from the last item.
+5. Complete a quiz with correct and incorrect answers and verify scoring and saved result.
+6. Mark items complete; close/restart the app and confirm completion, last position and quiz result survive.
+7. Play the Danish Unicode samples above, optionally play French, then play Danish again.
+8. Repeat navigation and quiz checks offline. TTS requires an installed offline Danish voice.
 
-## Tests and validations performed
+## Final status and next step
 
-### Synthetic contract validation — passed
+- CONTENT VALIDATION: PASS
+- DUPLICATE IDS: 0 in the canonical course
+- BUILD: FAIL — SDK access denied
+- DEVICE TEST: NOT RUN
+- TTS DA: NOT RUN at runtime; configuration PASS
+- PROGRESS: NOT RUN at runtime; stable-key persistence code reviewed
+- QUIZZES: content PASS; runtime scoring/navigation NOT RUN
 
-- JSON parses as UTF-8.
-- Exactly two modules: Level 1 and Children.
-- Exactly two lessons, eight items, and four quiz questions.
-- 27 course/module/lesson/item/quiz/question/answer IDs are valid and globally unique.
-- Lesson `moduleId` references resolve.
-- Every item contains French `support`, Danish `target`, and target/`da-DK` TTS.
-- Every single-choice question has exactly one correct answer.
-- Grammar, cultural, digital, and pronunciation note shapes are represented.
+Next step: run the build and device checklist from Android Studio or PowerShell with working SDK access.
+Do not treat this integration as release-ready until runtime checks pass. Remaining broader limitations include
+voice selection/audio focus, presentation-state and progress migration tests, and accessibility/physical-device QA.
+No accounts, cloud services, analytics, new lessons, Grammar content or UI redesign were added.
 
-### Source and resource validation — passed
+## Files in this integration
 
-- All Android XML files parse as well-formed XML.
-- Java front-end parsing reported no syntax errors. Full Android type resolution still requires the SDK build.
-- Static flow checks found module, lesson, item, quiz, progress, and speech wiring.
-- The manifest has one exported launcher activity and requests no permissions.
-- The Gradle asset source set points to the existing synthetic fixture.
+Created:
 
-### Portuguese-remnant audit — passed for runtime scope
+- app/src/main/assets/content/fr-da/course.json
+- tools/production-content.mjs
+- tools/production-content.test.mjs
 
-The Android source, resources, Gradle files, and synthetic fixture were searched for:
+Modified:
 
-- `textPt`
-- `pt-PT`
-- Portuguese/portugis naming
-- LearnPortuguese package/product names
-- hard-coded `Locale("pt", ...)`
-- `titleDa`, `questionDa`, and `explanationDa`
-- the LP2 progress preference name
+- app/build.gradle
+- app/src/main/java/dk/nenolink/learnfrda/MainActivity.java
+- app/src/main/java/dk/nenolink/learnfrda/content/ContentRepository.java
+- app/src/main/res/values/strings.xml
+- docs/BUILD_AND_TEST.md
 
-No runtime matches remain. Portuguese terms intentionally remain in historical architecture documentation explaining what was removed; they are not compiled or bundled as lesson content.
+Structural content corrections: none. Linguistic entries unable to integrate unchanged: none.
+All source production files and the synthetic fixture are preserved byte-for-byte in Git.
 
-### Device/runtime tests — pending
+## Commit result
 
-The SDK ACL prevented APK generation, installation, and emulator/device launch in this task. These checks remain mandatory:
-
-1. App starts without a network connection.
-2. Level 1 and its synthetic lesson open.
-3. French and Danish strings render without clipping at large font scale.
-4. Previous/back/next navigation behaves correctly.
-5. `da-DK` TTS speaks Danish or shows the unavailable message.
-6. Optional `fr-FR` TTS does not change the Danish default.
-7. Item completion and latest position survive process restart.
-8. Quiz score is saved and restored.
-9. Children opens as a distinct module.
-
-## Known limitations and technical debt
-
-- `MainActivity` still owns the small screen state and programmatic View rendering. New parser, progress, and TTS responsibilities are isolated, but a later phase should introduce testable presentation state before the screen set grows.
-- Parser validation is strict and runtime-based; an equivalent JVM test suite and/or generated JSON Schema should be added after the first successful Android build.
-- `SharedPreferences` is sufficient for the skeleton but will need migration/version tests before content IDs ship publicly.
-- Quiz supports only the documented `single-choice` type.
-- TTS does not yet expose voice selection, rate, audio focus, or utterance highlighting.
-- Level 2 and Grammar are placeholders because final content is explicitly out of scope.
-- The UI uses one responsive vertical layout but has not received physical-device, TalkBack, landscape, or full accessibility testing.
-- The Gradle flag `android.useAndroidX=false` follows the no-dependency LP2 baseline and is deprecated in Android Gradle Plugin 9.2.1; reassess it before broader UI work.
-
-## Remaining LP2 reuse and debt
-
-Reused concepts:
-
-- Single-module native Android baseline.
-- Offline JSON assets.
-- Module/lesson/item progression and previous/next flow.
-- Simple local completion/quiz persistence.
-- Lazy Android TTS and graceful missing-voice behavior.
-- Programmatic View approach for an incremental skeleton.
-
-Generalised or replaced:
-
-- Portuguese/Danish field names became `support`/`target` roles.
-- Numeric level/dialog IDs became stable course/module/lesson/entity IDs.
-- Title-based Children detection became explicit module metadata.
-- Hard-coded Portuguese TTS became per-course/per-item locale configuration.
-- Permissive LP2 parsing became required-field, unknown-field, ID, reference, tag, locale, and quiz validation.
-- TTS and progress moved out of `MainActivity`.
-- Danish LP2 interface copy became French Android resources.
-
-## Next recommended implementation step
-
-First run `assembleDebug` and the runtime checklist in a normal local Android environment. Once that baseline passes, add automated tests for the version-1 parser and stable progress keys before creating or importing any final linguistic content. The next feature work should then add presentation-state tests and accessibility fixes—not the 20 production lessons yet.
+The requested commit `feat: integrate FR-DA production content` could not be created.
+Both `git add` and `git commit` were blocked by Windows access denial on `.git/index.lock`,
+including after explicit write permission for `.git` was granted. Changes remain in the actual
+repository working tree, unstaged; no commit or push is claimed.
+After restoring Git metadata write access, validate again and commit the eight files listed above.

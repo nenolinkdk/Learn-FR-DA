@@ -35,7 +35,8 @@ import dk.nenolink.learnfrda.content.ContentModels.SpeechSpec;
 import dk.nenolink.learnfrda.content.ContentModels.TextPair;
 
 public final class ContentRepository {
-    public static final String SYNTHETIC_ASSET = "course.synthetic.json";
+    public static final String PRODUCTION_ASSET = "content/fr-da/course.json";
+    private String assetName = PRODUCTION_ASSET;
 
     private static final Pattern ID_PATTERN = Pattern.compile("^[a-z0-9]+(?:[.-][a-z0-9]+)*$");
     private static final Pattern TAG_PATTERN = Pattern.compile("^[a-z0-9]+(?:-[a-z0-9]+)*$");
@@ -50,10 +51,15 @@ public final class ContentRepository {
         this.context = context.getApplicationContext();
     }
 
-    public Course loadSyntheticCourse() throws ContentContractException {
+    public Course loadProductionCourse() throws ContentContractException {
+        return loadCourse(PRODUCTION_ASSET);
+    }
+
+    public Course loadCourse(String name) throws ContentContractException {
+        assetName = name;
         ids.clear();
         try {
-            JSONObject root = new JSONObject(readAsset(SYNTHETIC_ASSET));
+            JSONObject root = new JSONObject(readAsset(assetName));
             requireOnly(root, "$", "schemaVersion", "contentVersion", "course");
             int schemaVersion = requiredPositiveInt(root, "schemaVersion", "$");
             if (schemaVersion != 1) {
@@ -80,7 +86,7 @@ public final class ContentRepository {
             }
             return new Course(schemaVersion, contentVersion, courseId, courseLocale, support, target, defaults, title, modules);
         } catch (IOException | JSONException exception) {
-            throw new ContentContractException(SYNTHETIC_ASSET + ": invalid JSON: " + exception.getMessage(), exception);
+            throw new ContentContractException(assetName + ": invalid JSON: " + exception.getMessage(), exception);
         }
     }
 
@@ -152,6 +158,7 @@ public final class ContentRepository {
             Quiz quiz = json.has("quiz") ? parseQuiz(requiredObject(json, "quiz", path), path + ".quiz") : null;
             lessons.add(new Lesson(id, reference, order, title, situation, tags, items, quiz));
         }
+        java.util.Collections.sort(lessons, (a, b) -> Integer.compare(a.order, b.order));
         return lessons;
     }
 
@@ -177,6 +184,7 @@ public final class ContentRepository {
             List<String> tags = parseTags(requiredArray(json, "tags", itemPath), itemPath + ".tags");
             items.add(new Item(id, order, type, speaker, text, speech, notes, tags));
         }
+        java.util.Collections.sort(items, (a, b) -> Integer.compare(a.order, b.order));
         return items;
     }
 
@@ -237,6 +245,7 @@ public final class ContentRepository {
             List<String> tags = parseTags(requiredArray(question, "tags", questionPath), questionPath + ".tags");
             questions.add(new Question(questionId, order, type, prompt, answers, explanation, tags));
         }
+        java.util.Collections.sort(questions, (a, b) -> Integer.compare(a.order, b.order));
         return new Quiz(id, title, questions);
     }
 
@@ -299,6 +308,8 @@ public final class ContentRepository {
 
     private int requiredPositiveInt(JSONObject json, String key, String path) throws JSONException, ContentContractException {
         if (!json.has(key) || json.isNull(key) || !(json.get(key) instanceof Number)) fail(path + "." + key, "required integer");
+        double number = json.getDouble(key);
+        if (number != Math.rint(number) || number > Integer.MAX_VALUE) fail(path + "." + key, "required integer");
         int value = json.getInt(key);
         if (value <= 0) fail(path + "." + key, "must be positive");
         return value;
@@ -336,7 +347,9 @@ public final class ContentRepository {
 
     private String readAsset(String name) throws IOException {
         try (InputStream input = context.getAssets().open(name);
-             BufferedReader reader = new BufferedReader(new InputStreamReader(input, StandardCharsets.UTF_8))) {
+             BufferedReader reader = new BufferedReader(new InputStreamReader(input, StandardCharsets.UTF_8.newDecoder()
+                     .onMalformedInput(java.nio.charset.CodingErrorAction.REPORT)
+                     .onUnmappableCharacter(java.nio.charset.CodingErrorAction.REPORT)))) {
             StringBuilder text = new StringBuilder();
             String line;
             while ((line = reader.readLine()) != null) text.append(line).append('\n');
@@ -348,7 +361,7 @@ public final class ContentRepository {
         return new HashSet<>(Arrays.asList(values));
     }
 
-    private static void fail(String path, String reason) throws ContentContractException {
-        throw new ContentContractException(SYNTHETIC_ASSET + " " + path + ": " + reason);
+    private void fail(String path, String reason) throws ContentContractException {
+        throw new ContentContractException(assetName + " " + path + ": " + reason);
     }
 }
