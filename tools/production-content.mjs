@@ -73,7 +73,7 @@ export function merge() {
       const {lessons:prior,...existing}=modules.get(m.id);assert.deepEqual(meta,existing,file+': module metadata differs');prior.push(...lessons);
     }
   }
-  const moduleIds=['module.level-1','module.level-2','module.children'];assert.deepEqual([...modules.keys()].sort(),[...moduleIds].sort());
+  const moduleIds=['module.level-1','module.level-2','module.children','module.grammar'];assert.deepEqual([...modules.keys()].sort(),[...moduleIds].sort());
   result.course.modules=moduleIds.map(id=>modules.get(id));
   for(const m of result.course.modules) {
     m.lessons.sort((a,b)=>a.order-b.order);assert.deepEqual(m.lessons.map(l=>l.order),[1,2,3,4,5,6,7,8,9,10]);

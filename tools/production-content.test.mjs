@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import { merge, validate } from './production-content.mjs';
 const { result } = merge();
-test('canonical course has 724 valid globally unique IDs', () => assert.equal(validate(result), 724));
+test('canonical course has 965 valid globally unique IDs', () => assert.equal(validate(result), 965));
 const cases = {
   'unknown field': d => { d.course.modules[0].lessons[0].items[0].textPt = 'x'; },
   'null optional notes': d => { d.course.modules[0].lessons[0].items[0].notes = null; },

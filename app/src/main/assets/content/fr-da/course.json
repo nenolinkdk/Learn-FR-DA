@@ -11436,6 +11436,3896 @@
             }
           }
         ]
+      },
+      {
+        "id": "module.grammar",
+        "type": "grammar",
+        "audience": "general",
+        "title": {
+          "support": "Grammaire danoise pratique",
+          "target": "Praktisk dansk grammatik"
+        },
+        "tags": [
+          "grammar",
+          "reference"
+        ],
+        "lessons": [
+          {
+            "id": "lesson.grammar.pronouns-present",
+            "moduleId": "module.grammar",
+            "order": 1,
+            "title": {
+              "support": "Pronoms et présent",
+              "target": "Pronominer og nutid"
+            },
+            "situation": {
+              "support": "Comprendre les pronoms personnels et la forme simple du présent danois.",
+              "target": "Forstå personlige pronominer og den enkle danske nutid."
+            },
+            "tags": [
+              "pronouns",
+              "present"
+            ],
+            "items": [
+              {
+                "id": "item.grammar.pronouns-present.1",
+                "order": 1,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Je travaille au Danemark.",
+                  "target": "Jeg arbejder i Danmark."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Jeg » = je. Au présent, le verbe danois a la même forme pour toutes les personnes.",
+                    "targetExample": "jeg arbejder"
+                  }
+                },
+                "tags": [
+                  "pronouns",
+                  "present"
+                ]
+              },
+              {
+                "id": "item.grammar.pronouns-present.2",
+                "order": 2,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Tu travailles ici.",
+                  "target": "Du arbejder her."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Du » = tu/vous au singulier courant. Le verbe reste « arbejder ».",
+                    "targetExample": "du arbejder"
+                  }
+                },
+                "tags": [
+                  "pronouns",
+                  "present"
+                ]
+              },
+              {
+                "id": "item.grammar.pronouns-present.3",
+                "order": 3,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Il habite à Aarhus.",
+                  "target": "Han bor i Aarhus."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Han » = il pour une personne de sexe masculin.",
+                    "targetExample": "han bor"
+                  }
+                },
+                "tags": [
+                  "pronouns"
+                ]
+              },
+              {
+                "id": "item.grammar.pronouns-present.4",
+                "order": 4,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Elle parle danois.",
+                  "target": "Hun taler dansk."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Hun » = elle pour une personne de sexe féminin.",
+                    "targetExample": "hun taler"
+                  }
+                },
+                "tags": [
+                  "pronouns"
+                ]
+              },
+              {
+                "id": "item.grammar.pronouns-present.5",
+                "order": 5,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Il est ouvert aujourd’hui.",
+                  "target": "Det er åbent i dag."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Det » peut correspondre à il/ce/cela pour une chose neutre ou une situation.",
+                    "targetExample": "det er"
+                  }
+                },
+                "tags": [
+                  "pronouns"
+                ]
+              },
+              {
+                "id": "item.grammar.pronouns-present.6",
+                "order": 6,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Nous prenons le train.",
+                  "target": "Vi tager toget."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Vi » = nous.",
+                    "targetExample": "vi tager"
+                  }
+                },
+                "tags": [
+                  "pronouns"
+                ]
+              },
+              {
+                "id": "item.grammar.pronouns-present.7",
+                "order": 7,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Vous avez une réservation ?",
+                  "target": "Har I en reservation?"
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« I » = vous au pluriel. Il s’écrit toujours avec une majuscule.",
+                    "targetExample": "I har"
+                  }
+                },
+                "tags": [
+                  "pronouns"
+                ]
+              },
+              {
+                "id": "item.grammar.pronouns-present.8",
+                "order": 8,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Ils arrivent demain.",
+                  "target": "De kommer i morgen."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« De » = ils/elles. Dans l’usage moderne, « De » comme vouvoiement formel est rare.",
+                    "targetExample": "de kommer"
+                  }
+                },
+                "tags": [
+                  "pronouns"
+                ]
+              },
+              {
+                "id": "item.grammar.pronouns-present.9",
+                "order": 9,
+                "type": "grammar-example",
+                "text": {
+                  "support": "On utilise souvent une application.",
+                  "target": "Man bruger ofte en app."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Man » correspond souvent au français « on » lorsqu’on parle en général.",
+                    "targetExample": "man bruger"
+                  }
+                },
+                "tags": [
+                  "pronouns"
+                ]
+              },
+              {
+                "id": "item.grammar.pronouns-present.10",
+                "order": 10,
+                "type": "grammar-example",
+                "text": {
+                  "support": "J’apprends le danois.",
+                  "target": "Jeg lærer dansk."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "Beaucoup de verbes réguliers ont un présent en -r : « lære » → « lærer », « arbejde » → « arbejder ».",
+                    "targetExample": "lære → lærer"
+                  }
+                },
+                "tags": [
+                  "present"
+                ]
+              }
+            ],
+            "quiz": {
+              "id": "quiz.grammar.pronouns-present",
+              "title": {
+                "support": "Mini-quiz — Pronoms et présent",
+                "target": "Miniquiz — Pronominer og nutid"
+              },
+              "questions": [
+                {
+                  "id": "question.grammar.pronouns-present.1",
+                  "order": 1,
+                  "type": "single-choice",
+                  "prompt": {
+                    "support": "Quel pronom signifie « nous » ?",
+                    "target": "Hvilket pronomen betyder ‘nous’?"
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.grammar.pronouns-present.1c",
+                      "text": {
+                        "support": "nous",
+                        "target": "vi"
+                      },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.grammar.pronouns-present.1w1",
+                      "text": {
+                        "support": "ils",
+                        "target": "de"
+                      },
+                      "correct": false
+                    },
+                    {
+                      "id": "answer.grammar.pronouns-present.1w2",
+                      "text": {
+                        "support": "tu",
+                        "target": "du"
+                      },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "« Vi » = nous.",
+                    "target": "‘Vi’ er første person flertal."
+                  },
+                  "tags": [
+                    "pronouns"
+                  ]
+                },
+                {
+                  "id": "question.grammar.pronouns-present.2",
+                  "order": 2,
+                  "type": "single-choice",
+                  "prompt": {
+                    "support": "Quelle phrase est correcte avec « du » ?",
+                    "target": "Hvilken sætning er korrekt med ‘du’?"
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.grammar.pronouns-present.2c",
+                      "text": {
+                        "support": "Tu travailles ici.",
+                        "target": "Du arbejder her."
+                      },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.grammar.pronouns-present.2w1",
+                      "text": {
+                        "support": "Tu travailles ici.",
+                        "target": "Du arbejde her."
+                      },
+                      "correct": false
+                    },
+                    {
+                      "id": "answer.grammar.pronouns-present.2w2",
+                      "text": {
+                        "support": "Tu travailles ici.",
+                        "target": "Du arbejders her."
+                      },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "Le présent est « arbejder ».",
+                    "target": "Nutidsformen er ‘arbejder’."
+                  },
+                  "tags": [
+                    "present"
+                  ]
+                },
+                {
+                  "id": "question.grammar.pronouns-present.3",
+                  "order": 3,
+                  "type": "single-choice",
+                  "prompt": {
+                    "support": "Quel pronom danois correspond souvent à « on » ?",
+                    "target": "Hvilket dansk pronomen svarer ofte til ‘on’?"
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.grammar.pronouns-present.3c",
+                      "text": {
+                        "support": "on",
+                        "target": "man"
+                      },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.grammar.pronouns-present.3w1",
+                      "text": {
+                        "support": "nous",
+                        "target": "vi"
+                      },
+                      "correct": false
+                    },
+                    {
+                      "id": "answer.grammar.pronouns-present.3w2",
+                      "text": {
+                        "support": "elle",
+                        "target": "hun"
+                      },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "« Man » sert aux affirmations générales.",
+                    "target": "‘Man’ bruges ofte om mennesker generelt."
+                  },
+                  "tags": [
+                    "pronouns"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "id": "lesson.grammar.nouns",
+            "moduleId": "module.grammar",
+            "order": 2,
+            "title": {
+              "support": "Noms : en, et et forme définie",
+              "target": "Navneord: en, et og bestemt form"
+            },
+            "situation": {
+              "support": "Reconnaître le genre des noms danois et la manière dont l’article défini est ajouté au nom.",
+              "target": "Genkende danske navneords køn og hvordan bestemt form sættes på ordet."
+            },
+            "tags": [
+              "nouns",
+              "definiteness"
+            ],
+            "items": [
+              {
+                "id": "item.grammar.nouns.1",
+                "order": 1,
+                "type": "grammar-example",
+                "text": {
+                  "support": "un billet",
+                  "target": "en billet"
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "La plupart des noms danois sont de genre commun et prennent « en ».",
+                    "targetExample": "en billet"
+                  }
+                },
+                "tags": [
+                  "nouns"
+                ]
+              },
+              {
+                "id": "item.grammar.nouns.2",
+                "order": 2,
+                "type": "grammar-example",
+                "text": {
+                  "support": "un hôtel",
+                  "target": "et hotel"
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "Les noms neutres prennent « et ». Le genre doit souvent être appris avec le nom.",
+                    "targetExample": "et hotel"
+                  }
+                },
+                "tags": [
+                  "nouns"
+                ]
+              },
+              {
+                "id": "item.grammar.nouns.3",
+                "order": 3,
+                "type": "grammar-example",
+                "text": {
+                  "support": "le billet",
+                  "target": "billetten"
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "Pour un nom en « en », l’article défini est normalement ajouté à la fin : billet → billetten.",
+                    "targetExample": "billet → billetten"
+                  }
+                },
+                "tags": [
+                  "definiteness"
+                ]
+              },
+              {
+                "id": "item.grammar.nouns.4",
+                "order": 4,
+                "type": "grammar-example",
+                "text": {
+                  "support": "l’hôtel",
+                  "target": "hotellet"
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "Pour un nom neutre, la forme définie finit généralement en -et : hotel → hotellet.",
+                    "targetExample": "hotel → hotellet"
+                  }
+                },
+                "tags": [
+                  "definiteness"
+                ]
+              },
+              {
+                "id": "item.grammar.nouns.5",
+                "order": 5,
+                "type": "grammar-example",
+                "text": {
+                  "support": "une application",
+                  "target": "en app"
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "Les emprunts modernes ont eux aussi un genre grammatical.",
+                    "targetExample": "en app"
+                  }
+                },
+                "tags": [
+                  "nouns"
+                ]
+              },
+              {
+                "id": "item.grammar.nouns.6",
+                "order": 6,
+                "type": "grammar-example",
+                "text": {
+                  "support": "le train",
+                  "target": "toget"
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Tog » est neutre : et tog → toget.",
+                    "targetExample": "et tog → toget"
+                  }
+                },
+                "tags": [
+                  "definiteness"
+                ]
+              },
+              {
+                "id": "item.grammar.nouns.7",
+                "order": 7,
+                "type": "grammar-example",
+                "text": {
+                  "support": "des billets",
+                  "target": "billetter"
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "Le pluriel varie : certains noms prennent -er, d’autres -e ou ne changent pas. Il faut apprendre le pluriel avec le vocabulaire fréquent.",
+                    "targetExample": "billet → billetter"
+                  }
+                },
+                "tags": [
+                  "plural"
+                ]
+              },
+              {
+                "id": "item.grammar.nouns.8",
+                "order": 8,
+                "type": "grammar-example",
+                "text": {
+                  "support": "les billets",
+                  "target": "billetterne"
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "La forme définie plurielle prend souvent -ne : billetter → billetterne.",
+                    "targetExample": "billetter → billetterne"
+                  }
+                },
+                "tags": [
+                  "plural",
+                  "definiteness"
+                ]
+              },
+              {
+                "id": "item.grammar.nouns.9",
+                "order": 9,
+                "type": "grammar-example",
+                "text": {
+                  "support": "cette carte",
+                  "target": "det her kort"
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "Avec un démonstratif comme « det her », le nom reste généralement sous sa forme indéfinie : « det her kort ».",
+                    "targetExample": "det her kort"
+                  }
+                },
+                "tags": [
+                  "demonstrative"
+                ]
+              },
+              {
+                "id": "item.grammar.nouns.10",
+                "order": 10,
+                "type": "grammar-example",
+                "text": {
+                  "support": "ma réservation",
+                  "target": "min reservation"
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "Avec un possessif, le nom reste généralement indéfini : « min reservation », pas « min reservationen ».",
+                    "targetExample": "min reservation"
+                  }
+                },
+                "tags": [
+                  "possessive"
+                ]
+              }
+            ],
+            "quiz": {
+              "id": "quiz.grammar.nouns",
+              "title": {
+                "support": "Mini-quiz — Noms",
+                "target": "Miniquiz — Navneord"
+              },
+              "questions": [
+                {
+                  "id": "question.grammar.nouns.1",
+                  "order": 1,
+                  "type": "single-choice",
+                  "prompt": {
+                    "support": "Quelle est la forme définie de « en billet » ?",
+                    "target": "Hvad er bestemt form af ‘en billet’?"
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.grammar.nouns.1c",
+                      "text": {
+                        "support": "le billet",
+                        "target": "billetten"
+                      },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.grammar.nouns.1w1",
+                      "text": {
+                        "support": "le billet",
+                        "target": "billetet"
+                      },
+                      "correct": false
+                    },
+                    {
+                      "id": "answer.grammar.nouns.1w2",
+                      "text": {
+                        "support": "le billet",
+                        "target": "en billetten"
+                      },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "« En » devient ici le suffixe -en.",
+                    "target": "Bestemt form er ‘billetten’."
+                  },
+                  "tags": [
+                    "definiteness"
+                  ]
+                },
+                {
+                  "id": "question.grammar.nouns.2",
+                  "order": 2,
+                  "type": "single-choice",
+                  "prompt": {
+                    "support": "Quelle forme est correcte ?",
+                    "target": "Hvilken form er korrekt?"
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.grammar.nouns.2c",
+                      "text": {
+                        "support": "un hôtel",
+                        "target": "et hotel"
+                      },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.grammar.nouns.2w1",
+                      "text": {
+                        "support": "un hôtel",
+                        "target": "en hotel"
+                      },
+                      "correct": false
+                    },
+                    {
+                      "id": "answer.grammar.nouns.2w2",
+                      "text": {
+                        "support": "l’hôtel",
+                        "target": "et hotellet"
+                      },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "« Hotel » est neutre : et hotel.",
+                    "target": "‘Hotel’ er intetkøn: ‘et hotel’."
+                  },
+                  "tags": [
+                    "nouns"
+                  ]
+                },
+                {
+                  "id": "question.grammar.nouns.3",
+                  "order": 3,
+                  "type": "single-choice",
+                  "prompt": {
+                    "support": "Quelle forme signifie « les billets » ?",
+                    "target": "Hvilken form betyder ‘les billets’?"
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.grammar.nouns.3c",
+                      "text": {
+                        "support": "les billets",
+                        "target": "billetterne"
+                      },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.grammar.nouns.3w1",
+                      "text": {
+                        "support": "des billets",
+                        "target": "billetter"
+                      },
+                      "correct": false
+                    },
+                    {
+                      "id": "answer.grammar.nouns.3w2",
+                      "text": {
+                        "support": "le billet",
+                        "target": "billetten"
+                      },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "Le pluriel défini est « billetterne ».",
+                    "target": "‘Billetterne’ er bestemt flertal."
+                  },
+                  "tags": [
+                    "plural"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "id": "lesson.grammar.word-order",
+            "moduleId": "module.grammar",
+            "order": 3,
+            "title": {
+              "support": "Ordre des mots et règle V2",
+              "target": "Ordstilling og V2-reglen"
+            },
+            "situation": {
+              "support": "Comprendre pourquoi le verbe danois occupe normalement la deuxième position dans une proposition principale.",
+              "target": "Forstå hvorfor det danske finitverbum normalt står på anden plads i en hovedsætning."
+            },
+            "tags": [
+              "v2",
+              "word-order"
+            ],
+            "items": [
+              {
+                "id": "item.grammar.word-order.1",
+                "order": 1,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Je prends le train aujourd’hui.",
+                  "target": "Jeg tager toget i dag."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "Ordre neutre : sujet + verbe + reste.",
+                    "targetExample": "Jeg tager toget i dag."
+                  }
+                },
+                "tags": [
+                  "v2"
+                ]
+              },
+              {
+                "id": "item.grammar.word-order.2",
+                "order": 2,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Aujourd’hui, je prends le train.",
+                  "target": "I dag tager jeg toget."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "Lorsque « I dag » occupe la première position, le verbe « tager » vient en deuxième et le sujet suit.",
+                    "targetExample": "I dag tager jeg toget."
+                  }
+                },
+                "tags": [
+                  "v2",
+                  "inversion"
+                ]
+              },
+              {
+                "id": "item.grammar.word-order.3",
+                "order": 3,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Ensuite, je vais à l’hôtel.",
+                  "target": "Derefter går jeg til hotellet."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Derefter » en tête déclenche également l’inversion.",
+                    "targetExample": "Derefter går jeg …"
+                  }
+                },
+                "tags": [
+                  "v2"
+                ]
+              },
+              {
+                "id": "item.grammar.word-order.4",
+                "order": 4,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Demain, nous avons une réunion.",
+                  "target": "I morgen har vi et møde."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "Le groupe temporel est en première position ; le verbe reste deuxième.",
+                    "targetExample": "I morgen har vi …"
+                  }
+                },
+                "tags": [
+                  "v2"
+                ]
+              },
+              {
+                "id": "item.grammar.word-order.5",
+                "order": 5,
+                "type": "grammar-example",
+                "text": {
+                  "support": "À Copenhague, je prends le métro.",
+                  "target": "I København tager jeg metroen."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "Un complément de lieu peut occuper la première position.",
+                    "targetExample": "I København tager jeg …"
+                  }
+                },
+                "tags": [
+                  "v2"
+                ]
+              },
+              {
+                "id": "item.grammar.word-order.6",
+                "order": 6,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Alors, je prends le saumon.",
+                  "target": "Så tager jeg laksen."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Så » est très fréquent en première position dans le danois parlé et écrit.",
+                    "targetExample": "Så tager jeg …"
+                  }
+                },
+                "tags": [
+                  "v2"
+                ]
+              },
+              {
+                "id": "item.grammar.word-order.7",
+                "order": 7,
+                "type": "grammar-example",
+                "text": {
+                  "support": "C’est pourquoi je vérifie le billet.",
+                  "target": "Derfor tjekker jeg billetten."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Derfor » prend la première position ; « tjekker » reste en deuxième.",
+                    "targetExample": "Derfor tjekker jeg …"
+                  }
+                },
+                "tags": [
+                  "v2"
+                ]
+              },
+              {
+                "id": "item.grammar.word-order.8",
+                "order": 8,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Je ne comprends pas la lettre.",
+                  "target": "Jeg forstår ikke brevet."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "Dans une principale simple, « ikke » vient généralement après le verbe conjugué.",
+                    "targetExample": "Jeg forstår ikke …"
+                  }
+                },
+                "tags": [
+                  "negation",
+                  "word-order"
+                ]
+              },
+              {
+                "id": "item.grammar.word-order.9",
+                "order": 9,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Aujourd’hui, je ne travaille pas.",
+                  "target": "I dag arbejder jeg ikke."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "Même avec un élément initial, le verbe reste deuxième ; « ikke » suit ensuite le sujet.",
+                    "targetExample": "I dag arbejder jeg ikke."
+                  }
+                },
+                "tags": [
+                  "v2",
+                  "negation"
+                ]
+              },
+              {
+                "id": "item.grammar.word-order.10",
+                "order": 10,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Avant de partir, je vérifie le billet.",
+                  "target": "Før jeg tager af sted, tjekker jeg billetten."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "Toute la subordonnée initiale occupe la première position de la principale, qui commence donc par « tjekker ».",
+                    "targetExample": "Før …, tjekker jeg …"
+                  }
+                },
+                "tags": [
+                  "v2",
+                  "subordinate-clause"
+                ]
+              }
+            ],
+            "quiz": {
+              "id": "quiz.grammar.word-order",
+              "title": {
+                "support": "Mini-quiz — V2",
+                "target": "Miniquiz — V2"
+              },
+              "questions": [
+                {
+                  "id": "question.grammar.word-order.1",
+                  "order": 1,
+                  "type": "single-choice",
+                  "prompt": {
+                    "support": "Quelle phrase est correcte ?",
+                    "target": "Hvilken sætning er korrekt?"
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.grammar.word-order.1c",
+                      "text": {
+                        "support": "Aujourd’hui, je prends le train.",
+                        "target": "I dag tager jeg toget."
+                      },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.grammar.word-order.1w1",
+                      "text": {
+                        "support": "Aujourd’hui, je prends le train.",
+                        "target": "I dag jeg tager toget."
+                      },
+                      "correct": false
+                    },
+                    {
+                      "id": "answer.grammar.word-order.1w2",
+                      "text": {
+                        "support": "Aujourd’hui, je prends le train.",
+                        "target": "I dag toget jeg tager."
+                      },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "Le verbe fini doit occuper la deuxième position.",
+                    "target": "Det finitte verbum står på anden plads."
+                  },
+                  "tags": [
+                    "v2"
+                  ]
+                },
+                {
+                  "id": "question.grammar.word-order.2",
+                  "order": 2,
+                  "type": "single-choice",
+                  "prompt": {
+                    "support": "Quelle phrase place correctement « ikke » ?",
+                    "target": "Hvilken sætning placerer ‘ikke’ korrekt?"
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.grammar.word-order.2c",
+                      "text": {
+                        "support": "Je ne travaille pas aujourd’hui.",
+                        "target": "Jeg arbejder ikke i dag."
+                      },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.grammar.word-order.2w1",
+                      "text": {
+                        "support": "Je ne travaille pas aujourd’hui.",
+                        "target": "Jeg ikke arbejder i dag."
+                      },
+                      "correct": false
+                    },
+                    {
+                      "id": "answer.grammar.word-order.2w2",
+                      "text": {
+                        "support": "Je ne travaille pas aujourd’hui.",
+                        "target": "Ikke jeg arbejder i dag."
+                      },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "Dans une principale, « ikke » suit normalement le verbe conjugué.",
+                    "target": "I en hovedsætning står ‘ikke’ normalt efter det finitte verbum."
+                  },
+                  "tags": [
+                    "negation"
+                  ]
+                },
+                {
+                  "id": "question.grammar.word-order.3",
+                  "order": 3,
+                  "type": "single-choice",
+                  "prompt": {
+                    "support": "Que se passe-t-il si « I morgen » vient en premier ?",
+                    "target": "Hvad sker der, hvis ‘I morgen’ står først?"
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.grammar.word-order.3c",
+                      "text": {
+                        "support": "Le verbe vient avant le sujet.",
+                        "target": "Verbet kommer før subjektet."
+                      },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.grammar.word-order.3w1",
+                      "text": {
+                        "support": "Le verbe disparaît.",
+                        "target": "Verbet forsvinder."
+                      },
+                      "correct": false
+                    },
+                    {
+                      "id": "answer.grammar.word-order.3w2",
+                      "text": {
+                        "support": "Le sujet reste toujours premier.",
+                        "target": "Subjektet står altid først."
+                      },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "La règle V2 maintient le verbe en deuxième position.",
+                    "target": "V2-reglen holder verbet på anden plads."
+                  },
+                  "tags": [
+                    "v2"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "id": "lesson.grammar.questions",
+            "moduleId": "module.grammar",
+            "order": 4,
+            "title": {
+              "support": "Questions",
+              "target": "Spørgsmål"
+            },
+            "situation": {
+              "support": "Former les questions oui/non et utiliser les mots interrogatifs les plus fréquents.",
+              "target": "Danne ja/nej-spørgsmål og bruge de mest almindelige spørgeord."
+            },
+            "tags": [
+              "questions",
+              "interrogatives"
+            ],
+            "items": [
+              {
+                "id": "item.grammar.questions.1",
+                "order": 1,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Vous avez un billet ?",
+                  "target": "Har du en billet?"
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "Dans une question oui/non, le verbe conjugué vient généralement avant le sujet.",
+                    "targetExample": "Har du …?"
+                  }
+                },
+                "tags": [
+                  "yes-no-question"
+                ]
+              },
+              {
+                "id": "item.grammar.questions.2",
+                "order": 2,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Vous pouvez payer par carte ?",
+                  "target": "Kan du betale med kort?"
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "Avec un modal, le modal vient en premier dans la question.",
+                    "targetExample": "Kan du …?"
+                  }
+                },
+                "tags": [
+                  "yes-no-question",
+                  "modal"
+                ]
+              },
+              {
+                "id": "item.grammar.questions.3",
+                "order": 3,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Où est la gare ?",
+                  "target": "Hvor er stationen?"
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Hvor » = où.",
+                    "targetExample": "Hvor er …?"
+                  }
+                },
+                "tags": [
+                  "question-word"
+                ]
+              },
+              {
+                "id": "item.grammar.questions.4",
+                "order": 4,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Quand part le train ?",
+                  "target": "Hvornår kører toget?"
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Hvornår » = quand pour demander un moment.",
+                    "targetExample": "Hvornår …?"
+                  }
+                },
+                "tags": [
+                  "question-word"
+                ]
+              },
+              {
+                "id": "item.grammar.questions.5",
+                "order": 5,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Comment allez-vous au centre ?",
+                  "target": "Hvordan kommer du ind til centrum?"
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Hvordan » = comment.",
+                    "targetExample": "Hvordan …?"
+                  }
+                },
+                "tags": [
+                  "question-word"
+                ]
+              },
+              {
+                "id": "item.grammar.questions.6",
+                "order": 6,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Que voulez-vous ?",
+                  "target": "Hvad vil du have?"
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Hvad » = quoi/que.",
+                    "targetExample": "Hvad …?"
+                  }
+                },
+                "tags": [
+                  "question-word"
+                ]
+              },
+              {
+                "id": "item.grammar.questions.7",
+                "order": 7,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Qui peut m’aider ?",
+                  "target": "Hvem kan hjælpe mig?"
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Hvem » = qui.",
+                    "targetExample": "Hvem …?"
+                  }
+                },
+                "tags": [
+                  "question-word"
+                ]
+              },
+              {
+                "id": "item.grammar.questions.8",
+                "order": 8,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Quel billet dois-je acheter ?",
+                  "target": "Hvilken billet skal jeg købe?"
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Hvilken » s’emploie avec un nom de genre commun ; « hvilket » avec un neutre.",
+                    "targetExample": "hvilken billet / hvilket spor"
+                  }
+                },
+                "tags": [
+                  "question-word"
+                ]
+              },
+              {
+                "id": "item.grammar.questions.9",
+                "order": 9,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Combien cela coûte ?",
+                  "target": "Hvor meget koster det?"
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Hvor meget » = combien pour une quantité non comptée ou un prix.",
+                    "targetExample": "Hvor meget …?"
+                  }
+                },
+                "tags": [
+                  "quantity"
+                ]
+              },
+              {
+                "id": "item.grammar.questions.10",
+                "order": 10,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Pourquoi le train est-il retardé ?",
+                  "target": "Hvorfor er toget forsinket?"
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Hvorfor » = pourquoi.",
+                    "targetExample": "Hvorfor …?"
+                  }
+                },
+                "tags": [
+                  "question-word"
+                ]
+              }
+            ],
+            "quiz": {
+              "id": "quiz.grammar.questions",
+              "title": {
+                "support": "Mini-quiz — Questions",
+                "target": "Miniquiz — Spørgsmål"
+              },
+              "questions": [
+                {
+                  "id": "question.grammar.questions.1",
+                  "order": 1,
+                  "type": "single-choice",
+                  "prompt": {
+                    "support": "Quel mot signifie « où » ?",
+                    "target": "Hvilket spørgeord betyder ‘où’?"
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.grammar.questions.1c",
+                      "text": {
+                        "support": "où",
+                        "target": "hvor"
+                      },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.grammar.questions.1w1",
+                      "text": {
+                        "support": "quand",
+                        "target": "hvornår"
+                      },
+                      "correct": false
+                    },
+                    {
+                      "id": "answer.grammar.questions.1w2",
+                      "text": {
+                        "support": "qui",
+                        "target": "hvem"
+                      },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "« Hvor » = où.",
+                    "target": "‘Hvor’ spørger til sted."
+                  },
+                  "tags": [
+                    "question-word"
+                  ]
+                },
+                {
+                  "id": "question.grammar.questions.2",
+                  "order": 2,
+                  "type": "single-choice",
+                  "prompt": {
+                    "support": "Quelle question oui/non est correcte ?",
+                    "target": "Hvilket ja/nej-spørgsmål er korrekt?"
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.grammar.questions.2c",
+                      "text": {
+                        "support": "Vous avez un billet ?",
+                        "target": "Har du en billet?"
+                      },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.grammar.questions.2w1",
+                      "text": {
+                        "support": "Vous avez un billet ?",
+                        "target": "Du har en billet?"
+                      },
+                      "correct": false
+                    },
+                    {
+                      "id": "answer.grammar.questions.2w2",
+                      "text": {
+                        "support": "Vous avez un billet ?",
+                        "target": "En billet har du?"
+                      },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "Le verbe vient avant le sujet dans la forme neutre de la question.",
+                    "target": "I et neutralt ja/nej-spørgsmål står verbet før subjektet."
+                  },
+                  "tags": [
+                    "yes-no-question"
+                  ]
+                },
+                {
+                  "id": "question.grammar.questions.3",
+                  "order": 3,
+                  "type": "single-choice",
+                  "prompt": {
+                    "support": "Quel mot signifie « pourquoi » ?",
+                    "target": "Hvilket ord betyder ‘pourquoi’?"
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.grammar.questions.3c",
+                      "text": {
+                        "support": "pourquoi",
+                        "target": "hvorfor"
+                      },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.grammar.questions.3w1",
+                      "text": {
+                        "support": "comment",
+                        "target": "hvordan"
+                      },
+                      "correct": false
+                    },
+                    {
+                      "id": "answer.grammar.questions.3w2",
+                      "text": {
+                        "support": "quoi",
+                        "target": "hvad"
+                      },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "« Hvorfor » demande une raison.",
+                    "target": "‘Hvorfor’ spørger til årsag."
+                  },
+                  "tags": [
+                    "question-word"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "id": "lesson.grammar.modals",
+            "moduleId": "module.grammar",
+            "order": 5,
+            "title": {
+              "support": "Verbes modaux",
+              "target": "Modalverber"
+            },
+            "situation": {
+              "support": "Utiliser kan, skal, vil, må et bør dans des situations quotidiennes.",
+              "target": "Bruge kan, skal, vil, må og bør i hverdagssituationer."
+            },
+            "tags": [
+              "modal",
+              "verbs"
+            ],
+            "items": [
+              {
+                "id": "item.grammar.modals.1",
+                "order": 1,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Je peux parler un peu danois.",
+                  "target": "Jeg kan tale lidt dansk."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Kan » exprime capacité ou possibilité. Le verbe suivant reste à l’infinitif sans « at ».",
+                    "targetExample": "kan tale"
+                  }
+                },
+                "tags": [
+                  "modal"
+                ]
+              },
+              {
+                "id": "item.grammar.modals.2",
+                "order": 2,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Je dois acheter un billet.",
+                  "target": "Jeg skal købe en billet."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Skal » exprime souvent nécessité, obligation pratique ou projet prévu.",
+                    "targetExample": "skal købe"
+                  }
+                },
+                "tags": [
+                  "modal"
+                ]
+              },
+              {
+                "id": "item.grammar.modals.3",
+                "order": 3,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Je veux rentrer maintenant.",
+                  "target": "Jeg vil hjem nu."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Vil » exprime la volonté. Avec un mouvement comme « hjem », le verbe lexical peut être omis dans certaines expressions courantes.",
+                    "targetExample": "Jeg vil hjem."
+                  }
+                },
+                "tags": [
+                  "modal"
+                ]
+              },
+              {
+                "id": "item.grammar.modals.4",
+                "order": 4,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Je peux entrer ?",
+                  "target": "Må jeg komme ind?"
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Må » sert notamment à demander ou donner la permission.",
+                    "targetExample": "Må jeg …?"
+                  }
+                },
+                "tags": [
+                  "modal",
+                  "permission"
+                ]
+              },
+              {
+                "id": "item.grammar.modals.5",
+                "order": 5,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Vous devriez vérifier l’heure.",
+                  "target": "Du bør tjekke tiden."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Bør » exprime un conseil ou une recommandation.",
+                    "targetExample": "Du bør …"
+                  }
+                },
+                "tags": [
+                  "modal",
+                  "advice"
+                ]
+              },
+              {
+                "id": "item.grammar.modals.6",
+                "order": 6,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Je ne peux pas me connecter.",
+                  "target": "Jeg kan ikke logge ind."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "Avec un modal, « ikke » suit normalement le modal : kan ikke logge ind.",
+                    "targetExample": "kan ikke logge ind"
+                  }
+                },
+                "tags": [
+                  "modal",
+                  "negation"
+                ]
+              },
+              {
+                "id": "item.grammar.modals.7",
+                "order": 7,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Vous n’avez pas besoin de changer de train.",
+                  "target": "Du behøver ikke at skifte tog."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Behøver ikke » signifie ne pas avoir besoin de. Avec « behøver », « at » est fréquent devant l’infinitif.",
+                    "targetExample": "behøver ikke at skifte"
+                  }
+                },
+                "tags": [
+                  "modal",
+                  "negation"
+                ]
+              },
+              {
+                "id": "item.grammar.modals.8",
+                "order": 8,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Est-ce que je dois réserver ?",
+                  "target": "Skal jeg bestille?"
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "Dans une question, le modal vient avant le sujet.",
+                    "targetExample": "Skal jeg …?"
+                  }
+                },
+                "tags": [
+                  "modal",
+                  "question"
+                ]
+              },
+              {
+                "id": "item.grammar.modals.9",
+                "order": 9,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Nous pouvons attendre un peu.",
+                  "target": "Vi kan godt vente lidt."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Godt » avec « kan » indique souvent que quelque chose convient ou est tout à fait possible.",
+                    "targetExample": "Vi kan godt vente."
+                  }
+                },
+                "tags": [
+                  "modal",
+                  "particle"
+                ]
+              },
+              {
+                "id": "item.grammar.modals.10",
+                "order": 10,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Tu peux simplement demander.",
+                  "target": "Du kan bare spørge."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Bare » peut signifier simplement et rendre la proposition plus naturelle.",
+                    "targetExample": "Du kan bare spørge."
+                  }
+                },
+                "tags": [
+                  "modal",
+                  "particle"
+                ]
+              }
+            ],
+            "quiz": {
+              "id": "quiz.grammar.modals",
+              "title": {
+                "support": "Mini-quiz — Modaux",
+                "target": "Miniquiz — Modalverber"
+              },
+              "questions": [
+                {
+                  "id": "question.grammar.modals.1",
+                  "order": 1,
+                  "type": "single-choice",
+                  "prompt": {
+                    "support": "Quel modal sert souvent à demander la permission ?",
+                    "target": "Hvilket modalverbum bruges ofte til at spørge om lov?"
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.grammar.modals.1c",
+                      "text": {
+                        "support": "pouvoir/avoir la permission",
+                        "target": "må"
+                      },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.grammar.modals.1w1",
+                      "text": {
+                        "support": "devoir",
+                        "target": "skal"
+                      },
+                      "correct": false
+                    },
+                    {
+                      "id": "answer.grammar.modals.1w2",
+                      "text": {
+                        "support": "vouloir",
+                        "target": "vil"
+                      },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "« Må jeg …? » = puis-je/est-ce que j’ai le droit de … ?",
+                    "target": "‘Må jeg …?’ bruges til at spørge om tilladelse."
+                  },
+                  "tags": [
+                    "permission"
+                  ]
+                },
+                {
+                  "id": "question.grammar.modals.2",
+                  "order": 2,
+                  "type": "single-choice",
+                  "prompt": {
+                    "support": "Quelle phrase signifie « Je ne peux pas me connecter » ?",
+                    "target": "Hvilken sætning betyder ‘Je ne peux pas me connecter’?"
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.grammar.modals.2c",
+                      "text": {
+                        "support": "Je ne peux pas me connecter.",
+                        "target": "Jeg kan ikke logge ind."
+                      },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.grammar.modals.2w1",
+                      "text": {
+                        "support": "Je ne veux pas me connecter.",
+                        "target": "Jeg vil ikke logge ind."
+                      },
+                      "correct": false
+                    },
+                    {
+                      "id": "answer.grammar.modals.2w2",
+                      "text": {
+                        "support": "Je ne dois pas me connecter.",
+                        "target": "Jeg skal ikke logge ind."
+                      },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "« Kan ikke » = ne pas pouvoir.",
+                    "target": "‘Kan ikke’ udtrykker manglende mulighed eller evne."
+                  },
+                  "tags": [
+                    "modal"
+                  ]
+                },
+                {
+                  "id": "question.grammar.modals.3",
+                  "order": 3,
+                  "type": "single-choice",
+                  "prompt": {
+                    "support": "Quel modal exprime souvent un conseil ?",
+                    "target": "Hvilket modalverbum udtrykker ofte et råd?"
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.grammar.modals.3c",
+                      "text": {
+                        "support": "devrait",
+                        "target": "bør"
+                      },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.grammar.modals.3w1",
+                      "text": {
+                        "support": "peut",
+                        "target": "kan"
+                      },
+                      "correct": false
+                    },
+                    {
+                      "id": "answer.grammar.modals.3w2",
+                      "text": {
+                        "support": "veut",
+                        "target": "vil"
+                      },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "« Bør » = devrait dans de nombreux conseils.",
+                    "target": "‘Bør’ bruges ofte til anbefalinger."
+                  },
+                  "tags": [
+                    "advice"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "id": "lesson.grammar.past-perfect",
+            "moduleId": "module.grammar",
+            "order": 6,
+            "title": {
+              "support": "Passé et parfait",
+              "target": "Datid og førnutid"
+            },
+            "situation": {
+              "support": "Parler de ce qui s’est passé et de ce qui a déjà été fait.",
+              "target": "Tale om hvad der skete, og hvad der allerede er blevet gjort."
+            },
+            "tags": [
+              "past",
+              "perfect"
+            ],
+            "items": [
+              {
+                "id": "item.grammar.past-perfect.1",
+                "order": 1,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Je travaillais hier.",
+                  "target": "Jeg arbejdede i går."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "Beaucoup de verbes réguliers forment le passé en -ede : arbejder → arbejdede.",
+                    "targetExample": "arbejder → arbejdede"
+                  }
+                },
+                "tags": [
+                  "past"
+                ]
+              },
+              {
+                "id": "item.grammar.past-perfect.2",
+                "order": 2,
+                "type": "grammar-example",
+                "text": {
+                  "support": "J’ai acheté un billet hier.",
+                  "target": "Jeg købte en billet i går."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Købe » a le passé irrégulier « købte ».",
+                    "targetExample": "købe → købte"
+                  }
+                },
+                "tags": [
+                  "past"
+                ]
+              },
+              {
+                "id": "item.grammar.past-perfect.3",
+                "order": 3,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Nous sommes arrivés tard.",
+                  "target": "Vi kom sent."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Kom » est le passé irrégulier de « komme ».",
+                    "targetExample": "komme → kom"
+                  }
+                },
+                "tags": [
+                  "past"
+                ]
+              },
+              {
+                "id": "item.grammar.past-perfect.4",
+                "order": 4,
+                "type": "grammar-example",
+                "text": {
+                  "support": "J’ai déjà payé.",
+                  "target": "Jeg har allerede betalt."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "Le parfait se forme souvent avec « har » + participe passé.",
+                    "targetExample": "har betalt"
+                  }
+                },
+                "tags": [
+                  "perfect"
+                ]
+              },
+              {
+                "id": "item.grammar.past-perfect.5",
+                "order": 5,
+                "type": "grammar-example",
+                "text": {
+                  "support": "J’ai reçu une lettre.",
+                  "target": "Jeg har fået et brev."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Få » a le participe « fået ».",
+                    "targetExample": "få → har fået"
+                  }
+                },
+                "tags": [
+                  "perfect"
+                ]
+              },
+              {
+                "id": "item.grammar.past-perfect.6",
+                "order": 6,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Nous avons réservé une table.",
+                  "target": "Vi har bestilt et bord."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "Le parfait relie souvent une action passée à la situation présente.",
+                    "targetExample": "har bestilt"
+                  }
+                },
+                "tags": [
+                  "perfect"
+                ]
+              },
+              {
+                "id": "item.grammar.past-perfect.7",
+                "order": 7,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Je n’ai pas encore reçu la carte.",
+                  "target": "Jeg har ikke fået kortet endnu."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "Dans le parfait, « ikke » vient après l’auxiliaire « har » ; « endnu » correspond ici à encore/pas encore.",
+                    "targetExample": "har ikke fået … endnu"
+                  }
+                },
+                "tags": [
+                  "perfect",
+                  "negation"
+                ]
+              },
+              {
+                "id": "item.grammar.past-perfect.8",
+                "order": 8,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Avez-vous déjà essayé l’application ?",
+                  "target": "Har du prøvet appen før?"
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "Le parfait est fréquent pour demander une expérience antérieure.",
+                    "targetExample": "Har du prøvet … før?"
+                  }
+                },
+                "tags": [
+                  "perfect",
+                  "question"
+                ]
+              },
+              {
+                "id": "item.grammar.past-perfect.9",
+                "order": 9,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Hier, le train était retardé.",
+                  "target": "I går var toget forsinket."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Var » est le passé de « være ».",
+                    "targetExample": "være → var"
+                  }
+                },
+                "tags": [
+                  "past"
+                ]
+              },
+              {
+                "id": "item.grammar.past-perfect.10",
+                "order": 10,
+                "type": "grammar-example",
+                "text": {
+                  "support": "J’étais au travail toute la journée.",
+                  "target": "Jeg var på arbejde hele dagen."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "Un repère passé terminé comme « i går » favorise souvent le prétérit ; le parfait est fréquent lorsque le résultat ou l’expérience reste pertinent.",
+                    "targetExample": "Jeg var … / Jeg har været …"
+                  }
+                },
+                "tags": [
+                  "past",
+                  "perfect"
+                ]
+              }
+            ],
+            "quiz": {
+              "id": "quiz.grammar.past-perfect",
+              "title": {
+                "support": "Mini-quiz — Passé",
+                "target": "Miniquiz — Datid"
+              },
+              "questions": [
+                {
+                  "id": "question.grammar.past-perfect.1",
+                  "order": 1,
+                  "type": "single-choice",
+                  "prompt": {
+                    "support": "Quel est le passé de « være » ?",
+                    "target": "Hvad er datid af ‘være’?"
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.grammar.past-perfect.1c",
+                      "text": {
+                        "support": "était",
+                        "target": "var"
+                      },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.grammar.past-perfect.1w1",
+                      "text": {
+                        "support": "est",
+                        "target": "er"
+                      },
+                      "correct": false
+                    },
+                    {
+                      "id": "answer.grammar.past-perfect.1w2",
+                      "text": {
+                        "support": "sera",
+                        "target": "bliver"
+                      },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "« Være » → « var » au passé.",
+                    "target": "Datid af ‘være’ er ‘var’."
+                  },
+                  "tags": [
+                    "past"
+                  ]
+                },
+                {
+                  "id": "question.grammar.past-perfect.2",
+                  "order": 2,
+                  "type": "single-choice",
+                  "prompt": {
+                    "support": "Quelle phrase est au parfait ?",
+                    "target": "Hvilken sætning står i førnutid?"
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.grammar.past-perfect.2c",
+                      "text": {
+                        "support": "J’ai déjà payé.",
+                        "target": "Jeg har allerede betalt."
+                      },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.grammar.past-perfect.2w1",
+                      "text": {
+                        "support": "Je paie maintenant.",
+                        "target": "Jeg betaler nu."
+                      },
+                      "correct": false
+                    },
+                    {
+                      "id": "answer.grammar.past-perfect.2w2",
+                      "text": {
+                        "support": "J’ai payé hier.",
+                        "target": "Jeg betalte i går."
+                      },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "« Har » + participe forme ici le parfait.",
+                    "target": "‘Har’ + kort tillægsform danner her førnutid."
+                  },
+                  "tags": [
+                    "perfect"
+                  ]
+                },
+                {
+                  "id": "question.grammar.past-perfect.3",
+                  "order": 3,
+                  "type": "single-choice",
+                  "prompt": {
+                    "support": "Quelle forme signifie « je n’ai pas encore reçu » ?",
+                    "target": "Hvilken form betyder ‘je n’ai pas encore reçu’?"
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.grammar.past-perfect.3c",
+                      "text": {
+                        "support": "Je n’ai pas encore reçu.",
+                        "target": "Jeg har ikke fået endnu."
+                      },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.grammar.past-perfect.3w1",
+                      "text": {
+                        "support": "Je ne reçois pas.",
+                        "target": "Jeg får ikke."
+                      },
+                      "correct": false
+                    },
+                    {
+                      "id": "answer.grammar.past-perfect.3w2",
+                      "text": {
+                        "support": "Je n’ai pas reçu hier.",
+                        "target": "Jeg fik ikke i går."
+                      },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "« Har ikke fået … endnu » exprime « ne pas encore avoir reçu ».",
+                    "target": "‘Har ikke fået … endnu’ er førnutid med nægtelse."
+                  },
+                  "tags": [
+                    "perfect"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "id": "lesson.grammar.subordinate",
+            "moduleId": "module.grammar",
+            "order": 7,
+            "title": {
+              "support": "Propositions subordonnées",
+              "target": "Ledsætninger"
+            },
+            "situation": {
+              "support": "Reconnaître at, hvis, når, fordi et om et placer correctement la négation.",
+              "target": "Genkende at, hvis, når, fordi og om og placere nægtelsen korrekt."
+            },
+            "tags": [
+              "subordinate-clause",
+              "word-order"
+            ],
+            "items": [
+              {
+                "id": "item.grammar.subordinate.1",
+                "order": 1,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Je pense que le train arrive bientôt.",
+                  "target": "Jeg tror, at toget kommer snart."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« At » introduit souvent une proposition complétive : que.",
+                    "targetExample": "at toget kommer"
+                  }
+                },
+                "tags": [
+                  "subordinate-clause"
+                ]
+              },
+              {
+                "id": "item.grammar.subordinate.2",
+                "order": 2,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Je pense que le train n’arrive pas aujourd’hui.",
+                  "target": "Jeg tror, at toget ikke kommer i dag."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "Dans une subordonnée, « ikke » vient normalement avant le verbe conjugué : toget ikke kommer.",
+                    "targetExample": "at toget ikke kommer"
+                  }
+                },
+                "tags": [
+                  "subordinate-clause",
+                  "negation"
+                ]
+              },
+              {
+                "id": "item.grammar.subordinate.3",
+                "order": 3,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Si vous avez MitID, vous pouvez vous connecter.",
+                  "target": "Hvis du har MitID, kan du logge ind."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Hvis » = si pour une condition. Après la subordonnée initiale, la principale suit la règle V2 : kan du.",
+                    "targetExample": "Hvis …, kan du …"
+                  }
+                },
+                "tags": [
+                  "condition",
+                  "v2"
+                ]
+              },
+              {
+                "id": "item.grammar.subordinate.4",
+                "order": 4,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Quand j’arrive, je vous appelle.",
+                  "target": "Når jeg kommer, ringer jeg til dig."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Når » sert notamment pour quand dans une situation future ou répétée.",
+                    "targetExample": "Når jeg kommer …"
+                  }
+                },
+                "tags": [
+                  "time-clause"
+                ]
+              },
+              {
+                "id": "item.grammar.subordinate.5",
+                "order": 5,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Je reste ici parce que j’attends quelqu’un.",
+                  "target": "Jeg bliver her, fordi jeg venter på nogen."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Fordi » = parce que.",
+                    "targetExample": "fordi jeg venter"
+                  }
+                },
+                "tags": [
+                  "reason"
+                ]
+              },
+              {
+                "id": "item.grammar.subordinate.6",
+                "order": 6,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Je ne sais pas si le magasin est ouvert.",
+                  "target": "Jeg ved ikke, om butikken er åben."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Om » introduit une question indirecte oui/non : si.",
+                    "targetExample": "om butikken er åben"
+                  }
+                },
+                "tags": [
+                  "indirect-question"
+                ]
+              },
+              {
+                "id": "item.grammar.subordinate.7",
+                "order": 7,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Avant de partir, je vérifie l’application.",
+                  "target": "Før jeg tager af sted, tjekker jeg appen."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Før » = avant que/avant de dans cette structure.",
+                    "targetExample": "Før jeg tager af sted …"
+                  }
+                },
+                "tags": [
+                  "time-clause"
+                ]
+              },
+              {
+                "id": "item.grammar.subordinate.8",
+                "order": 8,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Même si je ne comprends pas tout, j’essaie.",
+                  "target": "Selvom jeg ikke forstår alt, prøver jeg."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Selvom » = même si/bien que. Notez « jeg ikke forstår » dans la subordonnée.",
+                    "targetExample": "selvom jeg ikke forstår"
+                  }
+                },
+                "tags": [
+                  "subordinate-clause",
+                  "negation"
+                ]
+              },
+              {
+                "id": "item.grammar.subordinate.9",
+                "order": 9,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Elle dit qu’elle travaille demain.",
+                  "target": "Hun siger, at hun arbejder i morgen."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "Le danois utilise souvent le présent avec un repère futur explicite.",
+                    "targetExample": "arbejder i morgen"
+                  }
+                },
+                "tags": [
+                  "subordinate-clause",
+                  "present"
+                ]
+              },
+              {
+                "id": "item.grammar.subordinate.10",
+                "order": 10,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Si je ne peux pas payer, je demande de l’aide.",
+                  "target": "Hvis jeg ikke kan betale, beder jeg om hjælp."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "Dans « hvis jeg ikke kan », la négation précède le modal dans la subordonnée.",
+                    "targetExample": "hvis jeg ikke kan"
+                  }
+                },
+                "tags": [
+                  "condition",
+                  "negation"
+                ]
+              }
+            ],
+            "quiz": {
+              "id": "quiz.grammar.subordinate",
+              "title": {
+                "support": "Mini-quiz — Subordonnées",
+                "target": "Miniquiz — Ledsætninger"
+              },
+              "questions": [
+                {
+                  "id": "question.grammar.subordinate.1",
+                  "order": 1,
+                  "type": "single-choice",
+                  "prompt": {
+                    "support": "Quelle phrase a l’ordre correct dans la subordonnée ?",
+                    "target": "Hvilken sætning har korrekt ordstilling i ledsætningen?"
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.grammar.subordinate.1c",
+                      "text": {
+                        "support": "Je pense que le train ne vient pas.",
+                        "target": "Jeg tror, at toget ikke kommer."
+                      },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.grammar.subordinate.1w1",
+                      "text": {
+                        "support": "Je pense que le train ne vient pas.",
+                        "target": "Jeg tror, at toget kommer ikke."
+                      },
+                      "correct": false
+                    },
+                    {
+                      "id": "answer.grammar.subordinate.1w2",
+                      "text": {
+                        "support": "Je pense que le train ne vient pas.",
+                        "target": "Jeg tror, ikke toget kommer."
+                      },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "Dans la subordonnée, « ikke » précède le verbe conjugué.",
+                    "target": "I ledsætningen står ‘ikke’ før det finitte verbum."
+                  },
+                  "tags": [
+                    "negation"
+                  ]
+                },
+                {
+                  "id": "question.grammar.subordinate.2",
+                  "order": 2,
+                  "type": "single-choice",
+                  "prompt": {
+                    "support": "Quel mot introduit souvent une condition ?",
+                    "target": "Hvilket ord indleder ofte en betingelse?"
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.grammar.subordinate.2c",
+                      "text": {
+                        "support": "si",
+                        "target": "hvis"
+                      },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.grammar.subordinate.2w1",
+                      "text": {
+                        "support": "parce que",
+                        "target": "fordi"
+                      },
+                      "correct": false
+                    },
+                    {
+                      "id": "answer.grammar.subordinate.2w2",
+                      "text": {
+                        "support": "que",
+                        "target": "at"
+                      },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "« Hvis » = si conditionnel.",
+                    "target": "‘Hvis’ indleder en betingelse."
+                  },
+                  "tags": [
+                    "condition"
+                  ]
+                },
+                {
+                  "id": "question.grammar.subordinate.3",
+                  "order": 3,
+                  "type": "single-choice",
+                  "prompt": {
+                    "support": "Quel mot utilise-t-on souvent pour une question indirecte oui/non ?",
+                    "target": "Hvilket ord bruges ofte i et indirekte ja/nej-spørgsmål?"
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.grammar.subordinate.3c",
+                      "text": {
+                        "support": "si",
+                        "target": "om"
+                      },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.grammar.subordinate.3w1",
+                      "text": {
+                        "support": "quand",
+                        "target": "når"
+                      },
+                      "correct": false
+                    },
+                    {
+                      "id": "answer.grammar.subordinate.3w2",
+                      "text": {
+                        "support": "pourquoi",
+                        "target": "hvorfor"
+                      },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "« Jeg ved ikke, om … » = je ne sais pas si …",
+                    "target": "‘Om’ bruges her til et indirekte spørgsmål."
+                  },
+                  "tags": [
+                    "indirect-question"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "id": "lesson.grammar.prepositions",
+            "moduleId": "module.grammar",
+            "order": 8,
+            "title": {
+              "support": "Prépositions et lieux",
+              "target": "Præpositioner og steder"
+            },
+            "situation": {
+              "support": "Choisir les prépositions fréquentes avec les villes, pays, travail, transport et lieux quotidiens.",
+              "target": "Vælge almindelige præpositioner med byer, lande, arbejde, transport og hverdagssteder."
+            },
+            "tags": [
+              "prepositions",
+              "places"
+            ],
+            "items": [
+              {
+                "id": "item.grammar.prepositions.1",
+                "order": 1,
+                "type": "grammar-example",
+                "text": {
+                  "support": "J’habite au Danemark.",
+                  "target": "Jeg bor i Danmark."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« I » est fréquent avec les pays et les villes : i Danmark, i København.",
+                    "targetExample": "i Danmark"
+                  }
+                },
+                "tags": [
+                  "prepositions"
+                ]
+              },
+              {
+                "id": "item.grammar.prepositions.2",
+                "order": 2,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Je suis à Copenhague.",
+                  "target": "Jeg er i København."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "Les villes prennent normalement « i ».",
+                    "targetExample": "i København"
+                  }
+                },
+                "tags": [
+                  "prepositions"
+                ]
+              },
+              {
+                "id": "item.grammar.prepositions.3",
+                "order": 3,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Je suis au travail.",
+                  "target": "Jeg er på arbejde."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "Certaines expressions fixes utilisent « på » : på arbejde.",
+                    "targetExample": "på arbejde"
+                  }
+                },
+                "tags": [
+                  "prepositions"
+                ]
+              },
+              {
+                "id": "item.grammar.prepositions.4",
+                "order": 4,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Je suis à l’hôtel.",
+                  "target": "Jeg er på hotellet."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "Pour de nombreux établissements/activités, « på » est courant : på hotellet, på café.",
+                    "targetExample": "på hotellet"
+                  }
+                },
+                "tags": [
+                  "prepositions"
+                ]
+              },
+              {
+                "id": "item.grammar.prepositions.5",
+                "order": 5,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Je vais à la gare.",
+                  "target": "Jeg går hen til stationen."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Til » marque souvent la destination. « Hen » peut souligner le mouvement vers un lieu proche/défini.",
+                    "targetExample": "hen til stationen"
+                  }
+                },
+                "tags": [
+                  "prepositions",
+                  "movement"
+                ]
+              },
+              {
+                "id": "item.grammar.prepositions.6",
+                "order": 6,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Je vais au travail.",
+                  "target": "Jeg tager på arbejde."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "L’expression fixe est « på arbejde » également avec un mouvement : tage på arbejde.",
+                    "targetExample": "tage på arbejde"
+                  }
+                },
+                "tags": [
+                  "prepositions"
+                ]
+              },
+              {
+                "id": "item.grammar.prepositions.7",
+                "order": 7,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Je voyage en train.",
+                  "target": "Jeg tager med tog."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Med » est courant pour le moyen de transport : med tog, med bus.",
+                    "targetExample": "med tog"
+                  }
+                },
+                "tags": [
+                  "transport",
+                  "prepositions"
+                ]
+              },
+              {
+                "id": "item.grammar.prepositions.8",
+                "order": 8,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Je descends du bus.",
+                  "target": "Jeg står af bussen."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Stå af » est un verbe à particule ; dans cette construction, le véhicule suit directement : stå af bussen.",
+                    "targetExample": "stå af bussen"
+                  }
+                },
+                "tags": [
+                  "transport",
+                  "particle-verb"
+                ]
+              },
+              {
+                "id": "item.grammar.prepositions.9",
+                "order": 9,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Je parle avec ma collègue.",
+                  "target": "Jeg taler med min kollega."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Tale med » = parler avec quelqu’un.",
+                    "targetExample": "tale med"
+                  }
+                },
+                "tags": [
+                  "prepositions"
+                ]
+              },
+              {
+                "id": "item.grammar.prepositions.10",
+                "order": 10,
+                "type": "grammar-example",
+                "text": {
+                  "support": "J’attends le train.",
+                  "target": "Jeg venter på toget."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Vente på » exige « på », contrairement au français « attendre » sans préposition.",
+                    "targetExample": "vente på"
+                  }
+                },
+                "tags": [
+                  "prepositions"
+                ]
+              }
+            ],
+            "quiz": {
+              "id": "quiz.grammar.prepositions",
+              "title": {
+                "support": "Mini-quiz — Prépositions",
+                "target": "Miniquiz — Præpositioner"
+              },
+              "questions": [
+                {
+                  "id": "question.grammar.prepositions.1",
+                  "order": 1,
+                  "type": "single-choice",
+                  "prompt": {
+                    "support": "Quelle expression signifie « au Danemark » ?",
+                    "target": "Hvilket udtryk betyder ‘au Danemark’?"
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.grammar.prepositions.1c",
+                      "text": {
+                        "support": "au Danemark",
+                        "target": "i Danmark"
+                      },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.grammar.prepositions.1w1",
+                      "text": {
+                        "support": "au Danemark",
+                        "target": "på Danmark"
+                      },
+                      "correct": false
+                    },
+                    {
+                      "id": "answer.grammar.prepositions.1w2",
+                      "text": {
+                        "support": "au Danemark",
+                        "target": "med Danmark"
+                      },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "Les pays comme Danmark prennent « i ».",
+                    "target": "Man siger ‘i Danmark’."
+                  },
+                  "tags": [
+                    "prepositions"
+                  ]
+                },
+                {
+                  "id": "question.grammar.prepositions.2",
+                  "order": 2,
+                  "type": "single-choice",
+                  "prompt": {
+                    "support": "Quelle expression signifie « attendre le train » ?",
+                    "target": "Hvilket udtryk betyder ‘attendre le train’?"
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.grammar.prepositions.2c",
+                      "text": {
+                        "support": "attendre le train",
+                        "target": "vente på toget"
+                      },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.grammar.prepositions.2w1",
+                      "text": {
+                        "support": "attendre le train",
+                        "target": "vente toget"
+                      },
+                      "correct": false
+                    },
+                    {
+                      "id": "answer.grammar.prepositions.2w2",
+                      "text": {
+                        "support": "attendre le train",
+                        "target": "vente med toget"
+                      },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "Le verbe danois est « vente på ».",
+                    "target": "‘Vente’ forbindes her med præpositionen ‘på’."
+                  },
+                  "tags": [
+                    "prepositions"
+                  ]
+                },
+                {
+                  "id": "question.grammar.prepositions.3",
+                  "order": 3,
+                  "type": "single-choice",
+                  "prompt": {
+                    "support": "Comment dit-on « en train » comme moyen de transport ?",
+                    "target": "Hvordan siger man ‘en train’ som transportmiddel?"
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.grammar.prepositions.3c",
+                      "text": {
+                        "support": "en train",
+                        "target": "med tog"
+                      },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.grammar.prepositions.3w1",
+                      "text": {
+                        "support": "en train",
+                        "target": "i tog"
+                      },
+                      "correct": false
+                    },
+                    {
+                      "id": "answer.grammar.prepositions.3w2",
+                      "text": {
+                        "support": "en train",
+                        "target": "på tog"
+                      },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "« Med » est courant pour le moyen de transport.",
+                    "target": "Transportmidlet kan udtrykkes med ‘med’: ‘med tog’."
+                  },
+                  "tags": [
+                    "transport"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "id": "lesson.grammar.adjectives",
+            "moduleId": "module.grammar",
+            "order": 9,
+            "title": {
+              "support": "Adjectifs et comparaison",
+              "target": "Tillægsord og sammenligning"
+            },
+            "situation": {
+              "support": "Adapter les adjectifs au nom et comparer des options simples.",
+              "target": "Bøje tillægsord efter navneordet og sammenligne enkle muligheder."
+            },
+            "tags": [
+              "adjectives",
+              "comparison"
+            ],
+            "items": [
+              {
+                "id": "item.grammar.adjectives.1",
+                "order": 1,
+                "type": "grammar-example",
+                "text": {
+                  "support": "un bon café",
+                  "target": "en god café"
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "Avec un nom en « en » indéfini singulier, l’adjectif a souvent sa forme de base.",
+                    "targetExample": "en god café"
+                  }
+                },
+                "tags": [
+                  "adjectives"
+                ]
+              },
+              {
+                "id": "item.grammar.adjectives.2",
+                "order": 2,
+                "type": "grammar-example",
+                "text": {
+                  "support": "un bon hôtel",
+                  "target": "et godt hotel"
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "Avec un nom neutre en « et », de nombreux adjectifs prennent -t : god → godt.",
+                    "targetExample": "et godt hotel"
+                  }
+                },
+                "tags": [
+                  "adjectives"
+                ]
+              },
+              {
+                "id": "item.grammar.adjectives.3",
+                "order": 3,
+                "type": "grammar-example",
+                "text": {
+                  "support": "de bons restaurants",
+                  "target": "gode restauranter"
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "Au pluriel, de nombreux adjectifs prennent -e : god → gode.",
+                    "targetExample": "gode restauranter"
+                  }
+                },
+                "tags": [
+                  "adjectives",
+                  "plural"
+                ]
+              },
+              {
+                "id": "item.grammar.adjectives.4",
+                "order": 4,
+                "type": "grammar-example",
+                "text": {
+                  "support": "le bon hôtel",
+                  "target": "det gode hotel"
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "Avec adjectif + nom défini, le danois utilise souvent det/den/de + adjectif en -e + nom indéfini : det gode hotel.",
+                    "targetExample": "det gode hotel"
+                  }
+                },
+                "tags": [
+                  "adjectives",
+                  "definiteness"
+                ]
+              },
+              {
+                "id": "item.grammar.adjectives.5",
+                "order": 5,
+                "type": "grammar-example",
+                "text": {
+                  "support": "La chambre est grande.",
+                  "target": "Værelset er stort."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "Après « er », l’adjectif s’accorde également avec le sujet neutre : værelset er stort.",
+                    "targetExample": "Værelset er stort."
+                  }
+                },
+                "tags": [
+                  "adjectives"
+                ]
+              },
+              {
+                "id": "item.grammar.adjectives.6",
+                "order": 6,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Les chambres sont grandes.",
+                  "target": "Værelserne er store."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "Au pluriel : store.",
+                    "targetExample": "Værelserne er store."
+                  }
+                },
+                "tags": [
+                  "adjectives",
+                  "plural"
+                ]
+              },
+              {
+                "id": "item.grammar.adjectives.7",
+                "order": 7,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Ce billet est moins cher.",
+                  "target": "Den her billet er billigere."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "Le comparatif de nombreux adjectifs prend -ere : billig → billigere.",
+                    "targetExample": "billig → billigere"
+                  }
+                },
+                "tags": [
+                  "comparison"
+                ]
+              },
+              {
+                "id": "item.grammar.adjectives.8",
+                "order": 8,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Le train est plus rapide que le bus.",
+                  "target": "Toget er hurtigere end bussen."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« End » = que après un comparatif.",
+                    "targetExample": "hurtigere end"
+                  }
+                },
+                "tags": [
+                  "comparison"
+                ]
+              },
+              {
+                "id": "item.grammar.adjectives.9",
+                "order": 9,
+                "type": "grammar-example",
+                "text": {
+                  "support": "C’est la solution la plus simple.",
+                  "target": "Det er den nemmeste løsning."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "Le superlatif attributif/défini prend souvent -este avec « den/det » : den nemmeste.",
+                    "targetExample": "den nemmeste"
+                  }
+                },
+                "tags": [
+                  "superlative"
+                ]
+              },
+              {
+                "id": "item.grammar.adjectives.10",
+                "order": 10,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Le plus important est le billet.",
+                  "target": "Det vigtigste er billetten."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "Une forme superlative peut être substantivée avec « det » : det vigtigste.",
+                    "targetExample": "det vigtigste"
+                  }
+                },
+                "tags": [
+                  "superlative"
+                ]
+              }
+            ],
+            "quiz": {
+              "id": "quiz.grammar.adjectives",
+              "title": {
+                "support": "Mini-quiz — Adjectifs",
+                "target": "Miniquiz — Tillægsord"
+              },
+              "questions": [
+                {
+                  "id": "question.grammar.adjectives.1",
+                  "order": 1,
+                  "type": "single-choice",
+                  "prompt": {
+                    "support": "Quelle forme convient avec « et hotel » ?",
+                    "target": "Hvilken form passer til ‘et hotel’?"
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.grammar.adjectives.1c",
+                      "text": {
+                        "support": "un bon hôtel",
+                        "target": "et godt hotel"
+                      },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.grammar.adjectives.1w1",
+                      "text": {
+                        "support": "un bon hôtel",
+                        "target": "et god hotel"
+                      },
+                      "correct": false
+                    },
+                    {
+                      "id": "answer.grammar.adjectives.1w2",
+                      "text": {
+                        "support": "un bon hôtel",
+                        "target": "et gode hotel"
+                      },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "Le neutre singulier prend ici -t.",
+                    "target": "Intetkøn ental har her formen ‘godt’."
+                  },
+                  "tags": [
+                    "adjectives"
+                  ]
+                },
+                {
+                  "id": "question.grammar.adjectives.2",
+                  "order": 2,
+                  "type": "single-choice",
+                  "prompt": {
+                    "support": "Quel est le comparatif de « billig » ?",
+                    "target": "Hvad er komparativ af ‘billig’?"
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.grammar.adjectives.2c",
+                      "text": {
+                        "support": "moins cher",
+                        "target": "billigere"
+                      },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.grammar.adjectives.2w1",
+                      "text": {
+                        "support": "bon marché",
+                        "target": "billigt"
+                      },
+                      "correct": false
+                    },
+                    {
+                      "id": "answer.grammar.adjectives.2w2",
+                      "text": {
+                        "support": "le moins cher",
+                        "target": "billigst"
+                      },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "« Billigere » est le comparatif.",
+                    "target": "Komparativ er ‘billigere’."
+                  },
+                  "tags": [
+                    "comparison"
+                  ]
+                },
+                {
+                  "id": "question.grammar.adjectives.3",
+                  "order": 3,
+                  "type": "single-choice",
+                  "prompt": {
+                    "support": "Quel mot signifie « que » dans une comparaison ?",
+                    "target": "Hvilket ord betyder ‘que’ i en sammenligning?"
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.grammar.adjectives.3c",
+                      "text": {
+                        "support": "que",
+                        "target": "end"
+                      },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.grammar.adjectives.3w1",
+                      "text": {
+                        "support": "et",
+                        "target": "og"
+                      },
+                      "correct": false
+                    },
+                    {
+                      "id": "answer.grammar.adjectives.3w2",
+                      "text": {
+                        "support": "mais",
+                        "target": "men"
+                      },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "« Hurtigere end » = plus rapide que.",
+                    "target": "Efter komparativ bruges ‘end’."
+                  },
+                  "tags": [
+                    "comparison"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "id": "lesson.grammar.everyday-patterns",
+            "moduleId": "module.grammar",
+            "order": 10,
+            "title": {
+              "support": "Structures utiles au quotidien",
+              "target": "Nyttige hverdagskonstruktioner"
+            },
+            "situation": {
+              "support": "Réviser des structures très fréquentes qui ne se traduisent pas mot à mot du français.",
+              "target": "Repetere meget almindelige konstruktioner, som ikke oversættes ord for ord fra fransk."
+            },
+            "tags": [
+              "patterns",
+              "everyday"
+            ],
+            "items": [
+              {
+                "id": "item.grammar.everyday-patterns.1",
+                "order": 1,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Je voudrais un café.",
+                  "target": "Jeg vil gerne have en kaffe."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Vil gerne » exprime un souhait poli et correspond souvent à « voudrais/aimerais ».",
+                    "targetExample": "Jeg vil gerne …"
+                  }
+                },
+                "tags": [
+                  "politeness",
+                  "pattern"
+                ]
+              },
+              {
+                "id": "item.grammar.everyday-patterns.2",
+                "order": 2,
+                "type": "grammar-example",
+                "text": {
+                  "support": "J’ai envie d’aller au musée.",
+                  "target": "Jeg har lyst til at gå på museum."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Have lyst til at » = avoir envie de + infinitif.",
+                    "targetExample": "har lyst til at"
+                  }
+                },
+                "tags": [
+                  "pattern"
+                ]
+              },
+              {
+                "id": "item.grammar.everyday-patterns.3",
+                "order": 3,
+                "type": "grammar-example",
+                "text": {
+                  "support": "J’ai besoin d’aide.",
+                  "target": "Jeg har brug for hjælp."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Have brug for » = avoir besoin de.",
+                    "targetExample": "har brug for"
+                  }
+                },
+                "tags": [
+                  "pattern",
+                  "help"
+                ]
+              },
+              {
+                "id": "item.grammar.everyday-patterns.4",
+                "order": 4,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Je suis en train d’apprendre le danois.",
+                  "target": "Jeg er ved at lære dansk."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Være ved at » peut exprimer une action en cours, sans être obligatoire chaque fois que le français utilise « être en train de ».",
+                    "targetExample": "er ved at lære"
+                  }
+                },
+                "tags": [
+                  "pattern"
+                ]
+              },
+              {
+                "id": "item.grammar.everyday-patterns.5",
+                "order": 5,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Je vais partir.",
+                  "target": "Jeg skal til at gå."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Skulle til at » exprime être sur le point de/aller faire quelque chose.",
+                    "targetExample": "skal til at gå"
+                  }
+                },
+                "tags": [
+                  "pattern"
+                ]
+              },
+              {
+                "id": "item.grammar.everyday-patterns.6",
+                "order": 6,
+                "type": "grammar-example",
+                "text": {
+                  "support": "J’ai réussi à me connecter.",
+                  "target": "Det lykkedes mig at logge ind."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Det lykkedes mig at … » = j’ai réussi à … ; la construction danoise est impersonnelle.",
+                    "targetExample": "Det lykkedes mig at …"
+                  }
+                },
+                "tags": [
+                  "pattern"
+                ]
+              },
+              {
+                "id": "item.grammar.everyday-patterns.7",
+                "order": 7,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Je n’arrive pas à ouvrir l’application.",
+                  "target": "Jeg kan ikke få appen til at åbne."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Få noget til at + infinitif » exprime faire en sorte que quelque chose fonctionne/se produise.",
+                    "targetExample": "få appen til at åbne"
+                  }
+                },
+                "tags": [
+                  "causative",
+                  "digital"
+                ]
+              },
+              {
+                "id": "item.grammar.everyday-patterns.8",
+                "order": 8,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Plus je pratique, plus je comprends.",
+                  "target": "Jo mere jeg øver mig, jo mere forstår jeg."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "La corrélation « plus … plus … » se construit avec « jo … jo … ».",
+                    "targetExample": "jo mere …, jo mere …"
+                  }
+                },
+                "tags": [
+                  "comparison",
+                  "pattern"
+                ]
+              },
+              {
+                "id": "item.grammar.everyday-patterns.9",
+                "order": 9,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Cela dépend de l’heure.",
+                  "target": "Det kommer an på tidspunktet."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "« Komme an på » = dépendre de.",
+                    "targetExample": "det kommer an på"
+                  }
+                },
+                "tags": [
+                  "particle-verb",
+                  "pattern"
+                ]
+              },
+              {
+                "id": "item.grammar.everyday-patterns.10",
+                "order": 10,
+                "type": "grammar-example",
+                "text": {
+                  "support": "Ça ne fait rien.",
+                  "target": "Det gør ikke noget."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "notes": {
+                  "grammar": {
+                    "support": "Expression idiomatique très fréquente pour dire que ce n’est pas grave.",
+                    "targetExample": "Det gør ikke noget."
+                  }
+                },
+                "tags": [
+                  "idiom",
+                  "pattern"
+                ]
+              }
+            ],
+            "quiz": {
+              "id": "quiz.grammar.everyday-patterns",
+              "title": {
+                "support": "Mini-quiz — Structures utiles",
+                "target": "Miniquiz — Nyttige konstruktioner"
+              },
+              "questions": [
+                {
+                  "id": "question.grammar.everyday-patterns.1",
+                  "order": 1,
+                  "type": "single-choice",
+                  "prompt": {
+                    "support": "Comment dit-on poliment « je voudrais » ?",
+                    "target": "Hvordan udtrykker man ofte høfligt ‘je voudrais’?"
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.grammar.everyday-patterns.1c",
+                      "text": {
+                        "support": "je voudrais",
+                        "target": "jeg vil gerne"
+                      },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.grammar.everyday-patterns.1w1",
+                      "text": {
+                        "support": "je dois",
+                        "target": "jeg skal"
+                      },
+                      "correct": false
+                    },
+                    {
+                      "id": "answer.grammar.everyday-patterns.1w2",
+                      "text": {
+                        "support": "je peux",
+                        "target": "jeg kan"
+                      },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "« Jeg vil gerne … » est une formule très fréquente.",
+                    "target": "‘Jeg vil gerne …’ udtrykker et ønske på en venlig måde."
+                  },
+                  "tags": [
+                    "politeness"
+                  ]
+                },
+                {
+                  "id": "question.grammar.everyday-patterns.2",
+                  "order": 2,
+                  "type": "single-choice",
+                  "prompt": {
+                    "support": "Quelle construction signifie « avoir besoin de » ?",
+                    "target": "Hvilken konstruktion betyder ‘avoir besoin de’?"
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.grammar.everyday-patterns.2c",
+                      "text": {
+                        "support": "avoir besoin de",
+                        "target": "have brug for"
+                      },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.grammar.everyday-patterns.2w1",
+                      "text": {
+                        "support": "avoir envie de",
+                        "target": "have lyst til"
+                      },
+                      "correct": false
+                    },
+                    {
+                      "id": "answer.grammar.everyday-patterns.2w2",
+                      "text": {
+                        "support": "dépendre de",
+                        "target": "komme an på"
+                      },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "« Jeg har brug for hjælp » = j’ai besoin d’aide.",
+                    "target": "‘Have brug for’ betyder at have behov for noget."
+                  },
+                  "tags": [
+                    "pattern"
+                  ]
+                },
+                {
+                  "id": "question.grammar.everyday-patterns.3",
+                  "order": 3,
+                  "type": "single-choice",
+                  "prompt": {
+                    "support": "Comment se construit « plus … plus … » ?",
+                    "target": "Hvordan konstrueres ‘plus … plus …’?"
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.grammar.everyday-patterns.3c",
+                      "text": {
+                        "support": "plus … plus …",
+                        "target": "jo … jo …"
+                      },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.grammar.everyday-patterns.3w1",
+                      "text": {
+                        "support": "si … alors …",
+                        "target": "hvis … så …"
+                      },
+                      "correct": false
+                    },
+                    {
+                      "id": "answer.grammar.everyday-patterns.3w2",
+                      "text": {
+                        "support": "soit … soit …",
+                        "target": "enten … eller …"
+                      },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "« Jo mere …, jo mere … » correspond à « plus …, plus … ».",
+                    "target": "Sammenhængen udtrykkes med ‘jo … jo …’."
+                  },
+                  "tags": [
+                    "comparison"
+                  ]
+                }
+              ]
+            }
+          }
+        ]
       }
     ]
   }

@@ -3,8 +3,6 @@
     <string name="app_name">Learn FR-DA</string>
     <string name="modules_title">Choisissez un module</string>
     <string name="modules_intro">Apprendre hors ligne : français → danois</string>
-    <string name="planned_grammar">Grammaire — bientôt disponible</string>
-    <string name="planned_message">Ce module sera ajouté ultérieurement.</string>
     <string name="back">Retour</string>
     <string name="home">Modules</string>
     <string name="previous">Précédent</string>

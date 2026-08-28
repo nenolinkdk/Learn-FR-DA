@@ -92,10 +92,6 @@ public final class MainActivity extends Activity implements SpeechController.Lis
             content.addView(button, matchWrapWithTop());
         }
 
-        Button grammar = secondaryButton(getString(R.string.planned_grammar));
-        grammar.setOnClickListener(view -> planned());
-        content.addView(grammar, matchWrapWithTop());
-
         String last = progress.getLastPosition();
         if (!last.isEmpty()) {
             panel("Dernière position enregistrée\n" + last, R.color.panel);
@@ -110,10 +106,6 @@ public final class MainActivity extends Activity implements SpeechController.Lis
             total += lesson.items.size();
         }
         return "\n" + completed + "/" + total + " éléments terminés";
-    }
-
-    private void planned() {
-        Toast.makeText(this, R.string.planned_message, Toast.LENGTH_LONG).show();
     }
 
     private void showLessons(Module module) {

@@ -3,6 +3,7 @@
 .android-user/
 build/
 app/build/
+dist/
 local.properties
 *.iml
 .idea/
