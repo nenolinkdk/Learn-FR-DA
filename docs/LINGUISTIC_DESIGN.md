@@ -38,6 +38,25 @@ material may gradually include more everyday and workplace register.
 Children's material must sound natural for children and remain clear in
 safety situations.
 
+Dialogue and practical spoken French should sound like language a
+French speaker would naturally use or recognise. Grammar examples and
+reference notes may keep a more written or pedagogical register.
+Do not convert every correct inversion into colloquial French; keep
+inversion where it is conventional, useful, or belongs in grammar.
+
+## Danish word order: *ikke*
+
+In a **main clause**, *ikke* normally follows the finite verb:
+
+`Jeg tror ikke, at toget kommer i dag.` (*ikke* negates *tror*)
+
+In a **subordinate clause** (*at*, *fordi*, *hvis*, *når*, *som*, …),
+*ikke* precedes the finite verb:
+
+`Jeg tror, at toget ikke kommer i dag.`
+
+The app must not teach that *ikke* always follows the finite verb.
+
 ## Notes
 
 JSON should be able to carry optional: - grammar notes - vocabulary

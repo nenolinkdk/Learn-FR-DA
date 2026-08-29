@@ -32,6 +32,9 @@ import dk.nenolink.learnfrda.content.ContentModels.Note;
 import dk.nenolink.learnfrda.content.ContentModels.Question;
 import dk.nenolink.learnfrda.content.ContentModels.Quiz;
 import dk.nenolink.learnfrda.content.ContentRepository;
+import dk.nenolink.learnfrda.content.ResourceModels.ExternalResource;
+import dk.nenolink.learnfrda.content.ResourceModels.ResourceCollection;
+import dk.nenolink.learnfrda.content.ResourceRepository;
 import dk.nenolink.learnfrda.progress.ProgressStore;
 import dk.nenolink.learnfrda.speech.SpeechController;
 import dk.nenolink.learnfrda.ui.RoundNavBar;
@@ -40,6 +43,7 @@ public final class MainActivity extends Activity implements SpeechController.Lis
     private static final int SPACE = 8;
 
     private Course course;
+    private ResourceCollection transportResources;
     private ProgressStore progress;
     private SpeechController speech;
     private LinearLayout content;
@@ -51,6 +55,7 @@ public final class MainActivity extends Activity implements SpeechController.Lis
     private int quizScore;
     private boolean questionAnswered;
     private Screen screen = Screen.MODULES;
+    private Screen resourcesReturn = Screen.MODULES;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +64,7 @@ public final class MainActivity extends Activity implements SpeechController.Lis
         speech = new SpeechController(this);
         try {
             course = new ContentRepository(this).loadProductionCourse();
+            transportResources = new ResourceRepository(this).loadTransport();
             setContentView(buildShell());
             showModules();
         } catch (ContentContractException exception) {
@@ -144,6 +150,7 @@ public final class MainActivity extends Activity implements SpeechController.Lis
             button.setOnClickListener(view -> showLessons(module));
             content.addView(button, matchWrapWithTop());
         }
+        addPracticalLinksButton(Screen.MODULES);
     }
 
     private List<Module> orderedModules() {
@@ -210,6 +217,42 @@ public final class MainActivity extends Activity implements SpeechController.Lis
             Button quiz = accentButton(getString(R.string.open_quiz) + quizSavedSuffix(lesson.quiz));
             quiz.setOnClickListener(view -> startQuiz());
             content.addView(quiz, matchWrapWithTop());
+        }
+        if (isTransportLesson(lesson)) addPracticalLinksButton(Screen.LESSON);
+    }
+
+    private boolean isTransportLesson(Lesson lesson) {
+        if (lesson.tags.contains("transport") || lesson.tags.contains("station")) return true;
+        return lesson.id.contains("public-transport") || lesson.id.contains("airport-station")
+                || lesson.id.contains("commute");
+    }
+
+    private void addPracticalLinksButton(Screen returnTo) {
+        if (transportResources == null) return;
+        Button button = secondaryButton(getString(R.string.practical_links_transport)
+                + "\n" + transportResources.title.support + " / " + transportResources.title.target);
+        button.setOnClickListener(view -> showPracticalLinks(returnTo));
+        content.addView(button, matchWrapWithTop());
+    }
+
+    private void showPracticalLinks(Screen returnTo) {
+        if (transportResources == null) return;
+        resourcesReturn = returnTo;
+        screen = Screen.RESOURCES;
+        clear();
+        if (returnTo == Screen.LESSON && selectedLesson != null) {
+            backButton(() -> showLessonOverview(selectedLesson));
+        } else {
+            backButton(this::showModules);
+        }
+        heading(transportResources.title.support);
+        targetLabel(transportResources.title.target);
+        panel(transportResources.intro.support + "\n" + transportResources.intro.target, R.color.panel);
+        status(getString(R.string.open_official_site));
+        for (ExternalResource resource : transportResources.items) {
+            Button entry = primaryButton(resource.name + "\n" + resource.title.support + " / " + resource.title.target);
+            entry.setOnClickListener(view -> openExternalUrl(resource.url));
+            content.addView(entry, matchWrapWithTop());
         }
     }
 
@@ -422,6 +465,13 @@ public final class MainActivity extends Activity implements SpeechController.Lis
             case QUIZ_RESULT:
                 showLessonOverview(selectedLesson);
                 break;
+            case RESOURCES:
+                if (resourcesReturn == Screen.LESSON && selectedLesson != null) {
+                    showLessonOverview(selectedLesson);
+                } else {
+                    showModules();
+                }
+                break;
         }
     }
 
@@ -582,6 +632,6 @@ public final class MainActivity extends Activity implements SpeechController.Lis
     }
 
     private enum Screen {
-        MODULES, LESSONS, LESSON, ITEM, QUIZ, QUIZ_RESULT
+        MODULES, LESSONS, LESSON, ITEM, QUIZ, QUIZ_RESULT, RESOURCES
     }
 }

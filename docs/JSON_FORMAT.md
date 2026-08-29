@@ -35,7 +35,10 @@ The first implementation may bundle one document at `content/fr-da/course.json`.
 ```text
 linguistic/testdata/course.synthetic.json
 linguistic/testdata/README.md
+linguistic/resources/transport.json
 ```
+
+Practical reference links are **not** linguistic lesson items. They live in a separate schema-1 document (`collection` of official HTTPS URLs) so version-1 course JSON is unchanged. The bundled copy is `app/src/main/assets/content/fr-da/resources.json`. External URLs open in the device browser (`ACTION_VIEW`); the app requests no network permission and remains offline-first for lessons.
 
 ## Course object
 
@@ -70,6 +73,35 @@ All shown top-level fields are required. `schemaVersion` is a positive integer; 
 ```
 
 Both fields are required, non-blank UTF-8 strings. `support` is French and `target` is Danish. Intentionally monolingual data uses a specifically documented note field rather than an empty translation.
+
+## Practical resources (separate document)
+
+Not part of the course `modules` array. Version-1 course files must not contain URLs in dialogue `text` fields.
+
+```json
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0-transport-resources",
+  "collection": {
+    "id": "resources.transport",
+    "category": "transport",
+    "title": { "support": "Liens pratiques", "target": "Praktiske links" },
+    "intro": { "support": "…", "target": "…" },
+    "items": [
+      {
+        "id": "resource.transport.rejseplanen",
+        "order": 1,
+        "name": "Rejseplanen",
+        "title": { "support": "Planifier un trajet", "target": "Planlæg en rejse" },
+        "url": "https://rejseplanen.dk",
+        "tags": ["journey-planning"]
+      }
+    ]
+  }
+}
+```
+
+URLs must be `https://` official destinations. They are opened with Android `ACTION_VIEW`. Prices and timetables are not stored.
 
 ## Module object
 

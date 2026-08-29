@@ -115,7 +115,7 @@
                 "type": "dialogue-turn",
                 "speaker": "A",
                 "text": {
-                  "support": "Comment puis-je aller au centre-ville ?",
+                  "support": "Comment je peux aller au centre-ville ?",
                   "target": "Hvordan kommer jeg ind til centrum?"
                 },
                 "tts": {
@@ -592,6 +592,9 @@
                   "grammar": {
                     "support": "Dans les gares danoises, « spor » correspond au numéro de voie/quai indiqué pour le train.",
                     "targetExample": "Hvilket spor?"
+                  },
+                  "cultural": {
+                    "support": "À l’aéroport de Copenhague, l’accès aux quais des trains régionaux et longue distance se trouve du côté du métro. En vous dirigeant vers cette zone, l’accès aux voies 12 et 13 est sur la droite."
                   }
                 },
                 "tags": [
@@ -885,7 +888,7 @@
                 "type": "dialogue-turn",
                 "speaker": "A",
                 "text": {
-                  "support": "De quel billet ai-je besoin ?",
+                  "support": "De quel billet j’ai besoin ?",
                   "target": "Hvilken billet skal jeg bruge?"
                 },
                 "tts": {
@@ -935,7 +938,7 @@
                 "type": "dialogue-turn",
                 "speaker": "A",
                 "text": {
-                  "support": "Je vais à l’Hôtel de Ville.",
+                  "support": "Je vais à Rådhuspladsen.",
                   "target": "Jeg skal til Rådhuspladsen."
                 },
                 "tts": {
@@ -945,7 +948,7 @@
                 },
                 "notes": {
                   "cultural": {
-                    "support": "À Copenhague, « Rådhuspladsen » est la place de l’Hôtel de Ville. Dans l’app, les noms de lieux servent aussi d’entraînement à l’écoute."
+                    "support": "À Copenhague, « Rådhuspladsen » est la place de l’Hôtel de Ville, pas le bâtiment lui-même. Les noms de lieux servent aussi d’entraînement à l’écoute."
                   },
                   "pronunciation": {
                     "support": "Les noms de lieux danois sont souvent mieux appris comme des unités sonores. Utilisez le TTS plutôt que de déduire la prononciation lettre par lettre.",
@@ -988,7 +991,7 @@
                 "type": "dialogue-turn",
                 "speaker": "A",
                 "text": {
-                  "support": "Quelle ligne dois-je prendre ensuite ?",
+                  "support": "Quelle ligne je dois prendre ensuite ?",
                   "target": "Hvilken linje skal jeg tage bagefter?"
                 },
                 "tts": {
@@ -1073,7 +1076,7 @@
                 },
                 "notes": {
                   "digital": {
-                    "support": "Les solutions danoises de transport évoluent. L’objectif linguistique est de reconnaître des mots comme « rejse », « billet », « afgang », « spor » et « stop » dans une application."
+                    "support": "Les solutions danoises de transport évoluent. Rejseplanen sert à planifier un trajet ; arrêts et stations se trouvent aussi dans Google Maps, et certains arrêts de bus donnent une information par QR. Pour les billets et le City Pass, consultez les sources officielles : l’app n’indique pas les tarifs ni les horaires. Linguistiquement, reconnaissez « rejse », « billet », « afgang », « spor » et « stop »."
                   }
                 },
                 "tags": [
@@ -2589,7 +2592,7 @@
                 "type": "dialogue-turn",
                 "speaker": "A",
                 "text": {
-                  "support": "Combien coûte-t-elle ?",
+                  "support": "Combien elle coûte ?",
                   "target": "Hvad koster den?"
                 },
                 "tts": {
@@ -2751,7 +2754,7 @@
                     {
                       "id": "answer.level-1.shopping-price.correct",
                       "text": {
-                        "support": "Combien coûte-t-elle ?",
+                        "support": "Combien elle coûte ?",
                         "target": "Hvad koster den?"
                       },
                       "correct": true
@@ -3421,7 +3424,7 @@
                 "type": "digital-scenario",
                 "speaker": "A",
                 "text": {
-                  "support": "Il ne s’affiche pas. Que dois-je faire ?",
+                  "support": "Il ne s’affiche pas. Qu’est-ce que je dois faire ?",
                   "target": "Den kommer ikke frem. Hvad skal jeg gøre?"
                 },
                 "tts": {
@@ -3850,7 +3853,7 @@
                 "type": "dialogue-turn",
                 "speaker": "A",
                 "text": {
-                  "support": "Que dois-je faire maintenant ?",
+                  "support": "Qu’est-ce que je dois faire maintenant ?",
                   "target": "Hvad skal jeg gøre nu?"
                 },
                 "tts": {
@@ -4001,7 +4004,7 @@
                     {
                       "id": "answer.level-1.travel-problem-next.correct",
                       "text": {
-                        "support": "Que dois-je faire maintenant ?",
+                        "support": "Qu’est-ce que je dois faire maintenant ?",
                         "target": "Hvad skal jeg gøre nu?"
                       },
                       "correct": true
@@ -5857,7 +5860,7 @@
                 "type": "dialogue-turn",
                 "speaker": "A",
                 "text": {
-                  "support": "Que dois-je faire si je ne reconnais pas un paiement ?",
+                  "support": "Qu’est-ce que je dois faire si je ne reconnais pas un paiement ?",
                   "target": "Hvad skal jeg gøre, hvis jeg ikke kan genkende en betaling?"
                 },
                 "tts": {
@@ -5983,7 +5986,7 @@
                     {
                       "id": "answer.level-2.bank-recognize.correct",
                       "text": {
-                        "support": "Que dois-je faire si je ne reconnais pas un paiement ?",
+                        "support": "Qu’est-ce que je dois faire si je ne reconnais pas un paiement ?",
                         "target": "Hvad skal jeg gøre, hvis jeg ikke kan genkende en betaling?"
                       },
                       "correct": true
@@ -12415,7 +12418,7 @@
                 },
                 "notes": {
                   "grammar": {
-                    "support": "Dans une principale simple, « ikke » vient généralement après le verbe conjugué.",
+                    "support": "Dans une proposition principale, « ikke » vient généralement après le verbe conjugué. Ce n’est pas une règle universelle : dans une subordonnée, « ikke » précède le verbe (voir la leçon Propositions subordonnées).",
                     "targetExample": "Jeg forstår ikke …"
                   }
                 },
@@ -12527,8 +12530,8 @@
                   "order": 2,
                   "type": "single-choice",
                   "prompt": {
-                    "support": "Quelle phrase place correctement « ikke » ?",
-                    "target": "Hvilken sætning placerer ‘ikke’ korrekt?"
+                    "support": "Quelle phrase principale place correctement « ikke » ?",
+                    "target": "Hvilken hovedsætning placerer ‘ikke’ korrekt?"
                   },
                   "answers": [
                     {
@@ -12557,8 +12560,8 @@
                     }
                   ],
                   "explanation": {
-                    "support": "Dans une principale, « ikke » suit normalement le verbe conjugué.",
-                    "target": "I en hovedsætning står ‘ikke’ normalt efter det finitte verbum."
+                    "support": "Dans une principale, « ikke » suit normalement le verbe conjugué. Dans une subordonnée, il précède le verbe.",
+                    "target": "I en hovedsætning står ‘ikke’ normalt efter det finitte verbum. I en bisætning står det før verbet."
                   },
                   "tags": [
                     "negation"
@@ -13827,7 +13830,7 @@
                 },
                 "notes": {
                   "grammar": {
-                    "support": "Dans une subordonnée, « ikke » vient normalement avant le verbe conjugué : toget ikke kommer.",
+                    "support": "Dans une subordonnée, « ikke » précède le verbe conjugué : at toget ikke kommer. Même place avec fordi, hvis, når et som. Ne pas confondre avec la principale « Jeg tror ikke, at toget kommer i dag », où « ikke » nie « tror ».",
                     "targetExample": "at toget ikke kommer"
                   }
                 },

@@ -74,6 +74,15 @@ Lessons are situation-based. A typical lesson contains approximately ten
 dialogue/communication units forming a small coherent story or
 situation.
 
+Spoken French in dialogues should sound like everyday conversation a
+French speaker would recognise. Grammar examples and reference notes may
+keep a more written or pedagogical register. Do not convert every
+correct inversion into colloquial French.
+
+Danish *ikke* follows the finite verb in main clauses and precedes it in
+subordinate clauses (*at*, *fordi*, *hvis*, *når*, *som*). The app must
+not teach that *ikke* always follows the finite verb.
+
 Avoid repetitive textbook patterns and generic phrases repeated across
 lessons. Prefer natural contemporary Danish that users are likely to
 hear and need.
@@ -97,6 +106,11 @@ level2.json - children.json - grammar.json - quiz.json
 
 Possible later files: - vocabulary.json - culture.json
 
+Practical reference links (official HTTPS destinations) live in a
+separate JSON collection, not in dialogue fields. They open in the
+device browser (`ACTION_VIEW`). The app does not store ticket prices or
+timetables.
+
 ## 9. UI
 
 Use a calm Nenoling visual identity with pastel/off-white background,
@@ -109,7 +123,8 @@ part of the same design system.
 
 Core lessons and JSON content are bundled with the app. No account is
 required for normal learning. TTS dependencies should fail gracefully if
-a required Android voice is unavailable.
+a required Android voice is unavailable. External practical links use
+the system browser; the app itself requests no `INTERNET` permission.
 
 ## 11. Definition of first release
 

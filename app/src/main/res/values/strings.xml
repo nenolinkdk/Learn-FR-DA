@@ -26,4 +26,6 @@
     <string name="footer_link_label">notaguidedtour.dk</string>
     <string name="footer_link_url">https://notaguidedtour.dk</string>
     <string name="link_unavailable">Le lien n’a pas pu être ouvert.</string>
+    <string name="practical_links_transport">Transport — liens pratiques</string>
+    <string name="open_official_site">Ouvre le site officiel dans le navigateur.</string>
 </resources>

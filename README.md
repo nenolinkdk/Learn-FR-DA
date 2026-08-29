@@ -27,6 +27,10 @@ Phase 1: documentation and specification.
 -   Digital Denmark is integrated into realistic situations: MitID,
     Digital Post, MobilePay, health card, travel cards and travel apps.
 -   Core learning content should work offline.
+-   Dialogue French uses a spoken register; grammar and reference notes
+    may keep a more written register.
+-   Practical transport links open in the device browser. The app does
+    not store ticket prices or timetables.
 
 ## Planned structure
 

@@ -1,5 +1,14 @@
 # Build and Test
 
+## Content QA and practical links — 2026-08-29 (0.3.2)
+
+App version: `versionName "0.3.2"` (`versionCode` 1), `RELEASE_DATE` `29.08.2026`.
+Linguistic source of truth remains `linguistic/production/*.json`. Practical links are a separate collection in `linguistic/resources/transport.json`, bundled as `app/src/main/assets/content/fr-da/resources.json`. External URLs open with `ACTION_VIEW`; no `INTERNET` permission. Lessons remain offline-first. Tariffs and timetables are not stored.
+
+See `docs/CONTENT_QA_0.3.2.md` for the linguistic change log.
+
+Runtime on emulator `Medium_Phone_API_36.1` (`emulator-5554`): four modules open; corrected items display (city-hall *Rådhuspladsen*, spoken *Combien elle coûte ?*, airport tracks 12/13 note, *De quel billet j’ai besoin ?*); Grammar item and quiz feedback work; progress 1/100 survived reinstall/restart; FR and DA TTS dispatched with no error toast; practical links section lists six official destinations; each tap launched Chrome via `ACTION_VIEW` (Chrome ANR’d once on this RAM-constrained emulator; returning to the activity was safe); airplane mode still loaded bundled lessons; no `INTERNET` permission.
+
 ## UI refinement — 2026-08-29 (0.3.1)
 
 App version: `versionName "0.3.1"` (`versionCode` 1), with `BuildConfig.VERSION_NAME` and a single `RELEASE_DATE` field (`29.08.2026`). Linguistic production JSON is unchanged.
@@ -23,11 +32,11 @@ App version: `versionName "0.3.0"` (`versionCode` 1). Play Store signing was not
 
 | Scope | Modules | Lessons | Items | Quizzes | Questions | Answers | Grammar notes | Cultural notes | Digital notes | Pronunciation notes |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| Level 1 | 1 | 10 | 100 | 10 | 30 | 90 | 69 | 12 | 13 | 5 |
+| Level 1 | 1 | 10 | 100 | 10 | 30 | 90 | 69 | 13 | 13 | 5 |
 | Level 2 | 1 | 10 | 100 | 10 | 30 | 90 | 58 | 11 | 11 | 0 |
 | Children | 1 | 10 | 100 | 10 | 30 | 90 | 9 | 7 | 4 | 0 |
 | Grammar | 1 | 10 | 100 | 10 | 30 | 90 | 100 | 0 | 0 | 0 |
-| Total | 4 | 40 | 400 | 40 | 120 | 360 | 236 | 30 | 28 | 5 |
+| Total | 4 | 40 | 400 | 40 | 120 | 360 | 236 | 31 | 28 | 5 |
 
 Notes are counted as present note objects, not separate grammar lessons.
 

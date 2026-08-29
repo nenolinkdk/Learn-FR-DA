@@ -39,7 +39,7 @@
                 "order": 1,
                 "type": "dialogue-turn",
                 "speaker": "A",
-                "text": { "support": "De quel billet ai-je besoin ?", "target": "Hvilken billet skal jeg bruge?" },
+                "text": { "support": "De quel billet j’ai besoin ?", "target": "Hvilken billet skal jeg bruge?" },
                 "tts": { "role": "target", "locale": "da-DK", "enabled": true },
                 "notes": {
                   "grammar": { "support": "« Hvilken » s’emploie ici avec le nom commun de genre commun « billet ».", "targetExample": "Hvilken billet?" }
@@ -63,10 +63,10 @@
                 "order": 3,
                 "type": "dialogue-turn",
                 "speaker": "A",
-                "text": { "support": "Je vais à l’Hôtel de Ville.", "target": "Jeg skal til Rådhuspladsen." },
+                "text": { "support": "Je vais à Rådhuspladsen.", "target": "Jeg skal til Rådhuspladsen." },
                 "tts": { "role": "target", "locale": "da-DK", "enabled": true },
                 "notes": {
-                  "cultural": { "support": "À Copenhague, « Rådhuspladsen » est la place de l’Hôtel de Ville. Dans l’app, les noms de lieux servent aussi d’entraînement à l’écoute." },
+                  "cultural": { "support": "À Copenhague, « Rådhuspladsen » est la place de l’Hôtel de Ville, pas le bâtiment lui-même. Les noms de lieux servent aussi d’entraînement à l’écoute." },
                   "pronunciation": { "support": "Les noms de lieux danois sont souvent mieux appris comme des unités sonores. Utilisez le TTS plutôt que de déduire la prononciation lettre par lettre.", "targetText": "Rådhuspladsen" }
                 },
                 "tags": ["destination", "place-name"]
@@ -88,7 +88,7 @@
                 "order": 5,
                 "type": "dialogue-turn",
                 "speaker": "A",
-                "text": { "support": "Quelle ligne dois-je prendre ensuite ?", "target": "Hvilken linje skal jeg tage bagefter?" },
+                "text": { "support": "Quelle ligne je dois prendre ensuite ?", "target": "Hvilken linje skal jeg tage bagefter?" },
                 "tts": { "role": "target", "locale": "da-DK", "enabled": true },
                 "notes": {
                   "grammar": { "support": "« Bagefter » signifie « ensuite/après » dans une séquence d’actions.", "targetExample": "Hvad skal jeg gøre bagefter?" }
@@ -127,7 +127,7 @@
                 "text": { "support": "Oui. Vous pouvez aussi suivre le trajet dans l’application.", "target": "Ja. Du kan også følge rejsen i appen." },
                 "tts": { "role": "target", "locale": "da-DK", "enabled": true },
                 "notes": {
-                  "digital": { "support": "Les solutions danoises de transport évoluent. L’objectif linguistique est de reconnaître des mots comme « rejse », « billet », « afgang », « spor » et « stop » dans une application." }
+                  "digital": { "support": "Les solutions danoises de transport évoluent. Rejseplanen sert à planifier un trajet ; arrêts et stations se trouvent aussi dans Google Maps, et certains arrêts de bus donnent une information par QR. Pour les billets et le City Pass, consultez les sources officielles : l’app n’indique pas les tarifs ni les horaires. Linguistiquement, reconnaissez « rejse », « billet », « afgang », « spor » et « stop »." }
                 },
                 "tags": ["digital", "journey-planning"]
               },

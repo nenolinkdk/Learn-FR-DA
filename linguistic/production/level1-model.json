@@ -64,7 +64,7 @@
                 "order": 3,
                 "type": "dialogue-turn",
                 "speaker": "A",
-                "text": { "support": "Comment puis-je aller au centre-ville ?", "target": "Hvordan kommer jeg ind til centrum?" },
+                "text": { "support": "Comment je peux aller au centre-ville ?", "target": "Hvordan kommer jeg ind til centrum?" },
                 "tts": { "role": "target", "locale": "da-DK", "enabled": true },
                 "notes": {
                   "grammar": { "support": "« Hvordan kommer jeg …? » est une manière naturelle de demander comment se rendre quelque part.", "targetExample": "Hvordan kommer jeg ind til centrum?" }
@@ -272,7 +272,8 @@
                 "text": { "support": "De quel quai part le train ?", "target": "Hvilket spor kører toget fra?" },
                 "tts": { "role": "target", "locale": "da-DK", "enabled": true },
                 "notes": {
-                  "grammar": { "support": "Dans les gares danoises, « spor » correspond au numéro de voie/quai indiqué pour le train.", "targetExample": "Hvilket spor?" }
+                  "grammar": { "support": "Dans les gares danoises, « spor » correspond au numéro de voie/quai indiqué pour le train.", "targetExample": "Hvilket spor?" },
+                  "cultural": { "support": "À l’aéroport de Copenhague, l’accès aux quais des trains régionaux et longue distance se trouve du côté du métro. En vous dirigeant vers cette zone, l’accès aux voies 12 et 13 est sur la droite." }
                 },
                 "tags": ["platform", "question"]
               },

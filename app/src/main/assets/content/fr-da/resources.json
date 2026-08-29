@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0-transport-resources",
+  "collection": {
+    "id": "resources.transport",
+    "category": "transport",
+    "title": {
+      "support": "Liens pratiques",
+      "target": "Praktiske links"
+    },
+    "intro": {
+      "support": "Rejseplanen sert à planifier un trajet. Certains arrêts de bus donnent une information par QR, et les arrêts ou stations se trouvent aussi dans Google Maps. Pour les billets et le City Pass, utilisez les sites officiels : l’app n’enregistre ni tarifs ni horaires, car ils changent.",
+      "target": "Rejseplanen bruges til at planlægge en rejse. Nogle busstoppesteder giver QR-information, og stoppesteder og stationer kan også findes i Google Maps. Billetter og City Pass tjekkes på de officielle sider: appen gemmer hverken priser eller køreplaner, fordi de ændrer sig."
+    },
+    "items": [
+      {
+        "id": "resource.transport.rejseplanen",
+        "order": 1,
+        "name": "Rejseplanen",
+        "title": {
+          "support": "Planifier un trajet",
+          "target": "Planlæg en rejse"
+        },
+        "url": "https://rejseplanen.dk",
+        "tags": [
+          "journey-planning"
+        ]
+      },
+      {
+        "id": "resource.transport.dsb",
+        "order": 2,
+        "name": "DSB",
+        "title": {
+          "support": "Trains et billets",
+          "target": "Tog og billetter"
+        },
+        "url": "https://www.dsb.dk",
+        "tags": [
+          "train",
+          "tickets"
+        ]
+      },
+      {
+        "id": "resource.transport.dot",
+        "order": 3,
+        "name": "Din Offentlige Transport",
+        "title": {
+          "support": "Billets et City Pass",
+          "target": "Billetter og City Pass"
+        },
+        "url": "https://dinoffentligetransport.dk",
+        "tags": [
+          "tickets",
+          "city-pass"
+        ]
+      },
+      {
+        "id": "resource.transport.metro",
+        "order": 4,
+        "name": "Copenhagen Metro",
+        "title": {
+          "support": "Métro",
+          "target": "Metro"
+        },
+        "url": "https://m.dk",
+        "tags": [
+          "metro"
+        ]
+      },
+      {
+        "id": "resource.transport.public-transport-app",
+        "order": 5,
+        "name": "Public Transport",
+        "title": {
+          "support": "Application pour les transports publics",
+          "target": "App til offentlig transport"
+        },
+        "url": "https://publictransport.dk/app",
+        "tags": [
+          "app"
+        ]
+      },
+      {
+        "id": "resource.transport.visit-copenhagen",
+        "order": 6,
+        "name": "Visit Copenhagen",
+        "title": {
+          "support": "Informations pratiques",
+          "target": "Praktisk turistinformation"
+        },
+        "url": "https://www.visitcopenhagen.com",
+        "tags": [
+          "visitor-information"
+        ]
+      }
+    ]
+  }
+}
