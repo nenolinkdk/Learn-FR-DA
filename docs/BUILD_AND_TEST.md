@@ -1,5 +1,11 @@
 # Build and Test
 
+## Test APK — 2026-08-29 (0.3.3)
+
+App version: `versionName "0.3.3"` (`versionCode` 1), `RELEASE_DATE` `29.08.2026`.
+One dialogue correction: *De quel billet est-ce que j’ai besoin ?* Danish unchanged.
+Test APK: `dist/Learn-FR-DA-0.3.3-test.apk` (gitignored).
+
 ## Content QA and practical links — 2026-08-29 (0.3.2)
 
 App version: `versionName "0.3.2"` (`versionCode` 1), `RELEASE_DATE` `29.08.2026`.

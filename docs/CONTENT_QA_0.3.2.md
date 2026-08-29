@@ -15,7 +15,7 @@ lesson items.
 | item.level-1.shopping-price | Combien coûte-t-elle ? | Combien elle coûte ? | Hvad koster den? | unchanged | Everyday spoken price question; inversion with *coûte-t-elle* is stiff in a shop. |
 | answer.level-1.shopping-price.correct | Combien coûte-t-elle ? | Combien elle coûte ? | Hvad koster den? | unchanged | Matches the dialogue. |
 | item.level-1.arrival.transport | Comment puis-je aller au centre-ville ? | Comment je peux aller au centre-ville ? | Hvordan kommer jeg ind til centrum? | unchanged | *Puis-je* is literary; spoken tourist French uses *comment je peux*. |
-| item.level-1.public-transport.ticket-needed | De quel billet ai-je besoin ? | De quel billet j’ai besoin ? | Hvilken billet skal jeg bruge? | unchanged | *Ai-je* is written; keep the same meaning. |
+| item.level-1.public-transport.ticket-needed | De quel billet ai-je besoin ? | De quel billet j’ai besoin ? | Hvilken billet skal jeg bruge? | unchanged | *Ai-je* is written; keep the same meaning. Superseded in 0.3.3 by *De quel billet est-ce que j’ai besoin ?* |
 | item.level-1.public-transport-which-line | Quelle ligne dois-je prendre ensuite ? | Quelle ligne je dois prendre ensuite ? | Hvilken linje skal jeg tage bagefter? | unchanged | Spoken word order for a practical follow-up. |
 | item.level-1.digital-booking-not-load | Il ne s’affiche pas. Que dois-je faire ? | Il ne s’affiche pas. Qu’est-ce que je dois faire ? | Den kommer ikke frem. Hvad skal jeg gøre? | unchanged | *Que dois-je* is formal; *qu’est-ce que je dois* is the usual spoken form. |
 | item.level-1.travel-problem-next | Que dois-je faire maintenant ? | Qu’est-ce que je dois faire maintenant ? | Hvad skal jeg gøre nu? | unchanged | Same spoken-question adjustment. |

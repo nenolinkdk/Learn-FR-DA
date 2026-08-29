@@ -39,7 +39,7 @@
                 "order": 1,
                 "type": "dialogue-turn",
                 "speaker": "A",
-                "text": { "support": "De quel billet j’ai besoin ?", "target": "Hvilken billet skal jeg bruge?" },
+                "text": { "support": "De quel billet est-ce que j’ai besoin ?", "target": "Hvilken billet skal jeg bruge?" },
                 "tts": { "role": "target", "locale": "da-DK", "enabled": true },
                 "notes": {
                   "grammar": { "support": "« Hvilken » s’emploie ici avec le nom commun de genre commun « billet ».", "targetExample": "Hvilken billet?" }

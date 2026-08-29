@@ -888,7 +888,7 @@
                 "type": "dialogue-turn",
                 "speaker": "A",
                 "text": {
-                  "support": "De quel billet j’ai besoin ?",
+                  "support": "De quel billet est-ce que j’ai besoin ?",
                   "target": "Hvilken billet skal jeg bruge?"
                 },
                 "tts": {
