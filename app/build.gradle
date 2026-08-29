@@ -6,12 +6,17 @@ android {
     namespace "dk.nenolink.learnfrda"
     compileSdk 35
 
+    buildFeatures {
+        buildConfig true
+    }
+
     defaultConfig {
         applicationId "dk.nenolink.learnfrda"
         minSdk 23
         targetSdk 35
         versionCode 1
-        versionName "0.3.0"
+        versionName "0.3.1"
+        buildConfigField "String", "RELEASE_DATE", "\"29.08.2026\""
     }
 
     sourceSets {

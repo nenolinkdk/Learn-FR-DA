@@ -1,5 +1,11 @@
 # Build and Test
 
+## UI refinement — 2026-08-29 (0.3.1)
+
+App version: `versionName "0.3.1"` (`versionCode` 1), with `BuildConfig.VERSION_NAME` and a single `RELEASE_DATE` field (`29.08.2026`). Linguistic production JSON is unchanged.
+
+Compact home/lesson presentation: Grammar last among the four course modules, compact FR/DA TTS row, smaller buttons and status text, round previous/next controls (`RoundNavBar`), no user-facing last-position message, and a home-only footer linking to `https://notaguidedtour.dk`.
+
 ## Production integration — 2026-08-28 (0.3.0 test)
 
 The canonical production course is `app/src/main/assets/content/fr-da/course.json`.

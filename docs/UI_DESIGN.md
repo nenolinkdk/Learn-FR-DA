@@ -21,8 +21,11 @@ for accessibility.
 -   large enough touch targets
 -   French UI text
 -   Danish target text visually easy to identify
--   consistent TTS button
--   visible progress without clutter
+-   compact controls with usable touch targets
+-   paired compact TTS buttons: Écouter FR / Écouter DA
+-   round previous/next icon navigation next to the dialogue
+-   visible progress without technical status clutter
+-   discreet version line and home footer with external site link
 -   no repeated decorative flags throughout the app
 
 ## Children
