@@ -26,6 +26,8 @@ App version: `versionName "0.4.2"` (`versionCode` 1), `RELEASE_DATE` `30.08.2026
 
 Quiz buttons shuffle once when a question is presented (`AnswerOrder.shuffleAnswers`). Stored JSON order is unchanged. Scoring uses the answer `correct` flag / ID, not the button index. Feedback does not reshuffle. The next question (or a later quiz restart) gets a new order. `answerDisplayRole` from 0.4.1 is unchanged.
 
+Test APK: `Learn-FR-DA-0.4.2-test.apk` in the repository root (1,038,325 bytes), same delivery as 0.4.1.
+
 ## Test APK — 2026-08-30 (0.4.1)
 
 App version: `versionName "0.4.1"` (`versionCode` 1), `RELEASE_DATE` `30.08.2026`.
