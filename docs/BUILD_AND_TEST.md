@@ -16,9 +16,15 @@ Gradle task: `copyNamedTestApkToDist` (runs automatically after `assembleDebug`)
 Windows check after a local build:
 
 ```powershell
-Test-Path ".\dist\Learn-FR-DA-0.4.1-test.apk"
-Get-Item ".\dist\Learn-FR-DA-0.4.1-test.apk" | Select-Object FullName, Length, LastWriteTime
+Test-Path ".\dist\Learn-FR-DA-0.4.2-test.apk"
+Get-Item ".\dist\Learn-FR-DA-0.4.2-test.apk" | Select-Object FullName, Length, LastWriteTime
 ```
+
+## Test APK — 2026-08-30 (0.4.2)
+
+App version: `versionName "0.4.2"` (`versionCode` 1), `RELEASE_DATE` `30.08.2026`.
+
+Quiz buttons shuffle once when a question is presented (`AnswerOrder.shuffleAnswers`). Stored JSON order is unchanged. Scoring uses the answer `correct` flag / ID, not the button index. Feedback does not reshuffle. The next question (or a later quiz restart) gets a new order. `answerDisplayRole` from 0.4.1 is unchanged.
 
 ## Test APK — 2026-08-30 (0.4.1)
 

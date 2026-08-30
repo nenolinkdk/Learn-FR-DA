@@ -18,10 +18,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
+import dk.nenolink.learnfrda.content.AnswerOrder;
 import dk.nenolink.learnfrda.content.ContentContractException;
 import dk.nenolink.learnfrda.content.ContentModels.Answer;
 import dk.nenolink.learnfrda.content.ContentModels.Course;
@@ -56,6 +58,7 @@ public final class MainActivity extends Activity implements SpeechController.Lis
     private int questionIndex;
     private int quizScore;
     private boolean questionAnswered;
+    private List<Answer> displayedAnswers = Collections.emptyList();
     private Screen screen = Screen.MODULES;
     private Screen resourcesReturn = Screen.MODULES;
 
@@ -385,6 +388,7 @@ public final class MainActivity extends Activity implements SpeechController.Lis
         questionIndex = 0;
         quizScore = 0;
         questionAnswered = false;
+        displayedAnswers = Collections.emptyList();
         showQuestion();
     }
 
@@ -404,7 +408,8 @@ public final class MainActivity extends Activity implements SpeechController.Lis
         status("Question " + (questionIndex + 1) + " sur " + questions.size());
         panel(question.prompt.support + "\n" + question.prompt.target, R.color.panel);
 
-        for (Answer answer : question.answers) {
+        displayedAnswers = AnswerOrder.shuffleAnswers(question.answers);
+        for (Answer answer : displayedAnswers) {
             Button option = primaryButton(question.displayedAnswerText(answer));
             option.setOnClickListener(view -> handleAnswer(answer, question));
             content.addView(option, matchWrapWithTop());
@@ -414,7 +419,7 @@ public final class MainActivity extends Activity implements SpeechController.Lis
     private void handleAnswer(Answer answer, Question question) {
         if (questionAnswered) return;
         questionAnswered = true;
-        if (answer.correct) quizScore++;
+        if (AnswerOrder.scoresCorrect(answer)) quizScore++;
         clear();
         backButton(() -> showLessonOverview(selectedLesson));
         feedback(answer.correct ? getString(R.string.correct) : getString(R.string.incorrect), answer.correct);

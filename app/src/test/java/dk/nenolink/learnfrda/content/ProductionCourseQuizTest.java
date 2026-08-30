@@ -1,6 +1,7 @@
 package dk.nenolink.learnfrda.content;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
@@ -13,7 +14,10 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Random;
+import java.util.Set;
 
 import dk.nenolink.learnfrda.content.ContentModels.Answer;
 import dk.nenolink.learnfrda.content.ContentModels.Course;
@@ -67,6 +71,96 @@ public class ProductionCourseQuizTest {
         }
         assertEquals(150, questions);
         QuizIntegrity.requireEveryLessonQuiz(course);
+    }
+
+    @Test
+    public void everyProductionQuestionShufflesWithoutLosingIdentity() throws Exception {
+        Course course = courseFrom(root());
+        assertEquals(5, course.modules.size());
+        assertEquals(50, QuizIntegrity.productionLessonIds(course).size());
+        boolean[] seen = new boolean[3];
+        int firstPositionHits = 0;
+        int shuffleTrials = 0;
+        int questions = 0;
+        for (String lessonId : QuizIntegrity.productionLessonIds(course)) {
+            List<Question> resolved = QuizIntegrity.questionsForLessonId(course, lessonId);
+            assertEquals(3, resolved.size());
+            int lessonScoreCorrect = 0;
+            int lessonScoreWrong = 0;
+            for (Question question : resolved) {
+                questions++;
+                QuizIntegrity.requireAnswerDisplayRole(question.answerDisplayRole, question.id);
+                assertEquals(3, question.answers.size());
+                String storedCorrectId = correctId(question.answers);
+                Set<String> storedIds = ids(question.answers);
+                List<String> storedOrder = idsInOrder(question.answers);
+                boolean[] questionSeen = new boolean[3];
+                for (int seed = 0; seed < 80; seed++) {
+                    List<Answer> displayed = AnswerOrder.shuffleAnswers(question.answers, new Random(seed));
+                    assertEquals(question.id, 3, displayed.size());
+                    assertEquals(question.id, storedIds, ids(displayed));
+                    assertEquals(question.id, 1, countCorrect(displayed));
+                    assertEquals(question.id, storedCorrectId, correctId(displayed));
+                    assertEquals(storedOrder, idsInOrder(question.answers));
+                    String button = QuizIntegrity.displayedAnswerText(question, displayed.get(AnswerOrder.indexOfCorrect(displayed)));
+                    assertTrue(question.id, button.trim().length() > 0);
+                    assertFalse(question.id, QuizIntegrity.leaksBothRoles(
+                            displayed.get(AnswerOrder.indexOfCorrect(displayed)).text, button));
+                    int position = AnswerOrder.indexOfCorrect(displayed);
+                    questionSeen[position] = true;
+                    seen[position] = true;
+                    shuffleTrials++;
+                    if (position == 0) firstPositionHits++;
+                }
+                assertTrue(question.id + " position 1", questionSeen[0]);
+                assertTrue(question.id + " position 2", questionSeen[1]);
+                assertTrue(question.id + " position 3", questionSeen[2]);
+
+                List<Answer> play = AnswerOrder.shuffleAnswers(question.answers, new Random(lessonId.hashCode() + question.order));
+                Answer correct = play.get(AnswerOrder.indexOfCorrect(play));
+                Answer wrong = play.get(AnswerOrder.indexOfCorrect(play) == 0 ? 1 : 0);
+                assertTrue(AnswerOrder.scoresCorrect(correct));
+                assertFalse(AnswerOrder.scoresCorrect(wrong));
+                if (AnswerOrder.scoresCorrect(correct)) lessonScoreCorrect++;
+                if (!AnswerOrder.scoresCorrect(wrong)) lessonScoreWrong++;
+            }
+            assertEquals(lessonId, 3, lessonScoreCorrect);
+            assertEquals(lessonId, 3, lessonScoreWrong);
+        }
+        assertEquals(150, questions);
+        assertTrue("position 1 never correct across the course", seen[0]);
+        assertTrue("position 2 never correct across the course", seen[1]);
+        assertTrue("position 3 never correct across the course", seen[2]);
+        assertTrue("correct answer was systematically first", firstPositionHits < shuffleTrials);
+        assertTrue("correct answer never first", firstPositionHits > 0);
+    }
+
+    private static JSONObject root() throws Exception {
+        Path asset = Path.of("src/main/assets/content/fr-da/course.json");
+        return new JSONObject(new String(Files.readAllBytes(asset), StandardCharsets.UTF_8));
+    }
+
+    private static Set<String> ids(List<Answer> answers) {
+        Set<String> ids = new HashSet<>();
+        for (Answer answer : answers) ids.add(answer.id);
+        return ids;
+    }
+
+    private static List<String> idsInOrder(List<Answer> answers) {
+        List<String> ids = new ArrayList<>();
+        for (Answer answer : answers) ids.add(answer.id);
+        return ids;
+    }
+
+    private static int countCorrect(List<Answer> answers) {
+        int count = 0;
+        for (Answer answer : answers) if (answer.correct) count++;
+        return count;
+    }
+
+    private static String correctId(List<Answer> answers) {
+        for (Answer answer : answers) if (answer.correct) return answer.id;
+        return null;
     }
 
     private static Course courseFrom(JSONObject root) throws Exception {
