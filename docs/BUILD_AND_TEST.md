@@ -1,5 +1,18 @@
 # Build and Test
 
+## Test APK — 2026-08-30 (0.4.0)
+
+App version: `versionName "0.4.0"` (`versionCode` 1), `RELEASE_DATE` `30.08.2026`.
+Home/version display: `Version 0.4.0 · 30.08.2026` from `BuildConfig`, not a separate hard-coded string.
+
+Level 3 is a full production module (`module.level-3`): practical professional Danish for French-speaking users working, freelancing or doing business in Denmark. Ten lessons, 100 items, 30 quiz questions, 50 core business terms in context. Source files: `linguistic/production/level3-01-05.json` and `level3-06-10.json`. The home screen loads five modules from `course.json` in this order: Niveau 1, Niveau 2, Niveau 3, Enfants, Grammaire danoise pratique.
+
+Footer destination corrected to `https://notaguidedtour.com` (visible label `notaguidedtour.com`). The credit line remains `© Nenolink · Henrik Nielsen`. The link still opens with Android `ACTION_VIEW`. No `INTERNET` permission.
+
+Test APK: `dist/Learn-FR-DA-0.4.0-test.apk` (gitignored).
+
+Expected linguistic totals: 5 modules, 50 lessons, 500 items, 150 quiz questions, 1206 unique IDs. Practical transport resources remain a separate collection (6 official links + collection ID). Duplicate IDs: 0. Content tests: 19 passing Node tests.
+
 ## Test APK — 2026-08-29 (0.3.3)
 
 App version: `versionName "0.3.3"` (`versionCode` 1), `RELEASE_DATE` `29.08.2026`.
@@ -40,9 +53,10 @@ App version: `versionName "0.3.0"` (`versionCode` 1). Play Store signing was not
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | Level 1 | 1 | 10 | 100 | 10 | 30 | 90 | 69 | 13 | 13 | 5 |
 | Level 2 | 1 | 10 | 100 | 10 | 30 | 90 | 58 | 11 | 11 | 0 |
+| Level 3 | 1 | 10 | 100 | 10 | 30 | 90 | 22 | 11 | 0 | 0 |
 | Children | 1 | 10 | 100 | 10 | 30 | 90 | 9 | 7 | 4 | 0 |
 | Grammar | 1 | 10 | 100 | 10 | 30 | 90 | 100 | 0 | 0 | 0 |
-| Total | 4 | 40 | 400 | 40 | 120 | 360 | 236 | 31 | 28 | 5 |
+| Total | 5 | 50 | 500 | 50 | 150 | 450 | 258 | 42 | 28 | 5 |
 
 Notes are counted as present note objects, not separate grammar lessons.
 
@@ -61,17 +75,17 @@ To deliberately regenerate the asset after editing production sources:
 node tools/production-content.mjs --write
 ```
 
-The normal command validates all nine files and requires the checked-in canonical asset to equal the merged source records.
+The normal command validates all eleven source files and requires the checked-in canonical asset to equal the merged source records.
 The writer validates the entire result before replacing the asset.
 
 Checks include strict UTF-8 decoding, JSON parsing, version 1, required/unknown/null fields, value types,
 course identity, French support and Danish target configuration, module type/audience, bilingual text,
 ID/tag regexes, global ID uniqueness, parent references, unique positive integer orders, note shapes,
 TTS roles/locales and exactly one correct answer per single-choice question.
-Production additionally requires the four module IDs, lesson orders 1–10, three questions per lesson
+Production additionally requires the five module IDs, lesson orders 1–10, three questions per lesson
 and enabled target/da-DK speech for every item, including Grammar.
 
-There are **965 globally unique canonical IDs and zero duplicate entity IDs**.
+There are **1206 globally unique canonical IDs and zero duplicate entity IDs**.
 Course and module IDs intentionally recur as matching metadata in separate source documents;
 these shared headers are consolidated, not renamed. No lesson, item, quiz, question or answer IDs recur.
 

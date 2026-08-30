@@ -3,7 +3,20 @@ import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import { merge, validate } from './production-content.mjs';
 const { result } = merge();
-test('canonical course has 965 valid globally unique IDs', () => assert.equal(validate(result), 965));
+test('canonical course has 1206 valid globally unique IDs', () => assert.equal(validate(result), 1206));
+test('production totals include Level 3', () => {
+  assert.deepEqual(result.course.modules.map(m => m.id),
+    ['module.level-1', 'module.level-2', 'module.level-3', 'module.children', 'module.grammar']);
+  const lessons = result.course.modules.flatMap(m => m.lessons);
+  assert.equal(lessons.length, 50);
+  assert.equal(lessons.reduce((n, l) => n + l.items.length, 0), 500);
+  assert.equal(lessons.reduce((n, l) => n + (l.quiz?.questions.length ?? 0), 0), 150);
+  const level3 = result.course.modules.find(m => m.id === 'module.level-3');
+  assert.equal(level3.level, 3);
+  assert.equal(level3.lessons.length, 10);
+  assert.equal(level3.lessons.reduce((n, l) => n + l.items.length, 0), 100);
+  assert.equal(level3.lessons.reduce((n, l) => n + l.quiz.questions.length, 0), 30);
+});
 const cases = {
   'unknown field': d => { d.course.modules[0].lessons[0].items[0].textPt = 'x'; },
   'null optional notes': d => { d.course.modules[0].lessons[0].items[0].notes = null; },
@@ -20,7 +33,7 @@ const cases = {
   'multiple correct answers': d => { d.course.modules[0].lessons[0].quiz.questions[0].answers.forEach(a => a.correct = true); },
   'no correct answer': d => { d.course.modules[0].lessons[0].quiz.questions[0].answers.forEach(a => a.correct = false); },
   'reversed languages': d => { [d.course.languages.target, d.course.languages.support] = [d.course.languages.support, d.course.languages.target]; },
-  'children audience': d => { d.course.modules[2].audience = 'general'; }
+  'children audience': d => { d.course.modules[3].audience = 'general'; }
 };
 for (const [name, mutate] of Object.entries(cases)) test(`rejects ${name}`, () => {
   const copy = structuredClone(result); mutate(copy); assert.throws(() => validate(copy));

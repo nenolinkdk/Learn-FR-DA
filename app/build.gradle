@@ -15,8 +15,8 @@ android {
         minSdk 23
         targetSdk 35
         versionCode 1
-        versionName "0.3.3"
-        buildConfigField "String", "RELEASE_DATE", "\"29.08.2026\""
+        versionName "0.4.0"
+        buildConfigField "String", "RELEASE_DATE", "\"30.08.2026\""
     }
 
     sourceSets {

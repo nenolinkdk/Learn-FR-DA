@@ -124,12 +124,12 @@ Required: `id`, `type`, `audience`, `title`, `tags`, and `lessons`.
 
 Allowed types:
 
-- `level`: requires `level` equal to `1` or `2`
+- `level`: requires `level` equal to `1`, `2` or `3`
 - `children`: requires `audience: "children"` and omits `level`
 - `grammar`: standalone grammar reference/practice
 - `quiz`: standalone cross-lesson quiz
 
-Other modules use `audience: "general"`. Reserved production IDs are `module.level-1`, `module.level-2`, `module.children`, `module.grammar`, and `module.quiz`. A small fixture need not contain every module.
+Other modules use `audience: "general"`. Reserved production IDs are `module.level-1`, `module.level-2`, `module.level-3`, `module.children`, `module.grammar`, and `module.quiz`. A small fixture need not contain every module. Level 3 is adult professional/business Danish; it still uses `audience: "general"` and is identified by `type`/`level`, not by title.
 
 ## Lesson object
 
