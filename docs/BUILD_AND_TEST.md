@@ -1,5 +1,25 @@
 # Build and Test
 
+## Named test APK in `dist/`
+
+Every successful debug assemble copies the current debug APK to a versioned local file:
+
+```text
+dist\Learn-FR-DA-<versionName>-test.apk
+```
+
+Source: `app/build/outputs/apk/debug/app-debug.apk`.  
+Gradle task: `copyNamedTestApkToDist` (runs automatically after `assembleDebug`).
+
+`dist/` stays on the machine (Dropbox/local checkout). The folder is gitignored. Never commit `*.apk`.
+
+Windows check after a local build:
+
+```powershell
+Test-Path ".\dist\Learn-FR-DA-0.4.0-test.apk"
+Get-Item ".\dist\Learn-FR-DA-0.4.0-test.apk" | Select-Object FullName, Length, LastWriteTime
+```
+
 ## Test APK — 2026-08-30 (0.4.0)
 
 App version: `versionName "0.4.0"` (`versionCode` 1), `RELEASE_DATE` `30.08.2026`.
@@ -9,7 +29,8 @@ Level 3 is a full production module (`module.level-3`): practical professional D
 
 Footer destination corrected to `https://notaguidedtour.com` (visible label `notaguidedtour.com`). The credit line remains `© Nenolink · Henrik Nielsen`. The link still opens with Android `ACTION_VIEW`. No `INTERNET` permission.
 
-Test APK: `dist/Learn-FR-DA-0.4.0-test.apk` (gitignored, 1,034,131 bytes).
+Test APK: `dist/Learn-FR-DA-0.4.0-test.apk` (gitignored). `assembleDebug` copies `app/build/outputs/apk/debug/app-debug.apk` to that named file via `copyNamedTestApkToDist`. The `dist/` folder stays local; APK binaries are never committed.
+
 `./gradlew clean assembleDebug` succeeded. The APK contains five modules, `versionName 0.4.0`, footer `https://notaguidedtour.com`, and no `INTERNET` permission.
 
 Empty quiz screens reported on the previous physical-device build were a leftover `ScrollView` offset, not missing questions. Every production lesson now fails fast unless it resolves to exactly three displayable questions (`QuizIntegrity`). `node --test tools/quiz-integrity.test.mjs` and `./gradlew test` walk every lesson ID through the same lesson → quiz → questions mapping `MainActivity` uses. An AndroidX `connectedAndroidTest` was not added because the app keeps `android.useAndroidX=false`.

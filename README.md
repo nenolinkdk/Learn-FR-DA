@@ -51,3 +51,6 @@ Phase 1: documentation and specification.
 5.  Android QA and release APK
 
 Read `/docs` before implementing application code.
+
+A successful `assembleDebug` also writes
+`dist/Learn-FR-DA-<version>-test.apk` (gitignored; local/Dropbox only).
