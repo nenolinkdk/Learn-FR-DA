@@ -35,6 +35,12 @@ Sources: `linguistic/production/level3-01-05.json`, `linguistic/production/level
 
 Visible label and destination are `notaguidedtour.com` / `https://notaguidedtour.com`. Historical 0.3.x documentation may still mention the earlier `.dk` address.
 
+## Empty quizzes (physical-device report)
+
+Root cause: not missing JSON. All 50 lessons already had 3 questions. The home/module `ScrollView` kept its previous Y offset after `content.removeAllViews()`. Opening a short quiz after scrolling a 10-lesson list placed the question and answers below the fold, so the quiz screen looked empty.
+
+Fix: reset the `ScrollView` to the top on every screen change. Production load now runs `QuizIntegrity.requireEveryLessonQuiz` on the same lesson → quiz → questions graph `MainActivity` uses. Per-lesson Node tests fail if any lesson would produce an empty quiz.
+
 ## Remaining linguistic risk
 
 Physical-device TTS quality for æ/ø/å and French accents still needs a device pass. Content tests do not replace a native-speaker review of every Level 3 line.

@@ -10,7 +10,9 @@ Level 3 is a full production module (`module.level-3`): practical professional D
 Footer destination corrected to `https://notaguidedtour.com` (visible label `notaguidedtour.com`). The credit line remains `© Nenolink · Henrik Nielsen`. The link still opens with Android `ACTION_VIEW`. No `INTERNET` permission.
 
 Test APK: `dist/Learn-FR-DA-0.4.0-test.apk` (gitignored, 1,034,131 bytes).
-`./gradlew clean assembleDebug` succeeded. The APK contains five modules, `versionName 0.4.0`, footer `https://notaguidedtour.com`, and no `INTERNET` permission. No emulator was attached in this environment; install/runtime remain a physical-device step.
+`./gradlew clean assembleDebug` succeeded. The APK contains five modules, `versionName 0.4.0`, footer `https://notaguidedtour.com`, and no `INTERNET` permission.
+
+Empty quiz screens reported on the previous physical-device build were a leftover `ScrollView` offset, not missing questions. Every production lesson now fails fast unless it resolves to exactly three displayable questions (`QuizIntegrity`). `node --test tools/quiz-integrity.test.mjs` and `./gradlew test` walk every lesson ID through the same lesson → quiz → questions mapping `MainActivity` uses. An AndroidX `connectedAndroidTest` was not added because the app keeps `android.useAndroidX=false`.
 
 Expected linguistic totals: 5 modules, 50 lessons, 500 items, 150 quiz questions, 1206 unique IDs. Practical transport resources remain a separate collection (6 official links + collection ID). Duplicate IDs: 0. Content tests: 19 passing Node tests.
 

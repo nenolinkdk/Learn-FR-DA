@@ -2,8 +2,14 @@ import test from 'node:test';
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import { merge, validate } from './production-content.mjs';
+import { assertEveryLessonQuiz } from './quiz-integrity.mjs';
 const { result } = merge();
 test('canonical course has 1206 valid globally unique IDs', () => assert.equal(validate(result), 1206));
+test('every lesson resolves to exactly 3 quiz questions', () => {
+  const counts = assertEveryLessonQuiz(result.course, 3);
+  assert.equal(counts.lessons, 50);
+  assert.equal(counts.questions, 150);
+});
 test('production totals include Level 3', () => {
   assert.deepEqual(result.course.modules.map(m => m.id),
     ['module.level-1', 'module.level-2', 'module.level-3', 'module.children', 'module.grammar']);

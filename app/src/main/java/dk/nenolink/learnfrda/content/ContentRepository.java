@@ -52,7 +52,9 @@ public final class ContentRepository {
     }
 
     public Course loadProductionCourse() throws ContentContractException {
-        return loadCourse(PRODUCTION_ASSET);
+        Course course = loadCourse(PRODUCTION_ASSET);
+        QuizIntegrity.requireEveryLessonQuiz(course);
+        return course;
     }
 
     public Course loadCourse(String name) throws ContentContractException {
