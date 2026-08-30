@@ -283,6 +283,7 @@
                   "id": "question.level-3.contact-virksomhed",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « virksomhed » ?",
                     "target": "Hvad betyder ‘virksomhed’?"
@@ -325,6 +326,7 @@
                   "id": "question.level-3.contact-kunde",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Comment demande-t-on si quelqu’un est client ou fournisseur ?",
                     "target": "Hvordan spørger man, om nogen er kunde eller leverandør?"
@@ -368,6 +370,7 @@
                   "id": "question.level-3.contact-meeting",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quelle phrase propose un créneau de rendez-vous ?",
                     "target": "Hvilken sætning foreslår et mødetidspunkt?"
@@ -647,6 +650,7 @@
                   "id": "question.level-3.offer-tilbud",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Comment demande-t-on un devis ?",
                     "target": "Hvordan beder man om et tilbud?"
@@ -689,6 +693,7 @@
                   "id": "question.level-3.offer-timepris",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « timepris » ?",
                     "target": "Hvad betyder ‘timepris’?"
@@ -731,6 +736,7 @@
                   "id": "question.level-3.offer-prisoverslag",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quel mot désigne une estimation de prix ?",
                     "target": "Hvilket ord betyder en pris-estimation?"
@@ -1021,6 +1027,7 @@
                   "id": "question.level-3.negotiate-budget",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Comment dit-on que c’est un peu au-dessus du budget ?",
                     "target": "Hvordan siger man, at det ligger lidt over budgettet?"
@@ -1063,6 +1070,7 @@
                   "id": "question.level-3.negotiate-rabat",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « rabat » ?",
                     "target": "Hvad betyder ‘rabat’?"
@@ -1105,6 +1113,7 @@
                   "id": "question.level-3.negotiate-aftalt",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quelle phrase confirme qu’un prix a été convenu ?",
                     "target": "Hvilken sætning bekræfter, at prisen er aftalt?"
@@ -1378,6 +1387,7 @@
                   "id": "question.level-3.order-ordre",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « lægge en ordre » ?",
                     "target": "Hvad betyder ‘lægge en ordre’?"
@@ -1420,6 +1430,7 @@
                   "id": "question.level-3.order-levere",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quel verbe signifie « livrer » ?",
                     "target": "Hvilket verbum betyder ‘livrer’?"
@@ -1462,6 +1473,7 @@
                   "id": "question.level-3.order-delay",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Comment demande-t-on ce qui se passe en cas de retard ?",
                     "target": "Hvordan spørger man om forsinkelse?"
@@ -1751,6 +1763,7 @@
                   "id": "question.level-3.invoice-moms",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « Er prisen inklusive moms? » ?",
                     "target": "Hvad betyder ‘Er prisen inklusive moms?’?"
@@ -1793,6 +1806,7 @@
                   "id": "question.level-3.invoice-forfald",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « forfaldsdato » ?",
                     "target": "Hvad betyder ‘forfaldsdato’?"
@@ -1835,6 +1849,7 @@
                   "id": "question.level-3.invoice-received",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quelle phrase confirme que le paiement est arrivé ?",
                     "target": "Hvilken sætning bekræfter, at betalingen er kommet?"

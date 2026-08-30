@@ -201,6 +201,7 @@ TTS `role` is `target` or `support`; its locale must match the declared role. Or
       "id": "question.level-1.arrival-test.hello",
       "order": 1,
       "type": "single-choice",
+      "answerDisplayRole": "target",
       "prompt": {
         "support": "Choisissez la salutation danoise.",
         "target": "Vælg den danske hilsen."
@@ -222,7 +223,7 @@ TTS `role` is `target` or `support`; its locale must match the declared role. Or
 }
 ```
 
-Required quiz fields: `id`, `title`, and non-empty `questions`. Required question fields: `id`, positive `order`, `type`, `prompt`, `answers`, `explanation`, and `tags`. Version 1 supports `single-choice`; each question has at least two answers and exactly one correct answer. Each answer requires stable `id`, bilingual `text`, and boolean `correct`. Apps may shuffle a copy without changing IDs.
+Required quiz fields: `id`, `title`, and non-empty `questions`. Required question fields: `id`, positive `order`, `type`, `answerDisplayRole` (`support` or `target`), `prompt`, `answers`, `explanation`, and `tags`. `answerDisplayRole` is the generic language role shown on answer buttons before the learner answers. Bilingual `text` stays on each answer for reuse and post-answer feedback; the renderer must not paint both roles on a button. Version 1 supports `single-choice`; each question has at least two answers and exactly one correct answer. Each answer requires stable `id`, bilingual `text`, and boolean `correct`. Apps may shuffle a copy without changing IDs.
 
 ## Stable IDs and progress
 

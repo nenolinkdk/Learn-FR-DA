@@ -48,6 +48,20 @@ public class ProductionCourseQuizTest {
                 assertTrue(question.prompt.support.trim().length() > 0);
                 assertTrue(question.prompt.target.trim().length() > 0);
                 assertTrue(question.answers.size() >= 2);
+                QuizIntegrity.requireAnswerDisplayRole(question.answerDisplayRole, question.id);
+                java.util.Set<String> displayed = new java.util.HashSet<>();
+                int correct = 0;
+                for (Answer answer : question.answers) {
+                    String button = QuizIntegrity.displayedAnswerText(question, answer);
+                    assertTrue(question.id, button.trim().length() > 0);
+                    assertTrue(question.id + " duplicate displayed answer", displayed.add(button.trim()));
+                    assertTrue(question.id + " must not leak both roles",
+                            !QuizIntegrity.leaksBothRoles(answer.text, button));
+                    assertEquals(button, question.answerDisplayRole.equals("support")
+                            ? answer.text.support : answer.text.target);
+                    if (answer.correct) correct++;
+                }
+                assertEquals(question.id + ": exactly one correct answer", 1, correct);
             }
             questions += resolved.size();
         }
@@ -109,6 +123,7 @@ public class ProductionCourseQuizTest {
                         questionJson.getString("id"),
                         questionJson.getInt("order"),
                         questionJson.getString("type"),
+                        questionJson.getString("answerDisplayRole"),
                         pair(questionJson.getJSONObject("prompt")),
                         answers,
                         pair(questionJson.getJSONObject("explanation")),

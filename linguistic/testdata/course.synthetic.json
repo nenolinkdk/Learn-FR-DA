@@ -116,6 +116,7 @@
                   "id": "question.level-1.arrival-test.greeting",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Choisissez la salutation danoise du test.",
                     "target": "Vælg testens danske hilsen."
@@ -142,6 +143,7 @@
                   "id": "question.level-1.arrival-test.station",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Choisissez la question qui demande où se trouve la gare.",
                     "target": "Vælg spørgsmålet, der spørger, hvor stationen er."
@@ -258,6 +260,7 @@
                   "id": "question.children.playground-test.play",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Choisissez la question danoise pour proposer de jouer.",
                     "target": "Vælg det danske spørgsmål om at lege."
@@ -284,6 +287,7 @@
                   "id": "question.children.playground-test.stop",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Choisissez la phrase danoise qui demande d’arrêter.",
                     "target": "Vælg den danske sætning, der beder om at stoppe."

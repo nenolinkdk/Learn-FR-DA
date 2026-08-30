@@ -37,6 +37,8 @@ const cases = {
   'invalid tags': d => { d.course.modules[0].tags = ['Bad tag']; },
   'duplicate tags': d => { d.course.modules[0].tags = ['travel', 'travel']; },
   'multiple correct answers': d => { d.course.modules[0].lessons[0].quiz.questions[0].answers.forEach(a => a.correct = true); },
+  'missing answerDisplayRole': d => { delete d.course.modules[0].lessons[0].quiz.questions[0].answerDisplayRole; },
+  'invalid answerDisplayRole': d => { d.course.modules[0].lessons[0].quiz.questions[0].answerDisplayRole = 'french'; },
   'no correct answer': d => { d.course.modules[0].lessons[0].quiz.questions[0].answers.forEach(a => a.correct = false); },
   'reversed languages': d => { [d.course.languages.target, d.course.languages.support] = [d.course.languages.support, d.course.languages.target]; },
   'children audience': d => { d.course.modules[3].audience = 'general'; }

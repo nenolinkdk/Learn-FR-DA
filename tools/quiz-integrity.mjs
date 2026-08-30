@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { assertAnswerDisplay } from './quiz-display.mjs';
 
 function blank(value) {
   return typeof value !== 'string' || value.trim().length === 0;
@@ -50,6 +51,7 @@ export function assertEveryLessonQuiz(course, expectedQuestions = 3) {
           if (answer.correct) correct++;
         }
         assert.equal(correct, 1, `${question.id}: exactly one correct answer required`);
+        assertAnswerDisplay(question, question.id);
         assert.ok(Number.isInteger(question.order) && question.order > previousOrder, `${question.id}: order mismatch`);
         previousOrder = question.order;
       }

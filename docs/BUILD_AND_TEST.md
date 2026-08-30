@@ -16,9 +16,18 @@ Gradle task: `copyNamedTestApkToDist` (runs automatically after `assembleDebug`)
 Windows check after a local build:
 
 ```powershell
-Test-Path ".\dist\Learn-FR-DA-0.4.0-test.apk"
-Get-Item ".\dist\Learn-FR-DA-0.4.0-test.apk" | Select-Object FullName, Length, LastWriteTime
+Test-Path ".\dist\Learn-FR-DA-0.4.1-test.apk"
+Get-Item ".\dist\Learn-FR-DA-0.4.1-test.apk" | Select-Object FullName, Length, LastWriteTime
 ```
+
+## Test APK — 2026-08-30 (0.4.1)
+
+App version: `versionName "0.4.1"` (`versionCode` 1), `RELEASE_DATE` `30.08.2026`.
+Home/version display: `Version 0.4.1 · 30.08.2026` from `BuildConfig`.
+
+Quiz answer buttons no longer show both Danish and French. Each question declares `answerDisplayRole` (`support` or `target`). The renderer paints only that role. Bilingual answer objects stay in JSON for reuse and for the existing bilingual explanation after the learner answers. `QuizIntegrity` / `ProductionCourseQuizTest` now reject bilingual translation leakage on answer buttons.
+
+Test APK: `dist/Learn-FR-DA-0.4.1-test.apk` (gitignored). Totals unchanged: 5 modules, 50 lessons, 500 items, 150 quiz questions, 1206 unique IDs.
 
 ## Test APK — 2026-08-30 (0.4.0)
 
@@ -35,7 +44,7 @@ Test APK: `dist/Learn-FR-DA-0.4.0-test.apk` (gitignored). `assembleDebug` copies
 
 Empty quiz screens reported on the previous physical-device build were a leftover `ScrollView` offset, not missing questions. Every production lesson now fails fast unless it resolves to exactly three displayable questions (`QuizIntegrity`). `node --test tools/quiz-integrity.test.mjs` and `./gradlew test` walk every lesson ID through the same lesson → quiz → questions mapping `MainActivity` uses. An AndroidX `connectedAndroidTest` was not added because the app keeps `android.useAndroidX=false`.
 
-Expected linguistic totals: 5 modules, 50 lessons, 500 items, 150 quiz questions, 1206 unique IDs. Practical transport resources remain a separate collection (6 official links + collection ID). Duplicate IDs: 0. Content tests: 19 passing Node tests.
+Expected linguistic totals: 5 modules, 50 lessons, 500 items, 150 quiz questions, 1206 unique IDs. Practical transport resources remain a separate collection (6 official links + collection ID). Duplicate IDs: 0. Content tests include answer-display leakage checks.
 
 ## Test APK — 2026-08-29 (0.3.3)
 

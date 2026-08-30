@@ -54,6 +54,38 @@ public class QuizIntegrityTest {
         }
     }
 
+    @Test
+    public void bilingualAnswerButtonsLeakWhenSidesDiffer() {
+        ContentModels.TextPair pair = new TextPair("conditions", "betingelser");
+        assertTrue(QuizIntegrity.leaksBothRoles(pair, "betingelser\nconditions"));
+        assertTrue(!QuizIntegrity.leaksBothRoles(pair, "conditions"));
+        assertTrue(!QuizIntegrity.leaksBothRoles(pair, "betingelser"));
+        assertTrue(!QuizIntegrity.leaksBothRoles(new TextPair("pause", "pause"), "pause"));
+        assertTrue(!QuizIntegrity.leaksBothRoles(
+                new TextPair("récréation/pause", "pause"), "récréation/pause"));
+    }
+
+    @Test
+    public void missingDisplayRoleFailsIntegrity() {
+        Question question = new Question(
+                "question.noleak", 1, "single-choice", "both",
+                new TextPair("Que signifie « betingelser » ?", "Hvad betyder ‘betingelser’?"),
+                Arrays.asList(
+                        new Answer("answer.c", new TextPair("conditions", "betingelser"), true),
+                        new Answer("answer.w", new TextPair("virement", "bankoverførsel"), false)
+                ),
+                new TextPair("Explication", "Forklaring"),
+                Collections.emptyList());
+        Course course = courseWith(lesson("lesson.role", new Quiz(
+                "quiz.role", new TextPair("Quiz", "Quiz"), Collections.singletonList(question))));
+        try {
+            QuizIntegrity.requireEveryLessonQuiz(course, 1);
+            fail("invalid answerDisplayRole must fail");
+        } catch (ContentContractException expected) {
+            assertTrue(expected.getMessage().contains("answerDisplayRole"));
+        }
+    }
+
     private static List<Question> questionsForLessonIdSilent(Course course, String lessonId) {
         try {
             return QuizIntegrity.questionsForLessonId(course, lessonId);
@@ -80,7 +112,7 @@ public class QuizIntegrityTest {
         List<Question> questions = new java.util.ArrayList<>();
         for (int index = 1; index <= count; index++) {
             questions.add(new Question(
-                    "question." + index, index, "single-choice",
+                    "question." + index, index, "single-choice", "target",
                     new TextPair("Prompt FR " + index, "Prompt DA " + index),
                     Arrays.asList(
                             new Answer("answer." + index + ".c", new TextPair("Oui", "Ja"), true),

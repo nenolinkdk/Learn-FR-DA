@@ -16,8 +16,44 @@ import dk.nenolink.learnfrda.content.ContentModels.Question;
  */
 public final class QuizIntegrity {
     public static final int PRODUCTION_QUESTIONS_PER_LESSON = 3;
+    public static final String ROLE_SUPPORT = "support";
+    public static final String ROLE_TARGET = "target";
 
     private QuizIntegrity() {}
+
+    public static String requireAnswerDisplayRole(String role, String path)
+            throws ContentContractException {
+        if (!ROLE_SUPPORT.equals(role) && !ROLE_TARGET.equals(role)) {
+            throw new ContentContractException(path + ": answerDisplayRole must be support or target");
+        }
+        return role;
+    }
+
+    public static String displayedAnswerText(Question question, Answer answer)
+            throws ContentContractException {
+        requireAnswerDisplayRole(question.answerDisplayRole, question.id);
+        String text = question.displayedAnswerText(answer);
+        if (blank(text)) {
+            throw new ContentContractException(answer.id + ": empty displayed answer");
+        }
+        return text;
+    }
+
+    /**
+     * True when a rendered button would expose both sides of a bilingual pair.
+     * An exact single-role string is never a leak, even if one language contains
+     * the other as a substring (cognates such as « pause »).
+     */
+    public static boolean leaksBothRoles(ContentModels.TextPair pair, String displayed) {
+        if (pair == null || displayed == null) return true;
+        String support = pair.support == null ? "" : pair.support.trim();
+        String target = pair.target == null ? "" : pair.target.trim();
+        String shown = displayed.trim();
+        if (support.isEmpty() || target.isEmpty() || shown.isEmpty()) return true;
+        if (support.equals(target)) return false;
+        if (shown.equals(support) || shown.equals(target)) return false;
+        return shown.contains(support) && shown.contains(target);
+    }
 
     public static List<Question> questionsForLesson(Lesson lesson) {
         if (lesson == null || lesson.quiz == null || lesson.quiz.questions == null) {
@@ -100,10 +136,19 @@ public final class QuizIntegrity {
         if (question.answers == null || question.answers.size() < 2) {
             throw new ContentContractException(question.id + ": missing answer choices");
         }
+        requireAnswerDisplayRole(question.answerDisplayRole, question.id);
         int correct = 0;
+        java.util.Set<String> displayed = new java.util.HashSet<>();
         for (Answer answer : question.answers) {
             if (blank(answer.text.support) || blank(answer.text.target)) {
                 throw new ContentContractException(answer.id + ": empty answer text");
+            }
+            String button = displayedAnswerText(question, answer);
+            if (!displayed.add(button.trim())) {
+                throw new ContentContractException(question.id + ": duplicate displayed answer");
+            }
+            if (leaksBothRoles(answer.text, button)) {
+                throw new ContentContractException(answer.id + ": answer button leaks both roles");
             }
             if (answer.correct) correct++;
         }

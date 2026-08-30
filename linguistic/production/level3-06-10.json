@@ -281,6 +281,7 @@
                   "id": "question.level-3.accounts-turnover",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « omsætning » ?",
                     "target": "Hvad betyder ‘omsætning’?"
@@ -323,6 +324,7 @@
                   "id": "question.level-3.accounts-overskud",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quelle paire oppose bénéfice et perte ?",
                     "target": "Hvilket par betyder overskud og underskud?"
@@ -366,6 +368,7 @@
                   "id": "question.level-3.accounts-udgift",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « udgift » ?",
                     "target": "Hvad betyder ‘udgift’?"
@@ -643,6 +646,7 @@
                   "id": "question.level-3.invest-investere",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « investere » ?",
                     "target": "Hvad betyder ‘investere’?"
@@ -685,6 +689,7 @@
                   "id": "question.level-3.invest-finansiere",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « finansiere købet » ?",
                     "target": "Hvad betyder ‘finansiere købet’?"
@@ -727,6 +732,7 @@
                   "id": "question.level-3.invest-beslutning",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quelle phrase annonce une décision ?",
                     "target": "Hvilken sætning handler om en beslutning?"
@@ -1006,6 +1012,7 @@
                   "id": "question.level-3.lease-udleje",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « udleje » ?",
                     "target": "Hvad betyder ‘udleje’?"
@@ -1048,6 +1055,7 @@
                   "id": "question.level-3.lease-leasing",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que décrit le leasing dans cette leçon ?",
                     "target": "Hvad beskriver leasing her?"
@@ -1090,6 +1098,7 @@
                   "id": "question.level-3.lease-compare",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quelle phrase propose de comparer les solutions ?",
                     "target": "Hvilken sætning handler om at sammenligne?"
@@ -1361,6 +1370,7 @@
                   "id": "question.level-3.contract-kontrakt",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « kontrakt » ?",
                     "target": "Hvad betyder ‘kontrakt’?"
@@ -1403,6 +1413,7 @@
                   "id": "question.level-3.contract-betingelser",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « betingelser » ?",
                     "target": "Hvad betyder ‘betingelser’?"
@@ -1445,6 +1456,7 @@
                   "id": "question.level-3.contract-accept",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quelle phrase confirme l’acceptation des conditions ?",
                     "target": "Hvilken sætning bekræfter, at man accepterer betingelserne?"
@@ -1717,6 +1729,7 @@
                   "id": "question.level-3.freelance-flow",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que fait-on souvent juste après s’être mis d’accord sur le prix ?",
                     "target": "Hvad gør man ofte, når prisen er aftalt?"
@@ -1759,6 +1772,7 @@
                   "id": "question.level-3.freelance-invoice",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Quand envoie-t-on souvent la facture dans cette leçon ?",
                     "target": "Hvornår sender man ofte fakturaen her?"
@@ -1801,6 +1815,7 @@
                   "id": "question.level-3.freelance-salary",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Que dit le freelance sur son salaire ?",
                     "target": "Hvad siger freelanceren om løn?"

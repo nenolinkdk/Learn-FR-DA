@@ -405,7 +405,7 @@ public final class MainActivity extends Activity implements SpeechController.Lis
         panel(question.prompt.support + "\n" + question.prompt.target, R.color.panel);
 
         for (Answer answer : question.answers) {
-            Button option = primaryButton(answer.text.target + "\n" + answer.text.support);
+            Button option = primaryButton(question.displayedAnswerText(answer));
             option.setOnClickListener(view -> handleAnswer(answer, question));
             content.addView(option, matchWrapWithTop());
         }

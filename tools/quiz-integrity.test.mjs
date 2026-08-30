@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { merge } from './production-content.mjs';
 import { assertEveryLessonQuiz, lessonById, questionsForLessonId } from './quiz-integrity.mjs';
+import { displayedAnswerText, leaksBothRoles } from './quiz-display.mjs';
 
 const { result } = merge();
 const course = result.course;
@@ -50,4 +51,21 @@ test('fails if question text is blank', () => {
   const copy = structuredClone(course);
   copy.modules[2].lessons[0].quiz.questions[0].prompt.support = '   ';
   assert.throws(() => assertEveryLessonQuiz(copy, 3), /empty question text/);
+});
+
+test('legacy target+support buttons leak; role-based buttons do not', () => {
+  const question = course.modules[2].lessons.find(l => l.id === 'lesson.level-3.contract')
+    .quiz.questions.find(q => q.id === 'question.level-3.contract-betingelser');
+  assert.equal(question.answerDisplayRole, 'support');
+  for (const answer of question.answers) {
+    const legacy = `${answer.text.target}\n${answer.text.support}`;
+    assert.equal(leaksBothRoles(answer.text, legacy), true, answer.id);
+    assert.equal(leaksBothRoles(answer.text, displayedAnswerText(question, answer)), false, answer.id);
+  }
+});
+
+test('fails if answerDisplayRole is missing', () => {
+  const copy = structuredClone(course);
+  delete copy.modules[0].lessons[0].quiz.questions[0].answerDisplayRole;
+  assert.throws(() => assertEveryLessonQuiz(copy, 3), /answerDisplayRole/);
 });

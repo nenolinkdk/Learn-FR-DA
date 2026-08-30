@@ -323,6 +323,7 @@
                   "id": "question.level-1.arrival.exit",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Comment demande-t-on où se trouve la sortie ?",
                     "target": "Hvordan spørger man, hvor udgangen er?"
@@ -365,6 +366,7 @@
                   "id": "question.level-1.arrival.modal",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quelle phrase signifie « Vous pouvez prendre le métro » ?",
                     "target": "Hvilken sætning betyder ‘Vous pouvez prendre le métro’?"
@@ -408,6 +410,7 @@
                   "id": "question.level-1.arrival.direction",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « Ligeud og så til højre » ?",
                     "target": "Hvad betyder ‘Ligeud og så til højre’?"
@@ -739,6 +742,7 @@
                   "id": "question.level-1.airport-station.when",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Comment demande-t-on quand le train part ?",
                     "target": "Hvordan spørger man, hvornår toget kører?"
@@ -781,6 +785,7 @@
                   "id": "question.level-1.airport-station.platform",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quel mot faut-il reconnaître pour trouver la voie du train ?",
                     "target": "Hvilket ord skal man genkende for at finde togets spor?"
@@ -823,6 +828,7 @@
                   "id": "question.level-1.airport-station.delay",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « Toget er forsinket » ?",
                     "target": "Hvad betyder ‘Toget er forsinket’?"
@@ -1143,6 +1149,7 @@
                   "id": "question.level-1.public-transport.destination",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « Hvor skal du hen? » ?",
                     "target": "Hvad betyder ‘Hvor skal du hen?’?"
@@ -1185,6 +1192,7 @@
                   "id": "question.level-1.public-transport-get-off",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quel verbe signifie « descendre » d’un bus ou d’un train ?",
                     "target": "Hvilket udtryk betyder at forlade en bus eller et tog?"
@@ -1227,6 +1235,7 @@
                   "id": "question.level-1.public-transport-right",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Comment vérifiez-vous que c’est le bon bus ?",
                     "target": "Hvordan spørger man, om det er den rigtige bus?"
@@ -1545,6 +1554,7 @@
                   "id": "question.level-1.hotel-reservation",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Comment dites-vous que vous avez une réservation ?",
                     "target": "Hvordan siger man, at man har en reservation?"
@@ -1587,6 +1597,7 @@
                   "id": "question.level-1.hotel-wifi",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Comment demande-t-on le code du Wi-Fi ?",
                     "target": "Hvordan spørger man om wi-fi-koden?"
@@ -1629,6 +1640,7 @@
                   "id": "question.level-1.hotel-problem",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « Det virker ikke » ?",
                     "target": "Hvad betyder ‘Det virker ikke’?"
@@ -1936,6 +1948,7 @@
                   "id": "question.level-1.cafe-order",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quelle phrase est naturelle pour commander ?",
                     "target": "Hvilken sætning er naturlig, når man bestiller?"
@@ -1978,6 +1991,7 @@
                   "id": "question.level-1.cafe-cake",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « kanelsnegl » ?",
                     "target": "Hvad er en kanelsnegl?"
@@ -2020,6 +2034,7 @@
                   "id": "question.level-1.cafe-card",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Comment demande-t-on si l’on peut payer par carte ?",
                     "target": "Hvordan spørger man, om man kan betale med kort?"
@@ -2343,6 +2358,7 @@
                   "id": "question.level-1.restaurant-table",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Comment demande-t-on une table pour deux ?",
                     "target": "Hvordan spørger man efter et bord til to?"
@@ -2385,6 +2401,7 @@
                   "id": "question.level-1.restaurant-without",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quel mot signifie « sans » ?",
                     "target": "Hvilket ord betyder ‘sans’?"
@@ -2427,6 +2444,7 @@
                   "id": "question.level-1.restaurant-bill",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Comment demande-t-on l’addition ?",
                     "target": "Hvordan beder man om regningen?"
@@ -2746,6 +2764,7 @@
                   "id": "question.level-1.shopping-price",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Comment demande-t-on le prix ?",
                     "target": "Hvordan spørger man om prisen?"
@@ -2788,6 +2807,7 @@
                   "id": "question.level-1.shopping-receipt",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quel mot signifie « reçu » ?",
                     "target": "Hvilket ord betyder ‘reçu’?"
@@ -2830,6 +2850,7 @@
                   "id": "question.level-1.shopping-size",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « en større størrelse » ?",
                     "target": "Hvad betyder ‘en større størrelse’?"
@@ -3132,6 +3153,7 @@
                   "id": "question.level-1.directions-left",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « til venstre » ?",
                     "target": "Hvad betyder ‘til venstre’?"
@@ -3174,6 +3196,7 @@
                   "id": "question.level-1.directions-far",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Comment demande-t-on si c’est loin ?",
                     "target": "Hvordan spørger man, om der er langt?"
@@ -3216,6 +3239,7 @@
                   "id": "question.level-1.directions-walk",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « til fods » ?",
                     "target": "Hvad betyder ‘til fods’?"
@@ -3517,6 +3541,7 @@
                   "id": "question.level-1.digital-booking-perfect",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « Jeg har bestilt to billetter » ?",
                     "target": "Hvad betyder ‘Jeg har bestilt to billetter’?"
@@ -3559,6 +3584,7 @@
                   "id": "question.level-1.digital-booking-qr",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « Åbn QR-koden » ?",
                     "target": "Hvad betyder ‘Åbn QR-koden’?"
@@ -3601,6 +3627,7 @@
                   "id": "question.level-1.digital-booking-advance",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « på forhånd » ?",
                     "target": "Hvad betyder ‘på forhånd’?"
@@ -3912,6 +3939,7 @@
                   "id": "question.level-1.travel-problem-lost",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Comment dites-vous « J’ai perdu mon sac » ?",
                     "target": "Hvordan siger man ‘J’ai perdu mon sac’?"
@@ -3954,6 +3982,7 @@
                   "id": "question.level-1.travel-problem-look",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que demande « Hvordan ser tasken ud? » ?",
                     "target": "Hvad spørger ‘Hvordan ser tasken ud?’ om?"
@@ -3996,6 +4025,7 @@
                   "id": "question.level-1.travel-problem-next",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Comment demande-t-on la prochaine étape ?",
                     "target": "Hvordan spørger man, hvad man skal gøre nu?"
@@ -4326,6 +4356,7 @@
                   "id": "question.level-2.moving-in-moved",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Comment dites-vous que vous venez de vous installer ?",
                     "target": "Hvordan siger man, at man lige er flyttet?"
@@ -4368,6 +4399,7 @@
                   "id": "question.level-2.moving-in-appointment",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « bestille tid » ?",
                     "target": "Hvad betyder ‘bestille tid’?"
@@ -4410,6 +4442,7 @@
                   "id": "question.level-2.moving-in-online",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Comment demande-t-on si une démarche peut être faite en ligne ?",
                     "target": "Hvordan spørger man, om noget kan ordnes online?"
@@ -4721,6 +4754,7 @@
                   "id": "question.level-2.mitid-login",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « Jeg kan ikke logge ind » ?",
                     "target": "Hvad betyder ‘Jeg kan ikke logge ind’?"
@@ -4763,6 +4797,7 @@
                   "id": "question.level-2.mitid-security",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que ne faut-il jamais communiquer à un appelant non vérifié ?",
                     "target": "Hvad skal man aldrig give til en ukendt person, der ringer?"
@@ -4805,6 +4840,7 @@
                   "id": "question.level-2.digital-post-passive",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « Posten bliver sendt digitalt » ?",
                     "target": "Hvad betyder ‘Posten bliver sendt digitalt’?"
@@ -5111,6 +5147,7 @@
                   "id": "question.level-2.workplace-depends",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « Det afhænger af teamet » ?",
                     "target": "Hvad betyder ‘Det afhænger af teamet’?"
@@ -5153,6 +5190,7 @@
                   "id": "question.level-2.workplace-if",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quelle phrase demande la permission de poser une question si l’on ne comprend pas ?",
                     "target": "Hvilken sætning bruges, hvis man ikke forstår noget?"
@@ -5195,6 +5233,7 @@
                   "id": "question.level-2.workplace-sigtil",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « sig til » dans ce contexte ?",
                     "target": "Hvad betyder ‘sig til’ her?"
@@ -5501,6 +5540,7 @@
                   "id": "question.level-2.healthcare-appointment",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Comment demande-t-on un rendez-vous chez le médecin ?",
                     "target": "Hvordan beder man om en tid hos lægen?"
@@ -5543,6 +5583,7 @@
                   "id": "question.level-2.healthcare-passer",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « Det passer mig fint » ?",
                     "target": "Hvad betyder ‘Det passer mig fint’?"
@@ -5585,6 +5626,7 @@
                   "id": "question.level-2.healthcare-card",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quel est le mot danois pour la carte de santé ?",
                     "target": "Hvad hedder det danske sundhedskort?"
@@ -5894,6 +5936,7 @@
                   "id": "question.level-2.bank-need",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « Jeg har brug for … » ?",
                     "target": "Hvad betyder ‘Jeg har brug for …’?"
@@ -5936,6 +5979,7 @@
                   "id": "question.level-2.bank-transfer",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quel mot signifie « virement » ?",
                     "target": "Hvilket ord betyder ‘virement’?"
@@ -5978,6 +6022,7 @@
                   "id": "question.level-2.bank-recognize",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Comment demande-t-on quoi faire face à un paiement inconnu ?",
                     "target": "Hvordan spørger man om hjælp ved en ukendt betaling?"
@@ -6283,6 +6328,7 @@
                   "id": "question.level-2.commute-delay",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « toget er forsinket » ?",
                     "target": "Hvad betyder ‘toget er forsinket’?"
@@ -6325,6 +6371,7 @@
                   "id": "question.level-2.commute-valid",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quel verbe signifie « être valable » ?",
                     "target": "Hvilket verbum betyder ‘être valable’?"
@@ -6367,6 +6414,7 @@
                   "id": "question.level-2.commute-nok",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que veut dire « nok » dans « Jeg kommer nok lidt for sent » ?",
                     "target": "Hvad betyder ‘nok’ i ‘Jeg kommer nok lidt for sent’?"
@@ -6663,6 +6711,7 @@
                   "id": "question.level-2.municipality-case",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « en administrativ sag » ?",
                     "target": "Hvad betyder ‘en administrativ sag’?"
@@ -6705,6 +6754,7 @@
                   "id": "question.level-2.municipality-found",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « Jeg fandt ikke svaret » ?",
                     "target": "Hvad betyder ‘Jeg fandt ikke svaret’?"
@@ -6747,6 +6797,7 @@
                   "id": "question.level-2.municipality-remember",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « Husk at tjekke fristen » ?",
                     "target": "Hvad betyder ‘Husk at tjekke fristen’?"
@@ -7043,6 +7094,7 @@
                   "id": "question.level-2.housing-duration",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quelle phrase indique que vous habitez là depuis trois mois ?",
                     "target": "Hvilken sætning siger, at du har boet der i tre måneder?"
@@ -7085,6 +7137,7 @@
                   "id": "question.level-2.housing-turnon",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « tænde for » ?",
                     "target": "Hvad betyder ‘tænde for’?"
@@ -7127,6 +7180,7 @@
                   "id": "question.level-2.housing-causative",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « Vi får nogen til at se på det » ?",
                     "target": "Hvad betyder ‘Vi får nogen til at se på det’?"
@@ -7428,6 +7482,7 @@
                   "id": "question.level-2.social-gerne",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quelle réponse accepte volontiers une invitation ?",
                     "target": "Hvilket svar accepterer en invitation?"
@@ -7470,6 +7525,7 @@
                   "id": "question.level-2.social-lyst",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « Har du lyst til at komme med? » ?",
                     "target": "Hvad betyder ‘Har du lyst til at komme med?’?"
@@ -7512,6 +7568,7 @@
                   "id": "question.level-2.social-follow",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « følge med » dans une conversation ?",
                     "target": "Hvad betyder ‘følge med’ i en samtale?"
@@ -7829,6 +7886,7 @@
                   "id": "question.level-2.everyday-digital-through",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « betalingen er gået igennem » ?",
                     "target": "Hvad betyder ‘betalingen er gået igennem’?"
@@ -7871,6 +7929,7 @@
                   "id": "question.level-2.everyday-digital-battery",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « løbe tør for strøm » ?",
                     "target": "Hvad betyder ‘løbe tør for strøm’?"
@@ -7913,6 +7972,7 @@
                   "id": "question.level-2.everyday-digital-jo",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quelle structure danoise correspond à « plus … plus … » ?",
                     "target": "Hvilken dansk konstruktion svarer til ‘plus … plus …’?"
@@ -8215,6 +8275,7 @@
                   "id": "question.level-3.contact-virksomhed",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « virksomhed » ?",
                     "target": "Hvad betyder ‘virksomhed’?"
@@ -8257,6 +8318,7 @@
                   "id": "question.level-3.contact-kunde",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Comment demande-t-on si quelqu’un est client ou fournisseur ?",
                     "target": "Hvordan spørger man, om nogen er kunde eller leverandør?"
@@ -8300,6 +8362,7 @@
                   "id": "question.level-3.contact-meeting",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quelle phrase propose un créneau de rendez-vous ?",
                     "target": "Hvilken sætning foreslår et mødetidspunkt?"
@@ -8579,6 +8642,7 @@
                   "id": "question.level-3.offer-tilbud",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Comment demande-t-on un devis ?",
                     "target": "Hvordan beder man om et tilbud?"
@@ -8621,6 +8685,7 @@
                   "id": "question.level-3.offer-timepris",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « timepris » ?",
                     "target": "Hvad betyder ‘timepris’?"
@@ -8663,6 +8728,7 @@
                   "id": "question.level-3.offer-prisoverslag",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quel mot désigne une estimation de prix ?",
                     "target": "Hvilket ord betyder en pris-estimation?"
@@ -8953,6 +9019,7 @@
                   "id": "question.level-3.negotiate-budget",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Comment dit-on que c’est un peu au-dessus du budget ?",
                     "target": "Hvordan siger man, at det ligger lidt over budgettet?"
@@ -8995,6 +9062,7 @@
                   "id": "question.level-3.negotiate-rabat",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « rabat » ?",
                     "target": "Hvad betyder ‘rabat’?"
@@ -9037,6 +9105,7 @@
                   "id": "question.level-3.negotiate-aftalt",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quelle phrase confirme qu’un prix a été convenu ?",
                     "target": "Hvilken sætning bekræfter, at prisen er aftalt?"
@@ -9310,6 +9379,7 @@
                   "id": "question.level-3.order-ordre",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « lægge en ordre » ?",
                     "target": "Hvad betyder ‘lægge en ordre’?"
@@ -9352,6 +9422,7 @@
                   "id": "question.level-3.order-levere",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quel verbe signifie « livrer » ?",
                     "target": "Hvilket verbum betyder ‘livrer’?"
@@ -9394,6 +9465,7 @@
                   "id": "question.level-3.order-delay",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Comment demande-t-on ce qui se passe en cas de retard ?",
                     "target": "Hvordan spørger man om forsinkelse?"
@@ -9683,6 +9755,7 @@
                   "id": "question.level-3.invoice-moms",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « Er prisen inklusive moms? » ?",
                     "target": "Hvad betyder ‘Er prisen inklusive moms?’?"
@@ -9725,6 +9798,7 @@
                   "id": "question.level-3.invoice-forfald",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « forfaldsdato » ?",
                     "target": "Hvad betyder ‘forfaldsdato’?"
@@ -9767,6 +9841,7 @@
                   "id": "question.level-3.invoice-received",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quelle phrase confirme que le paiement est arrivé ?",
                     "target": "Hvilken sætning bekræfter, at betalingen er kommet?"
@@ -10050,6 +10125,7 @@
                   "id": "question.level-3.accounts-turnover",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « omsætning » ?",
                     "target": "Hvad betyder ‘omsætning’?"
@@ -10092,6 +10168,7 @@
                   "id": "question.level-3.accounts-overskud",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quelle paire oppose bénéfice et perte ?",
                     "target": "Hvilket par betyder overskud og underskud?"
@@ -10135,6 +10212,7 @@
                   "id": "question.level-3.accounts-udgift",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « udgift » ?",
                     "target": "Hvad betyder ‘udgift’?"
@@ -10412,6 +10490,7 @@
                   "id": "question.level-3.invest-investere",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « investere » ?",
                     "target": "Hvad betyder ‘investere’?"
@@ -10454,6 +10533,7 @@
                   "id": "question.level-3.invest-finansiere",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « finansiere købet » ?",
                     "target": "Hvad betyder ‘finansiere købet’?"
@@ -10496,6 +10576,7 @@
                   "id": "question.level-3.invest-beslutning",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quelle phrase annonce une décision ?",
                     "target": "Hvilken sætning handler om en beslutning?"
@@ -10775,6 +10856,7 @@
                   "id": "question.level-3.lease-udleje",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « udleje » ?",
                     "target": "Hvad betyder ‘udleje’?"
@@ -10817,6 +10899,7 @@
                   "id": "question.level-3.lease-leasing",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que décrit le leasing dans cette leçon ?",
                     "target": "Hvad beskriver leasing her?"
@@ -10859,6 +10942,7 @@
                   "id": "question.level-3.lease-compare",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quelle phrase propose de comparer les solutions ?",
                     "target": "Hvilken sætning handler om at sammenligne?"
@@ -11130,6 +11214,7 @@
                   "id": "question.level-3.contract-kontrakt",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « kontrakt » ?",
                     "target": "Hvad betyder ‘kontrakt’?"
@@ -11172,6 +11257,7 @@
                   "id": "question.level-3.contract-betingelser",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « betingelser » ?",
                     "target": "Hvad betyder ‘betingelser’?"
@@ -11214,6 +11300,7 @@
                   "id": "question.level-3.contract-accept",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quelle phrase confirme l’acceptation des conditions ?",
                     "target": "Hvilken sætning bekræfter, at man accepterer betingelserne?"
@@ -11486,6 +11573,7 @@
                   "id": "question.level-3.freelance-flow",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que fait-on souvent juste après s’être mis d’accord sur le prix ?",
                     "target": "Hvad gør man ofte, når prisen er aftalt?"
@@ -11528,6 +11616,7 @@
                   "id": "question.level-3.freelance-invoice",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Quand envoie-t-on souvent la facture dans cette leçon ?",
                     "target": "Hvornår sender man ofte fakturaen her?"
@@ -11570,6 +11659,7 @@
                   "id": "question.level-3.freelance-salary",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Que dit le freelance sur son salaire ?",
                     "target": "Hvad siger freelanceren om løn?"
@@ -11859,6 +11949,7 @@
                   "id": "q.children.meet.1",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Comment demandes-tu si tu peux participer ?",
                     "target": "Hvordan spørger du, om du må være med?"
@@ -11901,6 +11992,7 @@
                   "id": "q.children.meet.2",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « Vi spiller fodbold » ?",
                     "target": "Hvad betyder ‘Vi spiller fodbold’?"
@@ -11943,6 +12035,7 @@
                   "id": "q.children.meet.3",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Comment dis-tu que ton danois n’est pas encore très bon ?",
                     "target": "Hvordan siger du, at dit dansk ikke er så godt endnu?"
@@ -12205,6 +12298,7 @@
                   "id": "q.children.school.1",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Comment demandes-tu à quelqu’un de répéter ?",
                     "target": "Hvordan beder du nogen gentage?"
@@ -12247,6 +12341,7 @@
                   "id": "q.children.school.2",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « pause » en danois ?",
                     "target": "Hvad betyder ‘pause’?"
@@ -12289,6 +12384,7 @@
                   "id": "q.children.school.3",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « Om ti minutter » ?",
                     "target": "Hvad betyder ‘Om ti minutter’?"
@@ -12559,6 +12655,7 @@
                   "id": "q.children.lost.1",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Comment dis-tu que tu t’es perdu ?",
                     "target": "Hvordan siger du, at du er blevet væk?"
@@ -12601,6 +12698,7 @@
                   "id": "q.children.lost.2",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Comment demandes-tu de l’aide pour téléphoner ?",
                     "target": "Hvordan beder du om hjælp til at ringe?"
@@ -12643,6 +12741,7 @@
                   "id": "q.children.lost.3",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « Bliv her » ?",
                     "target": "Hvad betyder ‘Bliv her’?"
@@ -12900,6 +12999,7 @@
                   "id": "q.children.shop.1",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Comment demandes-tu le prix ?",
                     "target": "Hvordan spørger du om prisen?"
@@ -12942,6 +13042,7 @@
                   "id": "q.children.shop.2",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Comment commandes-tu poliment quelque chose ?",
                     "target": "Hvordan bestiller du noget på en venlig måde?"
@@ -12984,6 +13085,7 @@
                   "id": "q.children.shop.3",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « Nej tak » ?",
                     "target": "Hvad betyder ‘Nej tak’?"
@@ -13249,6 +13351,7 @@
                   "id": "q.children.library.1",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Comment demandes-tu où sont les livres pour enfants ?",
                     "target": "Hvordan spørger du, hvor børnebøgerne er?"
@@ -13291,6 +13394,7 @@
                   "id": "q.children.library.2",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quel verbe signifie « emprunter » ?",
                     "target": "Hvilket verbum betyder ‘emprunter’?"
@@ -13333,6 +13437,7 @@
                   "id": "q.children.library.3",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Comment demandes-tu s’il y a du Wi-Fi ?",
                     "target": "Hvordan spørger du, om der er wi-fi?"
@@ -13589,6 +13694,7 @@
                   "id": "q.children.swimming.1",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Comment demandes-tu la permission de nager dans un bassin ?",
                     "target": "Hvordan spørger du om lov til at svømme i et bassin?"
@@ -13631,6 +13737,7 @@
                   "id": "q.children.swimming.2",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « dybt » ?",
                     "target": "Hvad betyder ‘dybt’?"
@@ -13673,6 +13780,7 @@
                   "id": "q.children.swimming.3",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Comment dis-tu que tu as besoin d’aide ?",
                     "target": "Hvordan siger du, at du har brug for hjælp?"
@@ -13935,6 +14043,7 @@
                   "id": "q.children.transport.1",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « stå af » ?",
                     "target": "Hvad betyder ‘stå af’?"
@@ -13977,6 +14086,7 @@
                   "id": "q.children.transport.2",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Comment demandes-tu si c’est le bon bus ?",
                     "target": "Hvordan spørger du, om det er den rigtige bus?"
@@ -14019,6 +14129,7 @@
                   "id": "q.children.transport.3",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « forsinket » ?",
                     "target": "Hvad betyder ‘forsinket’?"
@@ -14284,6 +14395,7 @@
                   "id": "q.children.internet.1",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que ne dois-tu pas donner à quelqu’un en ligne ?",
                     "target": "Hvad skal du ikke give til nogen online?"
@@ -14326,6 +14438,7 @@
                   "id": "q.children.internet.2",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « Spillet virker ikke » ?",
                     "target": "Hvad betyder ‘Spillet virker ikke’?"
@@ -14368,6 +14481,7 @@
                   "id": "q.children.internet.3",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Que fais-tu si un inconnu te demande des informations privées ?",
                     "target": "Hvad gør du, hvis en ukendt spørger om private oplysninger?"
@@ -14619,6 +14733,7 @@
                   "id": "q.children.clothes.1",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « Det blæser » ?",
                     "target": "Hvad betyder ‘Det blæser’?"
@@ -14661,6 +14776,7 @@
                   "id": "q.children.clothes.2",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quel mot signifie « maillot de bain » au sens général ?",
                     "target": "Hvilket ord betyder badetøj?"
@@ -14703,6 +14819,7 @@
                   "id": "q.children.clothes.3",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « i stedet » ?",
                     "target": "Hvad betyder ‘i stedet’?"
@@ -14970,6 +15087,7 @@
                   "id": "q.children.emergency.1",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Comment appelles-tu immédiatement à l’aide ?",
                     "target": "Hvordan kalder du hurtigt på hjælp?"
@@ -15012,6 +15130,7 @@
                   "id": "q.children.emergency.2",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que signifie « Han har ondt i benet » ?",
                     "target": "Hvad betyder ‘Han har ondt i benet’?"
@@ -15054,6 +15173,7 @@
                   "id": "q.children.emergency.3",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quel est le numéro d’urgence danois pour une situation aiguë ?",
                     "target": "Hvad er alarmnummeret i Danmark ved en akut nødsituation?"
@@ -15371,6 +15491,7 @@
                   "id": "question.grammar.pronouns-present.1",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quel pronom signifie « nous » ?",
                     "target": "Hvilket pronomen betyder ‘nous’?"
@@ -15413,6 +15534,7 @@
                   "id": "question.grammar.pronouns-present.2",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quelle phrase est correcte avec « du » ?",
                     "target": "Hvilken sætning er korrekt med ‘du’?"
@@ -15455,6 +15577,7 @@
                   "id": "question.grammar.pronouns-present.3",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quel pronom danois correspond souvent à « on » ?",
                     "target": "Hvilket dansk pronomen svarer ofte til ‘on’?"
@@ -15756,6 +15879,7 @@
                   "id": "question.grammar.nouns.1",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quelle est la forme définie de « en billet » ?",
                     "target": "Hvad er bestemt form af ‘en billet’?"
@@ -15798,6 +15922,7 @@
                   "id": "question.grammar.nouns.2",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quelle forme est correcte ?",
                     "target": "Hvilken form er korrekt?"
@@ -15840,6 +15965,7 @@
                   "id": "question.grammar.nouns.3",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quelle forme signifie « les billets » ?",
                     "target": "Hvilken form betyder ‘les billets’?"
@@ -16144,6 +16270,7 @@
                   "id": "question.grammar.word-order.1",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quelle phrase est correcte ?",
                     "target": "Hvilken sætning er korrekt?"
@@ -16186,6 +16313,7 @@
                   "id": "question.grammar.word-order.2",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quelle phrase principale place correctement « ikke » ?",
                     "target": "Hvilken hovedsætning placerer ‘ikke’ korrekt?"
@@ -16228,6 +16356,7 @@
                   "id": "question.grammar.word-order.3",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": {
                     "support": "Que se passe-t-il si « I morgen » vient en premier ?",
                     "target": "Hvad sker der, hvis ‘I morgen’ står først?"
@@ -16529,6 +16658,7 @@
                   "id": "question.grammar.questions.1",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quel mot signifie « où » ?",
                     "target": "Hvilket spørgeord betyder ‘où’?"
@@ -16571,6 +16701,7 @@
                   "id": "question.grammar.questions.2",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quelle question oui/non est correcte ?",
                     "target": "Hvilket ja/nej-spørgsmål er korrekt?"
@@ -16613,6 +16744,7 @@
                   "id": "question.grammar.questions.3",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quel mot signifie « pourquoi » ?",
                     "target": "Hvilket ord betyder ‘pourquoi’?"
@@ -16920,6 +17052,7 @@
                   "id": "question.grammar.modals.1",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quel modal sert souvent à demander la permission ?",
                     "target": "Hvilket modalverbum bruges ofte til at spørge om lov?"
@@ -16962,6 +17095,7 @@
                   "id": "question.grammar.modals.2",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quelle phrase signifie « Je ne peux pas me connecter » ?",
                     "target": "Hvilken sætning betyder ‘Je ne peux pas me connecter’?"
@@ -17004,6 +17138,7 @@
                   "id": "question.grammar.modals.3",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quel modal exprime souvent un conseil ?",
                     "target": "Hvilket modalverbum udtrykker ofte et råd?"
@@ -17307,6 +17442,7 @@
                   "id": "question.grammar.past-perfect.1",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quel est le passé de « være » ?",
                     "target": "Hvad er datid af ‘være’?"
@@ -17349,6 +17485,7 @@
                   "id": "question.grammar.past-perfect.2",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quelle phrase est au parfait ?",
                     "target": "Hvilken sætning står i førnutid?"
@@ -17391,6 +17528,7 @@
                   "id": "question.grammar.past-perfect.3",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quelle forme signifie « je n’ai pas encore reçu » ?",
                     "target": "Hvilken form betyder ‘je n’ai pas encore reçu’?"
@@ -17696,6 +17834,7 @@
                   "id": "question.grammar.subordinate.1",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quelle phrase a l’ordre correct dans la subordonnée ?",
                     "target": "Hvilken sætning har korrekt ordstilling i ledsætningen?"
@@ -17738,6 +17877,7 @@
                   "id": "question.grammar.subordinate.2",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quel mot introduit souvent une condition ?",
                     "target": "Hvilket ord indleder ofte en betingelse?"
@@ -17780,6 +17920,7 @@
                   "id": "question.grammar.subordinate.3",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quel mot utilise-t-on souvent pour une question indirecte oui/non ?",
                     "target": "Hvilket ord bruges ofte i et indirekte ja/nej-spørgsmål?"
@@ -18083,6 +18224,7 @@
                   "id": "question.grammar.prepositions.1",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quelle expression signifie « au Danemark » ?",
                     "target": "Hvilket udtryk betyder ‘au Danemark’?"
@@ -18125,6 +18267,7 @@
                   "id": "question.grammar.prepositions.2",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quelle expression signifie « attendre le train » ?",
                     "target": "Hvilket udtryk betyder ‘attendre le train’?"
@@ -18167,6 +18310,7 @@
                   "id": "question.grammar.prepositions.3",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Comment dit-on « en train » comme moyen de transport ?",
                     "target": "Hvordan siger man ‘en train’ som transportmiddel?"
@@ -18470,6 +18614,7 @@
                   "id": "question.grammar.adjectives.1",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quelle forme convient avec « et hotel » ?",
                     "target": "Hvilken form passer til ‘et hotel’?"
@@ -18512,6 +18657,7 @@
                   "id": "question.grammar.adjectives.2",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quel est le comparatif de « billig » ?",
                     "target": "Hvad er komparativ af ‘billig’?"
@@ -18554,6 +18700,7 @@
                   "id": "question.grammar.adjectives.3",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quel mot signifie « que » dans une comparaison ?",
                     "target": "Hvilket ord betyder ‘que’ i en sammenligning?"
@@ -18860,6 +19007,7 @@
                   "id": "question.grammar.everyday-patterns.1",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Comment dit-on poliment « je voudrais » ?",
                     "target": "Hvordan udtrykker man ofte høfligt ‘je voudrais’?"
@@ -18902,6 +19050,7 @@
                   "id": "question.grammar.everyday-patterns.2",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Quelle construction signifie « avoir besoin de » ?",
                     "target": "Hvilken konstruktion betyder ‘avoir besoin de’?"
@@ -18944,6 +19093,7 @@
                   "id": "question.grammar.everyday-patterns.3",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": {
                     "support": "Comment se construit « plus … plus … » ?",
                     "target": "Hvordan konstrueres ‘plus … plus …’?"

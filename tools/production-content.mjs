@@ -49,7 +49,7 @@ export function validate(doc, file='document') {
       if(Object.hasOwn(l,'quiz')) {
         const q=l.quiz,qp=lp+'.quiz';obj(q,qp,['id','title','questions']);id(q.id,qp);pair(q.title,qp+'.title');ordered(q.questions,qp+'.questions');check(q.questions.length,qp,'empty quiz');
         for(const question of q.questions) {
-          const p=qp+'.'+question.id;obj(question,p,['id','order','type','prompt','answers','explanation','tags']);id(question.id,p);check(question.type==='single-choice',p,'invalid question type');pair(question.prompt,p+'.prompt');pair(question.explanation,p+'.explanation');tags(question.tags,p+'.tags');array(question.answers,p+'.answers');check(question.answers.length>=2,p,'too few answers');
+          const p=qp+'.'+question.id;obj(question,p,['id','order','type','answerDisplayRole','prompt','answers','explanation','tags']);id(question.id,p);check(question.type==='single-choice',p,'invalid question type');check(['support','target'].includes(question.answerDisplayRole),p,'answerDisplayRole must be support or target');pair(question.prompt,p+'.prompt');pair(question.explanation,p+'.explanation');tags(question.tags,p+'.tags');array(question.answers,p+'.answers');check(question.answers.length>=2,p,'too few answers');
           for(const a of question.answers) {obj(a,p+'.'+a.id,['id','text','correct']);id(a.id,p+'.'+a.id);pair(a.text,p+'.'+a.id+'.text');check(typeof a.correct==='boolean',p,'correct must be boolean');}
           check(question.answers.filter(a=>a.correct).length===1,p,'exactly one correct answer required');
         }
