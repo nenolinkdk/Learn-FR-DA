@@ -27,7 +27,7 @@ Home/version display: `Version 0.4.1 · 30.08.2026` from `BuildConfig`.
 
 Quiz answer buttons no longer show both Danish and French. Each question declares `answerDisplayRole` (`support` or `target`). The renderer paints only that role. Bilingual answer objects stay in JSON for reuse and for the existing bilingual explanation after the learner answers. `QuizIntegrity` / `ProductionCourseQuizTest` now reject bilingual translation leakage on answer buttons.
 
-Test APK: `dist/Learn-FR-DA-0.4.1-test.apk` (gitignored). Totals unchanged: 5 modules, 50 lessons, 500 items, 150 quiz questions, 1206 unique IDs.
+Test APK: `dist/Learn-FR-DA-0.4.1-test.apk` (gitignored, 1,037,711 bytes). `./gradlew clean assembleDebug` copies `app/build/outputs/apk/debug/app-debug.apk` to that named file. Totals unchanged: 5 modules, 50 lessons, 500 items, 150 quiz questions, 1206 unique IDs. `node --test` and `./gradlew test` pass, including answer-display leakage checks.
 
 ## Test APK — 2026-08-30 (0.4.0)
 
