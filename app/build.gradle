@@ -30,8 +30,8 @@ android {
 }
 
 dependencies {
-    implementation project(":nenoling-engine")
-    implementation project(":nenoling-shell")
+    implementation project(":engine")
+    implementation project(":app-shell")
     testImplementation "junit:junit:4.13.2"
     testImplementation "org.json:json:20240303"
 }
