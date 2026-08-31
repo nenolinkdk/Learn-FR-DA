@@ -58,6 +58,7 @@ public final class MainActivity extends Activity implements SpeechController.Lis
     private int questionIndex;
     private int quizScore;
     private boolean questionAnswered;
+    private List<Question> quizQuestions = Collections.emptyList();
     private List<Answer> displayedAnswers = Collections.emptyList();
     private Screen screen = Screen.MODULES;
     private Screen resourcesReturn = Screen.MODULES;
@@ -87,12 +88,10 @@ public final class MainActivity extends Activity implements SpeechController.Lis
         appTitle.setGravity(Gravity.CENTER);
         root.addView(appTitle, matchWrap());
 
-        TextView version = text(
-                getString(R.string.app_version_line, BuildConfig.VERSION_NAME, BuildConfig.RELEASE_DATE),
-                11, R.color.muted, false);
-        version.setGravity(Gravity.CENTER);
-        version.setPadding(0, dp(2), 0, dp(4));
-        root.addView(version, matchWrap());
+        TextView intro = text(getString(R.string.app_intro), 13, R.color.muted, false);
+        intro.setGravity(Gravity.CENTER);
+        intro.setPadding(dp(8), dp(4), dp(8), dp(6));
+        root.addView(intro, matchWrap());
 
         scroll = new ScrollView(this);
         scroll.setFillViewport(true);
@@ -127,6 +126,13 @@ public final class MainActivity extends Activity implements SpeechController.Lis
         link.setFocusable(true);
         link.setOnClickListener(view -> openExternalUrl(getString(R.string.footer_link_url)));
         bar.addView(link, matchWrap());
+
+        TextView version = text(
+                getString(R.string.app_version_line, BuildConfig.VERSION_NAME, BuildConfig.RELEASE_DATE),
+                10, R.color.muted, false);
+        version.setGravity(Gravity.CENTER);
+        version.setPadding(0, dp(3), 0, 0);
+        bar.addView(version, matchWrap());
         return bar;
     }
 
@@ -147,7 +153,6 @@ public final class MainActivity extends Activity implements SpeechController.Lis
         footer.setVisibility(View.VISIBLE);
         clear();
         heading(getString(R.string.modules_title));
-        centered(getString(R.string.modules_intro));
 
         for (Module module : orderedModules()) {
             String progressText = moduleProgress(module);
@@ -381,10 +386,13 @@ public final class MainActivity extends Activity implements SpeechController.Lis
 
     private void startQuiz() {
         if (selectedLesson == null || selectedLesson.quiz == null) return;
-        if (QuizIntegrity.questionsForLesson(selectedLesson).isEmpty()) {
+        List<Question> questions = QuizIntegrity.questionsForLesson(selectedLesson);
+        if (questions.isEmpty()) {
             showFatalError(selectedLesson.id + ": quiz has no questions");
             return;
         }
+        quizQuestions = new ArrayList<>(questions);
+        Collections.shuffle(quizQuestions);
         questionIndex = 0;
         quizScore = 0;
         questionAnswered = false;
@@ -394,18 +402,17 @@ public final class MainActivity extends Activity implements SpeechController.Lis
 
     private void showQuestion() {
         Quiz quiz = selectedLesson.quiz;
-        List<Question> questions = QuizIntegrity.questionsForLesson(selectedLesson);
-        if (questionIndex >= questions.size()) {
+        if (questionIndex >= quizQuestions.size()) {
             showQuizResult();
             return;
         }
         screen = Screen.QUIZ;
         questionAnswered = false;
-        Question question = questions.get(questionIndex);
+        Question question = quizQuestions.get(questionIndex);
         clear();
         backButton(() -> showLessonOverview(selectedLesson));
         heading(quiz.title.support);
-        status("Question " + (questionIndex + 1) + " sur " + questions.size());
+        status("Question " + (questionIndex + 1) + " sur " + quizQuestions.size());
         panel(question.prompt.support + "\n" + question.prompt.target, R.color.panel);
 
         displayedAnswers = AnswerOrder.shuffleAnswers(question.answers);
@@ -437,9 +444,9 @@ public final class MainActivity extends Activity implements SpeechController.Lis
         screen = Screen.QUIZ_RESULT;
         Quiz quiz = selectedLesson.quiz;
         String progressId = progress.progressId(course.id, selectedModule.id, selectedLesson.id, quiz.id);
-        progress.saveQuizResult(progressId, quizScore, quiz.questions.size());
+        progress.saveQuizResult(progressId, quizScore, quizQuestions.size());
         clear();
-        heading(getString(R.string.quiz_result, quizScore, quiz.questions.size()));
+        heading(getString(R.string.quiz_result, quizScore, quizQuestions.size()));
         status(getString(R.string.quiz_saved));
         Button repeat = primaryButton(getString(R.string.repeat_quiz));
         repeat.setOnClickListener(view -> startQuiz());
