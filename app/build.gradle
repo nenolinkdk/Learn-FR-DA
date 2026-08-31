@@ -11,11 +11,11 @@ android {
     }
 
     defaultConfig {
-        applicationId "dk.nenolink.learnfrda.gate3test"
+        applicationId "dk.nenolink.learnfrda.gate3test2"
         minSdk 23
         targetSdk 35
         versionCode 1
-        versionName "0.5.0-gate3"
+        versionName "0.5.0-gate3-test2"
         buildConfigField "String", "RELEASE_DATE", "\"31.08.2026\""
     }
 
