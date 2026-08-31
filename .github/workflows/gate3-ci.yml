@@ -1,0 +1,31 @@
+name: Learn-FR-DA Gate 3 CI
+
+on:
+  push:
+    branches: [integration/nenoling-template-gate3]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '9.6.1'
+      - name: Engine tests
+        run: gradle :engine:testDebugUnitTest
+      - name: Shell tests
+        run: gradle :app-shell:testDebugUnitTest
+      - name: Build Gate 3 APK
+        run: gradle :app:assembleDebug
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Learn-FR-DA-0.5.0-gate3-test
+          path: app/build/outputs/apk/debug/app-debug.apk
