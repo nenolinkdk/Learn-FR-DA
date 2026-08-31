@@ -15,8 +15,8 @@ android {
         minSdk 23
         targetSdk 35
         versionCode 1
-        versionName "0.4.2"
-        buildConfigField "String", "RELEASE_DATE", "\"30.08.2026\""
+        versionName "0.5.0-gate3"
+        buildConfigField "String", "RELEASE_DATE", "\"31.08.2026\""
     }
 
     sourceSets {
@@ -30,6 +30,8 @@ android {
 }
 
 dependencies {
+    implementation project(":nenoling-engine")
+    implementation project(":nenoling-shell")
     testImplementation "junit:junit:4.13.2"
     testImplementation "org.json:json:20240303"
 }
