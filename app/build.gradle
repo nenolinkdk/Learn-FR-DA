@@ -2,6 +2,19 @@ plugins {
     id "com.android.application"
 }
 
+def signingValue = { String name ->
+    def envValue = System.getenv(name)
+    if (envValue != null && !envValue.trim().isEmpty()) return envValue
+    return project.findProperty(name)
+}
+
+def releaseKeystoreFile = signingValue("NENOLING_KEYSTORE_FILE")
+def releaseKeystorePassword = signingValue("NENOLING_KEYSTORE_PASSWORD")
+def releaseKeyAlias = signingValue("NENOLING_KEY_ALIAS")
+def releaseKeyPassword = signingValue("NENOLING_KEY_PASSWORD")
+def hasReleaseSigning = [releaseKeystoreFile, releaseKeystorePassword, releaseKeyAlias, releaseKeyPassword]
+        .every { it != null && !it.toString().trim().isEmpty() }
+
 android {
     namespace "dk.nenolink.learnfrda"
     compileSdk 35
@@ -17,6 +30,26 @@ android {
         versionCode 7
         versionName "0.5.2"
         buildConfigField "String", "RELEASE_DATE", "\"31.08.2026\""
+    }
+
+    if (hasReleaseSigning) {
+        signingConfigs {
+            release {
+                storeFile file(releaseKeystoreFile)
+                storePassword releaseKeystorePassword
+                keyAlias releaseKeyAlias
+                keyPassword releaseKeyPassword
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            if (hasReleaseSigning) {
+                signingConfig signingConfigs.release
+            }
+        }
     }
 
     sourceSets {
