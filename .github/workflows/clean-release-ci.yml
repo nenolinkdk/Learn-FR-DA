@@ -3,7 +3,7 @@ name: Learn-FR-DA Clean Release CI
 on:
   push:
     branches:
-      - release/clean-0.5.0
+      - release/clean-0.5.2
   pull_request:
     branches:
       - main
@@ -29,12 +29,12 @@ jobs:
       - name: Unit tests
         run: gradle testDebugUnitTest
 
-      - name: Build clean APK
+      - name: Build unsigned verification APK
         run: gradle assembleDebug
 
-      - name: Upload clean APK
+      - name: Upload verification APK
         uses: actions/upload-artifact@v4
         with:
-          name: Learn-FR-DA-0.5.1-clean
+          name: Learn-FR-DA-0.5.2-verification
           path: app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
