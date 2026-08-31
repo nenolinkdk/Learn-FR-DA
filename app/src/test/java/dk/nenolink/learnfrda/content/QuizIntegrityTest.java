@@ -1,0 +1,126 @@
+package dk.nenolink.learnfrda.content;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+
+import org.junit.Test;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+import dk.nenolink.learnfrda.content.ContentModels.Answer;
+import dk.nenolink.learnfrda.content.ContentModels.Course;
+import dk.nenolink.learnfrda.content.ContentModels.Language;
+import dk.nenolink.learnfrda.content.ContentModels.Lesson;
+import dk.nenolink.learnfrda.content.ContentModels.Module;
+import dk.nenolink.learnfrda.content.ContentModels.Question;
+import dk.nenolink.learnfrda.content.ContentModels.Quiz;
+import dk.nenolink.learnfrda.content.ContentModels.SpeechDefaults;
+import dk.nenolink.learnfrda.content.ContentModels.TextPair;
+
+public class QuizIntegrityTest {
+    @Test
+    public void lessonIdResolvesToThreeQuestions() throws Exception {
+        Course course = courseWith(lesson("lesson.one", quizWith(3)));
+        assertEquals(3, QuizIntegrity.questionsForLessonId(course, "lesson.one").size());
+        QuizIntegrity.requireEveryLessonQuiz(course);
+    }
+
+    @Test
+    public void emptyQuizFailsIntegrity() {
+        Course course = courseWith(lesson("lesson.empty", quizWith(0)));
+        assertTrue(questionsForLessonIdSilent(course, "lesson.empty").isEmpty());
+        try {
+            QuizIntegrity.requireEveryLessonQuiz(course);
+            fail("empty quiz must fail");
+        } catch (ContentContractException expected) {
+            assertTrue(expected.getMessage().contains("lesson.empty"));
+        }
+    }
+
+    @Test
+    public void missingQuizFailsIntegrity() {
+        Course course = courseWith(new Lesson(
+                "lesson.none", "module.one", 1,
+                new TextPair("T", "T"), new TextPair("S", "S"),
+                Collections.emptyList(), Collections.emptyList(), null));
+        try {
+            QuizIntegrity.requireEveryLessonQuiz(course);
+            fail("missing quiz must fail");
+        } catch (ContentContractException expected) {
+            assertTrue(expected.getMessage().contains("lesson.none"));
+        }
+    }
+
+    @Test
+    public void bilingualAnswerButtonsLeakWhenSidesDiffer() {
+        ContentModels.TextPair pair = new TextPair("conditions", "betingelser");
+        assertTrue(QuizIntegrity.leaksBothRoles(pair, "betingelser\nconditions"));
+        assertTrue(!QuizIntegrity.leaksBothRoles(pair, "conditions"));
+        assertTrue(!QuizIntegrity.leaksBothRoles(pair, "betingelser"));
+        assertTrue(!QuizIntegrity.leaksBothRoles(new TextPair("pause", "pause"), "pause"));
+        assertTrue(!QuizIntegrity.leaksBothRoles(
+                new TextPair("récréation/pause", "pause"), "récréation/pause"));
+    }
+
+    @Test
+    public void missingDisplayRoleFailsIntegrity() {
+        Question question = new Question(
+                "question.noleak", 1, "single-choice", "both",
+                new TextPair("Que signifie « betingelser » ?", "Hvad betyder ‘betingelser’?"),
+                Arrays.asList(
+                        new Answer("answer.c", new TextPair("conditions", "betingelser"), true),
+                        new Answer("answer.w", new TextPair("virement", "bankoverførsel"), false)
+                ),
+                new TextPair("Explication", "Forklaring"),
+                Collections.emptyList());
+        Course course = courseWith(lesson("lesson.role", new Quiz(
+                "quiz.role", new TextPair("Quiz", "Quiz"), Collections.singletonList(question))));
+        try {
+            QuizIntegrity.requireEveryLessonQuiz(course, 1);
+            fail("invalid answerDisplayRole must fail");
+        } catch (ContentContractException expected) {
+            assertTrue(expected.getMessage().contains("answerDisplayRole"));
+        }
+    }
+
+    private static List<Question> questionsForLessonIdSilent(Course course, String lessonId) {
+        try {
+            return QuizIntegrity.questionsForLessonId(course, lessonId);
+        } catch (ContentContractException exception) {
+            return Collections.emptyList();
+        }
+    }
+
+    private static Course courseWith(Lesson lesson) {
+        Module module = new Module("module.one", "level", 1, "general",
+                new TextPair("M", "M"), Collections.emptyList(), Collections.singletonList(lesson));
+        return new Course(1, "test", "course.fr-da", "fr-FR",
+                new Language("fr", "fr-FR"), new Language("da", "da-DK"),
+                new SpeechDefaults("target", "da-DK", "fr-FR"),
+                new TextPair("C", "C"), Collections.singletonList(module));
+    }
+
+    private static Lesson lesson(String id, Quiz quiz) {
+        return new Lesson(id, "module.one", 1, new TextPair("L", "L"), new TextPair("S", "S"),
+                Collections.emptyList(), Collections.emptyList(), quiz);
+    }
+
+    private static Quiz quizWith(int count) {
+        List<Question> questions = new java.util.ArrayList<>();
+        for (int index = 1; index <= count; index++) {
+            questions.add(new Question(
+                    "question." + index, index, "single-choice", "target",
+                    new TextPair("Prompt FR " + index, "Prompt DA " + index),
+                    Arrays.asList(
+                            new Answer("answer." + index + ".c", new TextPair("Oui", "Ja"), true),
+                            new Answer("answer." + index + ".w", new TextPair("Non", "Nej"), false)
+                    ),
+                    new TextPair("Explication", "Forklaring"),
+                    Collections.emptyList()));
+        }
+        return new Quiz("quiz.one", new TextPair("Quiz", "Quiz"), questions);
+    }
+}

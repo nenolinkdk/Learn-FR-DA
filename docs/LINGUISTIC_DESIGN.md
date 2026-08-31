@@ -35,8 +35,10 @@ numbers and dates - pronunciation and reduced spoken forms
 
 Tourist material should be polite, simple and usable. Work/living
 material may gradually include more everyday and workplace register.
-Children's material must sound natural for children and remain clear in
-safety situations.
+Level 3 uses a contemporary professional register for offers, prices,
+invoices and everyday business talk; it is language training, not
+financial or legal advice. Children's material must sound natural for
+children and remain clear in safety situations.
 
 Dialogue and practical spoken French should sound like language a
 French speaker would naturally use or recognise. Grammar examples and

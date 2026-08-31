@@ -124,12 +124,12 @@ Required: `id`, `type`, `audience`, `title`, `tags`, and `lessons`.
 
 Allowed types:
 
-- `level`: requires `level` equal to `1` or `2`
+- `level`: requires `level` equal to `1`, `2` or `3`
 - `children`: requires `audience: "children"` and omits `level`
 - `grammar`: standalone grammar reference/practice
 - `quiz`: standalone cross-lesson quiz
 
-Other modules use `audience: "general"`. Reserved production IDs are `module.level-1`, `module.level-2`, `module.children`, `module.grammar`, and `module.quiz`. A small fixture need not contain every module.
+Other modules use `audience: "general"`. Reserved production IDs are `module.level-1`, `module.level-2`, `module.level-3`, `module.children`, `module.grammar`, and `module.quiz`. A small fixture need not contain every module. Level 3 is adult professional/business Danish; it still uses `audience: "general"` and is identified by `type`/`level`, not by title.
 
 ## Lesson object
 
@@ -201,6 +201,7 @@ TTS `role` is `target` or `support`; its locale must match the declared role. Or
       "id": "question.level-1.arrival-test.hello",
       "order": 1,
       "type": "single-choice",
+      "answerDisplayRole": "target",
       "prompt": {
         "support": "Choisissez la salutation danoise.",
         "target": "Vælg den danske hilsen."
@@ -222,7 +223,7 @@ TTS `role` is `target` or `support`; its locale must match the declared role. Or
 }
 ```
 
-Required quiz fields: `id`, `title`, and non-empty `questions`. Required question fields: `id`, positive `order`, `type`, `prompt`, `answers`, `explanation`, and `tags`. Version 1 supports `single-choice`; each question has at least two answers and exactly one correct answer. Each answer requires stable `id`, bilingual `text`, and boolean `correct`. Apps may shuffle a copy without changing IDs.
+Required quiz fields: `id`, `title`, and non-empty `questions`. Required question fields: `id`, positive `order`, `type`, `answerDisplayRole` (`support` or `target`), `prompt`, `answers`, `explanation`, and `tags`. `answerDisplayRole` is the generic language role shown on answer buttons before the learner answers. Bilingual `text` stays on each answer for reuse and post-answer feedback; the renderer must not paint both roles on a button. Version 1 supports `single-choice`; each question has at least two answers and exactly one correct answer. Each answer requires stable `id`, bilingual `text`, and boolean `correct`. Apps may shuffle a copy without changing IDs.
 
 ## Stable IDs and progress
 
