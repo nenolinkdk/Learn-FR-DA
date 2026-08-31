@@ -1,0 +1,3 @@
+[submodule "vendor/nenoling-app"]
+	path = vendor/nenoling-app
+	url = https://github.com/nenolinkdk/nenoling-app.git
