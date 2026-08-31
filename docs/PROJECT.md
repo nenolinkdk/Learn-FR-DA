@@ -45,6 +45,14 @@ Ten lessons for longer stays. Themes include home/neighbourhood,
 shopping, workplace, appointments, health, public services,
 MitID/Digital Post, banking/payment, commuting, and social life.
 
+### Level 3 --- Working and doing business in Denmark
+
+Practical professional Danish for French-speaking users working,
+freelancing or doing business in Denmark. Ten lessons, 100 items and
+30 quiz questions. The module integrates 50 core business terms in
+situations (offers, prices, invoices, delivery, simple costs and
+financing) without being an MBA, accounting or legal course.
+
 ### Children / Enfants
 
 A separate module designed for children rather than a simplified copy of
@@ -102,7 +110,7 @@ repeat-after-me activities.
 ## 8. Data
 
 Initial content files are expected to include: - level1.json -
-level2.json - children.json - grammar.json - quiz.json
+level2.json - level3.json - children.json - grammar.json - quiz.json
 
 Possible later files: - vocabulary.json - culture.json
 
@@ -128,8 +136,8 @@ the system browser; the app itself requests no `INTERNET` permission.
 
 ## 11. Definition of first release
 
-Version 1 should contain: - French UI - Danish target content - Level 1
-and Level 2 - Children module - Grammar - Quizzes - Danish TTS -
+Version 1 should contain: - French UI - Danish target content - Level 1,
+Level 2 and Level 3 - Children module - Grammar - Quizzes - Danish TTS -
 Progress tracking - Documented JSON architecture - Nenoling visual
 identity - Offline lesson content - Successful installation/test on a
 physical Android device - Release APK

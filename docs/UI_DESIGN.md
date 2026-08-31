@@ -25,7 +25,7 @@ for accessibility.
 -   paired compact TTS buttons: Écouter FR / Écouter DA
 -   round previous/next icon navigation next to the dialogue
 -   visible progress without technical status clutter
--   discreet version line and home footer with external site link
+-   discreet version line and home footer linking to notaguidedtour.com
 -   no repeated decorative flags throughout the app
 
 ## Children

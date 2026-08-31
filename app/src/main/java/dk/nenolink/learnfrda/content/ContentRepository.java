@@ -52,7 +52,9 @@ public final class ContentRepository {
     }
 
     public Course loadProductionCourse() throws ContentContractException {
-        return loadCourse(PRODUCTION_ASSET);
+        Course course = loadCourse(PRODUCTION_ASSET);
+        QuizIntegrity.requireEveryLessonQuiz(course);
+        return course;
     }
 
     public Course loadCourse(String name) throws ContentContractException {
@@ -120,8 +122,8 @@ public final class ContentRepository {
             if (!MODULE_TYPES.contains(type)) fail(path + ".type", "unsupported module type");
             String audience = requiredString(json, "audience", path);
             Integer level = json.has("level") ? requiredPositiveInt(json, "level", path) : null;
-            if ("level".equals(type) && (level == null || (level != 1 && level != 2))) {
-                fail(path + ".level", "level modules require 1 or 2");
+            if ("level".equals(type) && (level == null || (level != 1 && level != 2 && level != 3))) {
+                fail(path + ".level", "level modules require 1, 2 or 3");
             }
             if ("children".equals(type) && (!"children".equals(audience) || level != null)) {
                 fail(path, "children requires children audience and no level");

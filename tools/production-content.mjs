@@ -36,7 +36,7 @@ export function validate(doc, file='document') {
     const mp=p+'.'+m.id; obj(m,mp,['id','type','audience','title','tags','lessons'],['level']); id(m.id,mp); pair(m.title,mp+'.title');tags(m.tags,mp+'.tags');
     check(['level','children','grammar','quiz'].includes(m.type),mp,'invalid module type');
     check(m.type==='children'?m.audience==='children'&&!Object.hasOwn(m,'level'):m.audience==='general',mp,'invalid audience/level');
-    if(m.type==='level') check([1,2].includes(m.level),mp,'invalid level');
+    if(m.type==='level') check([1,2,3].includes(m.level),mp,'invalid level');
     ordered(m.lessons,mp+'.lessons');
     for(const l of m.lessons) {
       const lp=mp+'.'+l.id; obj(l,lp,['id','moduleId','order','title','situation','tags','items'],['quiz']); id(l.id,lp);check(l.moduleId===m.id,lp,'invalid module reference'); pair(l.title,lp+'.title');pair(l.situation,lp+'.situation');tags(l.tags,lp+'.tags');ordered(l.items,lp+'.items');check(l.items.length,lp,'empty items');
@@ -73,7 +73,7 @@ export function merge() {
       const {lessons:prior,...existing}=modules.get(m.id);assert.deepEqual(meta,existing,file+': module metadata differs');prior.push(...lessons);
     }
   }
-  const moduleIds=['module.level-1','module.level-2','module.children','module.grammar'];assert.deepEqual([...modules.keys()].sort(),[...moduleIds].sort());
+  const moduleIds=['module.level-1','module.level-2','module.level-3','module.children','module.grammar'];assert.deepEqual([...modules.keys()].sort(),[...moduleIds].sort());
   result.course.modules=moduleIds.map(id=>modules.get(id));
   for(const m of result.course.modules) {
     m.lessons.sort((a,b)=>a.order-b.order);assert.deepEqual(m.lessons.map(l=>l.order),[1,2,3,4,5,6,7,8,9,10]);

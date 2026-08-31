@@ -8,7 +8,9 @@ The core release contains:
 
 - Level 1: 10 lessons for visitors and tourists.
 - Level 2: 10 lessons for longer stays, work and everyday life.
+- Level 3: 10 lessons of practical professional Danish for work, freelancing and small business.
 - Enfants: 10 child-focused lessons.
+- Grammaire: 10 grammar/reference lessons.
 - Approximately 10 dialogue/communication units per lesson.
 
 The lesson sequence is communicative rather than grammar-driven. Grammar, pronunciation, cultural information and digital Denmark are introduced where they naturally support the situation.
@@ -518,6 +520,54 @@ Linguistic focus:
 Digital integration:
 
 - messages, bookings and event information where natural.
+
+# Level 3 — Travailler et faire des affaires au Danemark / Arbejde og forretning i Danmark
+
+Primary audience: French-speaking adults working, freelancing or doing business in Denmark.
+
+Purpose: practical professional Danish. Not an MBA, accounting, legal or investment course. Ten lessons, 100 communication items, 30 quiz questions, and 50 core business terms used in situations rather than as isolated vocabulary cards.
+
+## L3-01 — Prendre contact avec une entreprise / Kontakte en virksomhed
+
+Situation: First contact with a company about a possible cooperation.
+
+Topics: company, customer, supplier, product, service, contact, meeting, needs, task, cooperation.
+
+## L3-02 — Demander et faire une offre / Indhente og give tilbud
+
+Situation: Request or send a quotation; hourly rate vs fixed price; estimate, scope, conditions, deadline, accepting an offer.
+
+## L3-03 — Négocier le prix / Forhandle pris
+
+Situation: The quote is high. Discount, budget, alternative, adjusting scope, agreement, final price.
+
+## L3-04 — Commande et livraison / Ordre og levering
+
+Situation: Place an order with a supplier; quantity, delivery date, confirmation, delay.
+
+## L3-05 — Facture et paiement / Faktura og betaling
+
+Situation: Invoice number, VAT (moms), payment deadline, due date, bank transfer, receipt, credit note, late payment.
+
+## L3-06 — Comptabilité et coûts / Regnskab og omkostninger
+
+Situation: Everyday words for bookkeeping, cost, expense, income, turnover, profit, loss, receipt and budget. Linguistic and practical only; no accounting rules.
+
+## L3-07 — Investir et financer / Investere og finansiere
+
+Situation: Simple, neutral language for investment, financing, capital, cost, risk, return and a decision. No investment advice.
+
+## L3-08 — Acheter, louer ou prendre en leasing / Købe, leje eller lease
+
+Situation: Compare buying, renting and leasing for equipment, a car or a computer; monthly cost, ownership, agreement.
+
+## L3-09 — Contrat et conditions / Kontrakt og betingelser
+
+Situation: Written agreement, terms, price, payment, delivery, deadline, change, cancellation, confirmation. Practical language only; no legal advice.
+
+## L3-10 — Le travail indépendant au quotidien / Freelancerens og den selvstændiges hverdag
+
+Situation: A realistic freelance workflow that brings the Level 3 vocabulary together: customer enquiry → task → requirements → offer → price → agreement → work → delivery → invoice → payment.
 
 # Enfants — Pour les enfants / For børn
 

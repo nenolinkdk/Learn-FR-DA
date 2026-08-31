@@ -32,6 +32,7 @@ import dk.nenolink.learnfrda.content.ContentModels.Note;
 import dk.nenolink.learnfrda.content.ContentModels.Question;
 import dk.nenolink.learnfrda.content.ContentModels.Quiz;
 import dk.nenolink.learnfrda.content.ContentRepository;
+import dk.nenolink.learnfrda.content.QuizIntegrity;
 import dk.nenolink.learnfrda.content.ResourceModels.ExternalResource;
 import dk.nenolink.learnfrda.content.ResourceModels.ResourceCollection;
 import dk.nenolink.learnfrda.content.ResourceRepository;
@@ -47,6 +48,7 @@ public final class MainActivity extends Activity implements SpeechController.Lis
     private ProgressStore progress;
     private SpeechController speech;
     private LinearLayout content;
+    private ScrollView scroll;
     private View footer;
     private Module selectedModule;
     private Lesson selectedLesson;
@@ -89,7 +91,7 @@ public final class MainActivity extends Activity implements SpeechController.Lis
         version.setPadding(0, dp(2), 0, dp(4));
         root.addView(version, matchWrap());
 
-        ScrollView scroll = new ScrollView(this);
+        scroll = new ScrollView(this);
         scroll.setFillViewport(true);
         content = new LinearLayout(this);
         content.setOrientation(LinearLayout.VERTICAL);
@@ -376,6 +378,10 @@ public final class MainActivity extends Activity implements SpeechController.Lis
 
     private void startQuiz() {
         if (selectedLesson == null || selectedLesson.quiz == null) return;
+        if (QuizIntegrity.questionsForLesson(selectedLesson).isEmpty()) {
+            showFatalError(selectedLesson.id + ": quiz has no questions");
+            return;
+        }
         questionIndex = 0;
         quizScore = 0;
         questionAnswered = false;
@@ -384,17 +390,18 @@ public final class MainActivity extends Activity implements SpeechController.Lis
 
     private void showQuestion() {
         Quiz quiz = selectedLesson.quiz;
-        if (questionIndex >= quiz.questions.size()) {
+        List<Question> questions = QuizIntegrity.questionsForLesson(selectedLesson);
+        if (questionIndex >= questions.size()) {
             showQuizResult();
             return;
         }
         screen = Screen.QUIZ;
         questionAnswered = false;
-        Question question = quiz.questions.get(questionIndex);
+        Question question = questions.get(questionIndex);
         clear();
         backButton(() -> showLessonOverview(selectedLesson));
         heading(quiz.title.support);
-        status("Question " + (questionIndex + 1) + " sur " + quiz.questions.size());
+        status("Question " + (questionIndex + 1) + " sur " + questions.size());
         panel(question.prompt.support + "\n" + question.prompt.target, R.color.panel);
 
         for (Answer answer : question.answers) {
@@ -494,6 +501,16 @@ public final class MainActivity extends Activity implements SpeechController.Lis
     private void clear() {
         content.removeAllViews();
         if (footer != null && screen != Screen.MODULES) footer.setVisibility(View.GONE);
+        resetScrollToTop();
+    }
+
+    /** Lesson lists are long; without this, a short quiz can open below the fold and look empty. */
+    private void resetScrollToTop() {
+        if (scroll == null) return;
+        scroll.scrollTo(0, 0);
+        scroll.post(() -> {
+            if (scroll != null) scroll.scrollTo(0, 0);
+        });
     }
 
     private void heading(String value) {
