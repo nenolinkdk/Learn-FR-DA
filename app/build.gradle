@@ -14,8 +14,8 @@ android {
         applicationId "dk.nenolink.learnfrda"
         minSdk 23
         targetSdk 35
-        versionCode 6
-        versionName "0.5.1"
+        versionCode 7
+        versionName "0.5.2"
         buildConfigField "String", "RELEASE_DATE", "\"31.08.2026\""
     }
 
