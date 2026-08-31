@@ -11,6 +11,7 @@ Phase 1: documentation and specification.
 
 -   Primarily French-speaking tourists in Denmark
 -   New arrivals and people moving to Denmark for work
+-   Freelancers and people doing business in Denmark
 -   Families
 -   Children needing simple practical Danish
 
@@ -36,6 +37,7 @@ Phase 1: documentation and specification.
 
 -   Level 1: Visiting Denmark --- 10 lessons
 -   Level 2: Living and working in Denmark --- 10 lessons
+-   Level 3: Working and doing business in Denmark --- 10 lessons
 -   Children / Enfants module
 -   Grammar
 -   Quiz
@@ -49,3 +51,6 @@ Phase 1: documentation and specification.
 5.  Android QA and release APK
 
 Read `/docs` before implementing application code.
+
+A successful `assembleDebug` also writes
+`dist/Learn-FR-DA-<version>-test.apk` (gitignored; local/Dropbox only).
