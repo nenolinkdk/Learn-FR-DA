@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Learn FR-DA</string>
+    <string name="app_intro">Une application simple pour apprendre le danois, pour débutants, touristes et visiteurs au Danemark.</string>
     <string name="app_version_line">Version %1$s · %2$s</string>
     <string name="modules_title">Choisissez un module</string>
     <string name="modules_intro">Apprendre hors ligne : français → danois</string>
