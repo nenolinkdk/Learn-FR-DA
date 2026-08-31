@@ -14,9 +14,9 @@ android {
         applicationId "dk.nenolink.learnfrda"
         minSdk 23
         targetSdk 35
-        versionCode 1
-        versionName "0.4.2"
-        buildConfigField "String", "RELEASE_DATE", "\"30.08.2026\""
+        versionCode 5
+        versionName "0.5.0"
+        buildConfigField "String", "RELEASE_DATE", "\"31.08.2026\""
     }
 
     sourceSets {
@@ -34,7 +34,7 @@ dependencies {
     testImplementation "org.json:json:20240303"
 }
 
-def namedTestApkFileName = "Learn-FR-DA-${android.defaultConfig.versionName}-test.apk"
+def namedTestApkFileName = "Learn-FR-DA-${android.defaultConfig.versionName}-clean.apk"
 
 tasks.register("copyDebugApkForManualTesting", Copy) {
     from(layout.buildDirectory.file("outputs/apk/debug/app-debug.apk"))
