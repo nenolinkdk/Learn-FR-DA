@@ -15,4 +15,6 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "Learn-FR-DA"
-include ":app"
+include ":app", ":nenoling-engine", ":nenoling-shell"
+project(":nenoling-engine").projectDir = file("vendor/nenoling-app/template/android/engine")
+project(":nenoling-shell").projectDir = file("vendor/nenoling-app/template/android/app-shell")
