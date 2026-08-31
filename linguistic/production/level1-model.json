@@ -165,6 +165,7 @@
                   "id": "question.level-1.arrival.exit",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": { "support": "Comment demande-t-on où se trouve la sortie ?", "target": "Hvordan spørger man, hvor udgangen er?" },
                   "answers": [
                     { "id": "answer.level-1.arrival.exit.correct", "text": { "support": "Où est la sortie ?", "target": "Hvor er udgangen?" }, "correct": true },
@@ -178,6 +179,7 @@
                   "id": "question.level-1.arrival.modal",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": { "support": "Quelle phrase signifie « Vous pouvez prendre le métro » ?", "target": "Hvilken sætning betyder ‘Vous pouvez prendre le métro’?" },
                   "answers": [
                     { "id": "answer.level-1.arrival.modal.correct", "text": { "support": "Vous pouvez prendre le métro.", "target": "Du kan tage metroen." }, "correct": true },
@@ -191,6 +193,7 @@
                   "id": "question.level-1.arrival.direction",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": { "support": "Que signifie « Ligeud og så til højre » ?", "target": "Hvad betyder ‘Ligeud og så til højre’?" },
                   "answers": [
                     { "id": "answer.level-1.arrival.direction.correct", "text": { "support": "Tout droit, puis à droite.", "target": "Ligeud og så til højre." }, "correct": true },
@@ -345,6 +348,7 @@
                   "id": "question.level-1.airport-station.when",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": { "support": "Comment demande-t-on quand le train part ?", "target": "Hvordan spørger man, hvornår toget kører?" },
                   "answers": [
                     { "id": "answer.level-1.airport-station.when.correct", "text": { "support": "À quelle heure part-il ?", "target": "Hvornår kører det?" }, "correct": true },
@@ -358,6 +362,7 @@
                   "id": "question.level-1.airport-station.platform",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": { "support": "Quel mot faut-il reconnaître pour trouver la voie du train ?", "target": "Hvilket ord skal man genkende for at finde togets spor?" },
                   "answers": [
                     { "id": "answer.level-1.airport-station.platform.correct", "text": { "support": "voie/quai", "target": "spor" }, "correct": true },
@@ -371,6 +376,7 @@
                   "id": "question.level-1.airport-station.delay",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": { "support": "Que signifie « Toget er forsinket » ?", "target": "Hvad betyder ‘Toget er forsinket’?" },
                   "answers": [
                     { "id": "answer.level-1.airport-station.delay.correct", "text": { "support": "Le train est en retard.", "target": "Toget er forsinket." }, "correct": true },

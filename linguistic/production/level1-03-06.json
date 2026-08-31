@@ -162,6 +162,7 @@
                   "id": "question.level-1.public-transport.destination",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": { "support": "Que signifie « Hvor skal du hen? » ?", "target": "Hvad betyder ‘Hvor skal du hen?’?" },
                   "answers": [
                     { "id": "answer.level-1.public-transport.destination.correct", "text": { "support": "Où allez-vous ?", "target": "Hvor skal du hen?" }, "correct": true },
@@ -175,6 +176,7 @@
                   "id": "question.level-1.public-transport-get-off",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": { "support": "Quel verbe signifie « descendre » d’un bus ou d’un train ?", "target": "Hvilket udtryk betyder at forlade en bus eller et tog?" },
                   "answers": [
                     { "id": "answer.level-1.public-transport-get-off.correct", "text": { "support": "descendre", "target": "stå af" }, "correct": true },
@@ -188,6 +190,7 @@
                   "id": "question.level-1.public-transport-right",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": { "support": "Comment vérifiez-vous que c’est le bon bus ?", "target": "Hvordan spørger man, om det er den rigtige bus?" },
                   "answers": [
                     { "id": "answer.level-1.public-transport-right.correct", "text": { "support": "Est-ce que c’est le bon bus ?", "target": "Er det den rigtige bus?" }, "correct": true },
@@ -340,6 +343,7 @@
                   "id": "question.level-1.hotel-reservation",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": { "support": "Comment dites-vous que vous avez une réservation ?", "target": "Hvordan siger man, at man har en reservation?" },
                   "answers": [
                     { "id": "answer.level-1.hotel-reservation.correct", "text": { "support": "J’ai une réservation.", "target": "Jeg har en reservation." }, "correct": true },
@@ -353,6 +357,7 @@
                   "id": "question.level-1.hotel-wifi",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": { "support": "Comment demande-t-on le code du Wi-Fi ?", "target": "Hvordan spørger man om wi-fi-koden?" },
                   "answers": [
                     { "id": "answer.level-1.hotel-wifi.correct", "text": { "support": "Quel est le code du Wi-Fi ?", "target": "Hvad er koden til wi-fi?" }, "correct": true },
@@ -366,6 +371,7 @@
                   "id": "question.level-1.hotel-problem",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": { "support": "Que signifie « Det virker ikke » ?", "target": "Hvad betyder ‘Det virker ikke’?" },
                   "answers": [
                     { "id": "answer.level-1.hotel-problem.correct", "text": { "support": "Cela ne fonctionne pas.", "target": "Det virker ikke." }, "correct": true },
@@ -511,6 +517,7 @@
                   "id": "question.level-1.cafe-order",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": { "support": "Quelle phrase est naturelle pour commander ?", "target": "Hvilken sætning er naturlig, når man bestiller?" },
                   "answers": [
                     { "id": "answer.level-1.cafe-order.correct", "text": { "support": "Je voudrais un café.", "target": "Jeg vil gerne have en kaffe." }, "correct": true },
@@ -524,6 +531,7 @@
                   "id": "question.level-1.cafe-cake",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "support",
                   "prompt": { "support": "Que signifie « kanelsnegl » ?", "target": "Hvad er en kanelsnegl?" },
                   "answers": [
                     { "id": "answer.level-1.cafe-cake.correct", "text": { "support": "une pâtisserie à la cannelle", "target": "en kage med kanel" }, "correct": true },
@@ -537,6 +545,7 @@
                   "id": "question.level-1.cafe-card",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": { "support": "Comment demande-t-on si l’on peut payer par carte ?", "target": "Hvordan spørger man, om man kan betale med kort?" },
                   "answers": [
                     { "id": "answer.level-1.cafe-card.correct", "text": { "support": "Je peux payer par carte ?", "target": "Kan jeg betale med kort?" }, "correct": true },
@@ -690,6 +699,7 @@
                   "id": "question.level-1.restaurant-table",
                   "order": 1,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": { "support": "Comment demande-t-on une table pour deux ?", "target": "Hvordan spørger man efter et bord til to?" },
                   "answers": [
                     { "id": "answer.level-1.restaurant-table.correct", "text": { "support": "Avez-vous une table pour deux ?", "target": "Har I et bord til to?" }, "correct": true },
@@ -703,6 +713,7 @@
                   "id": "question.level-1.restaurant-without",
                   "order": 2,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": { "support": "Quel mot signifie « sans » ?", "target": "Hvilket ord betyder ‘sans’?" },
                   "answers": [
                     { "id": "answer.level-1.restaurant-without.correct", "text": { "support": "sans", "target": "uden" }, "correct": true },
@@ -716,6 +727,7 @@
                   "id": "question.level-1.restaurant-bill",
                   "order": 3,
                   "type": "single-choice",
+                  "answerDisplayRole": "target",
                   "prompt": { "support": "Comment demande-t-on l’addition ?", "target": "Hvordan beder man om regningen?" },
                   "answers": [
                     { "id": "answer.level-1.restaurant-bill.correct", "text": { "support": "Nous pouvons avoir l’addition ?", "target": "Må vi bede om regningen?" }, "correct": true },

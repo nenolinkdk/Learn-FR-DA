@@ -36,7 +36,7 @@ export function validate(doc, file='document') {
     const mp=p+'.'+m.id; obj(m,mp,['id','type','audience','title','tags','lessons'],['level']); id(m.id,mp); pair(m.title,mp+'.title');tags(m.tags,mp+'.tags');
     check(['level','children','grammar','quiz'].includes(m.type),mp,'invalid module type');
     check(m.type==='children'?m.audience==='children'&&!Object.hasOwn(m,'level'):m.audience==='general',mp,'invalid audience/level');
-    if(m.type==='level') check([1,2].includes(m.level),mp,'invalid level');
+    if(m.type==='level') check([1,2,3].includes(m.level),mp,'invalid level');
     ordered(m.lessons,mp+'.lessons');
     for(const l of m.lessons) {
       const lp=mp+'.'+l.id; obj(l,lp,['id','moduleId','order','title','situation','tags','items'],['quiz']); id(l.id,lp);check(l.moduleId===m.id,lp,'invalid module reference'); pair(l.title,lp+'.title');pair(l.situation,lp+'.situation');tags(l.tags,lp+'.tags');ordered(l.items,lp+'.items');check(l.items.length,lp,'empty items');
@@ -49,7 +49,7 @@ export function validate(doc, file='document') {
       if(Object.hasOwn(l,'quiz')) {
         const q=l.quiz,qp=lp+'.quiz';obj(q,qp,['id','title','questions']);id(q.id,qp);pair(q.title,qp+'.title');ordered(q.questions,qp+'.questions');check(q.questions.length,qp,'empty quiz');
         for(const question of q.questions) {
-          const p=qp+'.'+question.id;obj(question,p,['id','order','type','prompt','answers','explanation','tags']);id(question.id,p);check(question.type==='single-choice',p,'invalid question type');pair(question.prompt,p+'.prompt');pair(question.explanation,p+'.explanation');tags(question.tags,p+'.tags');array(question.answers,p+'.answers');check(question.answers.length>=2,p,'too few answers');
+          const p=qp+'.'+question.id;obj(question,p,['id','order','type','answerDisplayRole','prompt','answers','explanation','tags']);id(question.id,p);check(question.type==='single-choice',p,'invalid question type');check(['support','target'].includes(question.answerDisplayRole),p,'answerDisplayRole must be support or target');pair(question.prompt,p+'.prompt');pair(question.explanation,p+'.explanation');tags(question.tags,p+'.tags');array(question.answers,p+'.answers');check(question.answers.length>=2,p,'too few answers');
           for(const a of question.answers) {obj(a,p+'.'+a.id,['id','text','correct']);id(a.id,p+'.'+a.id);pair(a.text,p+'.'+a.id+'.text');check(typeof a.correct==='boolean',p,'correct must be boolean');}
           check(question.answers.filter(a=>a.correct).length===1,p,'exactly one correct answer required');
         }
@@ -73,7 +73,7 @@ export function merge() {
       const {lessons:prior,...existing}=modules.get(m.id);assert.deepEqual(meta,existing,file+': module metadata differs');prior.push(...lessons);
     }
   }
-  const moduleIds=['module.level-1','module.level-2','module.children','module.grammar'];assert.deepEqual([...modules.keys()].sort(),[...moduleIds].sort());
+  const moduleIds=['module.level-1','module.level-2','module.level-3','module.children','module.grammar'];assert.deepEqual([...modules.keys()].sort(),[...moduleIds].sort());
   result.course.modules=moduleIds.map(id=>modules.get(id));
   for(const m of result.course.modules) {
     m.lessons.sort((a,b)=>a.order-b.order);assert.deepEqual(m.lessons.map(l=>l.order),[1,2,3,4,5,6,7,8,9,10]);

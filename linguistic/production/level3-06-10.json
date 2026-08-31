@@ -1,0 +1,1864 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "0.1.0-l3-06-10",
+  "course": {
+    "id": "course.fr-da",
+    "courseLocale": "fr-FR",
+    "languages": {
+      "support": {
+        "language": "fr",
+        "locale": "fr-FR"
+      },
+      "target": {
+        "language": "da",
+        "locale": "da-DK"
+      }
+    },
+    "tts": {
+      "primaryRole": "target",
+      "targetLocale": "da-DK",
+      "supportLocale": "fr-FR"
+    },
+    "title": {
+      "support": "Danois pratique",
+      "target": "Praktisk dansk"
+    },
+    "modules": [
+      {
+        "id": "module.level-3",
+        "type": "level",
+        "level": 3,
+        "audience": "general",
+        "title": {
+          "support": "Niveau 3 — Travailler et faire des affaires au Danemark",
+          "target": "Niveau 3 — Arbejde og forretning i Danmark"
+        },
+        "tags": [
+          "professional",
+          "business",
+          "work"
+        ],
+        "lessons": [
+          {
+            "id": "lesson.level-3.accounts",
+            "moduleId": "module.level-3",
+            "order": 6,
+            "title": {
+              "support": "Comptabilité et coûts",
+              "target": "Regnskab og omkostninger"
+            },
+            "situation": {
+              "support": "Vous parlez simplement des chiffres de l’activité : comptabilité, recettes, dépenses, chiffre d’affaires, bénéfice ou perte, reçus, budget et impôt. La leçon enseigne le vocabulaire, pas les règles comptables.",
+              "target": "I taler enkelt om virksomhedens tal: regnskab, indtægter, udgifter, omsætning, overskud eller underskud, kvitteringer, budget og skat. Lektionen underviser i sprog, ikke i regnskabsregler."
+            },
+            "tags": [
+              "accounting",
+              "costs",
+              "budget"
+            ],
+            "items": [
+              {
+                "id": "item.level-3.accounts.books",
+                "order": 1,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": {
+                  "support": "Je dois suivre la comptabilité de l’entreprise.",
+                  "target": "Jeg skal holde styr på virksomhedens regnskab."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "accounting",
+                  "company"
+                ],
+                "notes": {
+                  "cultural": {
+                    "support": "« Regnskab » désigne la comptabilité / les comptes. L’app n’enseigne pas comment tenir une comptabilité légale."
+                  }
+                }
+              },
+              {
+                "id": "item.level-3.accounts.bookkeeping",
+                "order": 2,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": {
+                  "support": "La tenue des comptes, c’est surtout les recettes et les dépenses.",
+                  "target": "Bogføringen er især indtægter og udgifter."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "bookkeeping",
+                  "income"
+                ],
+                "notes": {
+                  "grammar": {
+                    "support": "« Bogføring » = tenue des comptes. « Indtægt » = recette / revenu. « Udgift » = dépense.",
+                    "targetExample": "indtægter og udgifter"
+                  }
+                }
+              },
+              {
+                "id": "item.level-3.accounts.expense",
+                "order": 3,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": {
+                  "support": "Cette dépense, je la classe où ?",
+                  "target": "Hvor hører den her udgift hjemme?"
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "expense",
+                  "bookkeeping"
+                ]
+              },
+              {
+                "id": "item.level-3.accounts.cost",
+                "order": 4,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": {
+                  "support": "C’est un coût lié au projet.",
+                  "target": "Det er en omkostning på projektet."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "cost",
+                  "project"
+                ],
+                "notes": {
+                  "grammar": {
+                    "support": "« Omkostning » = coût (souvent lié à une activité). « Udgift » insiste plutôt sur l’argent sorti.",
+                    "targetExample": "en omkostning på projektet"
+                  }
+                }
+              },
+              {
+                "id": "item.level-3.accounts.turnover",
+                "order": 5,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": {
+                  "support": "Le chiffre d’affaires a augmenté ce mois-ci.",
+                  "target": "Omsætningen er steget i den her måned."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "turnover",
+                  "income"
+                ]
+              },
+              {
+                "id": "item.level-3.accounts.profit",
+                "order": 6,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": {
+                  "support": "Alors on a un bénéfice, pas une perte.",
+                  "target": "Så har vi et overskud, ikke et underskud."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "profit",
+                  "loss"
+                ]
+              },
+              {
+                "id": "item.level-3.accounts.receipts",
+                "order": 7,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": {
+                  "support": "Je garde tous les reçus.",
+                  "target": "Jeg gemmer alle kvitteringer."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "receipt",
+                  "bookkeeping"
+                ]
+              },
+              {
+                "id": "item.level-3.accounts.budget",
+                "order": 8,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": {
+                  "support": "Oui, c’est utile pour le budget.",
+                  "target": "Ja, det er nyttigt til budgettet."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "budget",
+                  "cost"
+                ]
+              },
+              {
+                "id": "item.level-3.accounts.tax",
+                "order": 9,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": {
+                  "support": "L’impôt, on le calcule à part.",
+                  "target": "Skatten regner vi separat."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "tax",
+                  "accounting"
+                ],
+                "notes": {
+                  "cultural": {
+                    "support": "« Skat » = impôt. Les règles et taux changent ; suivez les informations officielles. Ici, seul le mot est enseigné."
+                  }
+                }
+              },
+              {
+                "id": "item.level-3.accounts.decide",
+                "order": 10,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": {
+                  "support": "On ne décide rien sans regarder les coûts.",
+                  "target": "Vi beslutter ikke noget uden at se på omkostningerne."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "cost",
+                  "decision"
+                ]
+              }
+            ],
+            "quiz": {
+              "id": "quiz.level-3.accounts",
+              "title": {
+                "support": "Mini-quiz — Comptes",
+                "target": "Miniquiz — Regnskab"
+              },
+              "questions": [
+                {
+                  "id": "question.level-3.accounts-turnover",
+                  "order": 1,
+                  "type": "single-choice",
+                  "answerDisplayRole": "support",
+                  "prompt": {
+                    "support": "Que signifie « omsætning » ?",
+                    "target": "Hvad betyder ‘omsætning’?"
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.level-3.accounts-turnover.correct",
+                      "text": {
+                        "support": "chiffre d’affaires",
+                        "target": "omsætning"
+                      },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.level-3.accounts-turnover.w1",
+                      "text": {
+                        "support": "remise",
+                        "target": "rabat"
+                      },
+                      "correct": false
+                    },
+                    {
+                      "id": "answer.level-3.accounts-turnover.w2",
+                      "text": {
+                        "support": "livraison",
+                        "target": "levering"
+                      },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "« Omsætning » = le chiffre d’affaires.",
+                    "target": "‘Omsætning’ er virksomhedens samlede salg i en periode."
+                  },
+                  "tags": [
+                    "turnover"
+                  ]
+                },
+                {
+                  "id": "question.level-3.accounts-overskud",
+                  "order": 2,
+                  "type": "single-choice",
+                  "answerDisplayRole": "target",
+                  "prompt": {
+                    "support": "Quelle paire oppose bénéfice et perte ?",
+                    "target": "Hvilket par betyder overskud og underskud?"
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.level-3.accounts-overskud.correct",
+                      "text": {
+                        "support": "bénéfice / perte",
+                        "target": "overskud / underskud"
+                      },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.level-3.accounts-overskud.w1",
+                      "text": {
+                        "support": "achat / location",
+                        "target": "køb / leje"
+                      },
+                      "correct": false
+                    },
+                    {
+                      "id": "answer.level-3.accounts-overskud.w2",
+                      "text": {
+                        "support": "client / fournisseur",
+                        "target": "kunde / leverandør"
+                      },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "« Overskud » = bénéfice. « Underskud » = perte / déficit.",
+                    "target": "‘Overskud’ er plus; ‘underskud’ er minus."
+                  },
+                  "tags": [
+                    "profit",
+                    "loss"
+                  ]
+                },
+                {
+                  "id": "question.level-3.accounts-udgift",
+                  "order": 3,
+                  "type": "single-choice",
+                  "answerDisplayRole": "support",
+                  "prompt": {
+                    "support": "Que signifie « udgift » ?",
+                    "target": "Hvad betyder ‘udgift’?"
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.level-3.accounts-udgift.correct",
+                      "text": {
+                        "support": "dépense",
+                        "target": "udgift"
+                      },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.level-3.accounts-udgift.w1",
+                      "text": {
+                        "support": "offre",
+                        "target": "tilbud"
+                      },
+                      "correct": false
+                    },
+                    {
+                      "id": "answer.level-3.accounts-udgift.w2",
+                      "text": {
+                        "support": "contrat",
+                        "target": "kontrakt"
+                      },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "Une « udgift » est une dépense, de l’argent qui sort.",
+                    "target": "En ‘udgift’ er penge, der går ud."
+                  },
+                  "tags": [
+                    "expense"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "id": "lesson.level-3.invest",
+            "moduleId": "module.level-3",
+            "order": 7,
+            "title": {
+              "support": "Investir et financer",
+              "target": "Investere og finansiere"
+            },
+            "situation": {
+              "support": "Vous discutez d’un investissement simple : matériel, financement, budget, capital, coût, risque, rendement possible et décision. Le langage reste neutre ; ce n’est pas un conseil financier.",
+              "target": "I taler om en enkel investering: udstyr, finansiering, budget, kapital, omkostning, risiko, muligt afkast og en beslutning. Sproget er neutralt; det er ikke finansiel rådgivning."
+            },
+            "tags": [
+              "investment",
+              "financing",
+              "decision"
+            ],
+            "items": [
+              {
+                "id": "item.level-3.invest.consider",
+                "order": 1,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": {
+                  "support": "On réfléchit à un investissement.",
+                  "target": "Vi overvejer en investering."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "investment",
+                  "decision"
+                ],
+                "notes": {
+                  "cultural": {
+                    "support": "Cette leçon donne le vocabulaire pour parler d’un investissement. Elle ne recommande aucun placement."
+                  }
+                }
+              },
+              {
+                "id": "item.level-3.invest.equipment",
+                "order": 2,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": {
+                  "support": "Vous voulez investir dans du matériel ?",
+                  "target": "Vil I investere i udstyr?"
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "invest",
+                  "equipment"
+                ]
+              },
+              {
+                "id": "item.level-3.invest.finance",
+                "order": 3,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": {
+                  "support": "Oui, mais il faut financer l’achat.",
+                  "target": "Ja, men vi skal finansiere købet."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "finance",
+                  "buy"
+                ]
+              },
+              {
+                "id": "item.level-3.invest.financing",
+                "order": 4,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": {
+                  "support": "Quelle est la solution de financement ?",
+                  "target": "Hvilken finansiering har I i tankerne?"
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "financing",
+                  "question"
+                ]
+              },
+              {
+                "id": "item.level-3.invest.capital",
+                "order": 5,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": {
+                  "support": "On a un budget, mais pas tout le capital.",
+                  "target": "Vi har et budget, men ikke hele kapitalen."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "budget",
+                  "capital"
+                ]
+              },
+              {
+                "id": "item.level-3.invest.risk",
+                "order": 6,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": {
+                  "support": "Il y a un coût, et il y a un risque.",
+                  "target": "Der er en omkostning, og der er en risiko."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "cost",
+                  "risk"
+                ]
+              },
+              {
+                "id": "item.level-3.invest.return",
+                "order": 7,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": {
+                  "support": "Quel rendement on peut raisonnablement mettre dans le budget ?",
+                  "target": "Hvilket afkast kan vi rimeligt sætte i budgettet?"
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "return",
+                  "budget"
+                ]
+              },
+              {
+                "id": "item.level-3.invest.no-guarantee",
+                "order": 8,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": {
+                  "support": "Ça dépend du projet. On ne peut pas le garantir.",
+                  "target": "Det afhænger af projektet. Det kan man ikke garantere."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "risk",
+                  "return"
+                ],
+                "notes": {
+                  "cultural": {
+                    "support": "Un rendement n’est jamais garanti. La phrase enseigne à rester prudent, sans donner de conseil."
+                  }
+                }
+              },
+              {
+                "id": "item.level-3.invest.decision",
+                "order": 9,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": {
+                  "support": "On prend la décision la semaine prochaine.",
+                  "target": "Vi træffer beslutningen i næste uge."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "decision",
+                  "time"
+                ],
+                "notes": {
+                  "grammar": {
+                    "support": "« Træffe en beslutning » = prendre une décision.",
+                    "targetExample": "Vi træffer beslutningen."
+                  }
+                }
+              },
+              {
+                "id": "item.level-3.invest.compare",
+                "order": 10,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": {
+                  "support": "D’accord. On compare d’abord le coût et le risque.",
+                  "target": "Okay. Vi sammenligner først omkostning og risiko."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "cost",
+                  "risk"
+                ]
+              }
+            ],
+            "quiz": {
+              "id": "quiz.level-3.invest",
+              "title": {
+                "support": "Mini-quiz — Investissement",
+                "target": "Miniquiz — Investering"
+              },
+              "questions": [
+                {
+                  "id": "question.level-3.invest-investere",
+                  "order": 1,
+                  "type": "single-choice",
+                  "answerDisplayRole": "support",
+                  "prompt": {
+                    "support": "Que signifie « investere » ?",
+                    "target": "Hvad betyder ‘investere’?"
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.level-3.invest-investere.correct",
+                      "text": {
+                        "support": "investir",
+                        "target": "investere"
+                      },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.level-3.invest-investere.w1",
+                      "text": {
+                        "support": "facturer",
+                        "target": "fakturere"
+                      },
+                      "correct": false
+                    },
+                    {
+                      "id": "answer.level-3.invest-investere.w2",
+                      "text": {
+                        "support": "livrer",
+                        "target": "levere"
+                      },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "« Investere » = investir. Le nom est « investering ».",
+                    "target": "‘Investere’ er verbet; ‘investering’ er substantivet."
+                  },
+                  "tags": [
+                    "invest"
+                  ]
+                },
+                {
+                  "id": "question.level-3.invest-finansiere",
+                  "order": 2,
+                  "type": "single-choice",
+                  "answerDisplayRole": "support",
+                  "prompt": {
+                    "support": "Que signifie « finansiere købet » ?",
+                    "target": "Hvad betyder ‘finansiere købet’?"
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.level-3.invest-finansiere.correct",
+                      "text": {
+                        "support": "financer l’achat",
+                        "target": "finansiere købet"
+                      },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.level-3.invest-finansiere.w1",
+                      "text": {
+                        "support": "annuler l’achat",
+                        "target": "annullere købet"
+                      },
+                      "correct": false
+                    },
+                    {
+                      "id": "answer.level-3.invest-finansiere.w2",
+                      "text": {
+                        "support": "vendre l’achat",
+                        "target": "sælge købet"
+                      },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "« Finansiere » = trouver l’argent pour payer. « Finansiering » est le nom.",
+                    "target": "At ‘finansiere’ noget betyder at skaffe penge til det."
+                  },
+                  "tags": [
+                    "finance"
+                  ]
+                },
+                {
+                  "id": "question.level-3.invest-beslutning",
+                  "order": 3,
+                  "type": "single-choice",
+                  "answerDisplayRole": "target",
+                  "prompt": {
+                    "support": "Quelle phrase annonce une décision ?",
+                    "target": "Hvilken sætning handler om en beslutning?"
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.level-3.invest-beslutning.correct",
+                      "text": {
+                        "support": "On prend la décision la semaine prochaine.",
+                        "target": "Vi træffer beslutningen i næste uge."
+                      },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.level-3.invest-beslutning.w1",
+                      "text": {
+                        "support": "On envoie la facture aujourd’hui.",
+                        "target": "Jeg sender fakturaen i dag."
+                      },
+                      "correct": false
+                    },
+                    {
+                      "id": "answer.level-3.invest-beslutning.w2",
+                      "text": {
+                        "support": "On livre demain.",
+                        "target": "Vi leverer i morgen."
+                      },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "« Træffe en beslutning » = décider.",
+                    "target": "Man ‘træffer en beslutning’, når man vælger, hvad man gør."
+                  },
+                  "tags": [
+                    "decision"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "id": "lesson.level-3.lease",
+            "moduleId": "module.level-3",
+            "order": 8,
+            "title": {
+              "support": "Acheter, louer ou prendre en leasing",
+              "target": "Købe, leje eller lease"
+            },
+            "situation": {
+              "support": "Vous comparez trois solutions pour une voiture, un ordinateur ou du matériel : acheter, louer ou prendre en leasing. Vous parlez du coût mensuel, de la propriété et de l’accord.",
+              "target": "I sammenligner tre løsninger til en bil, en computer eller udstyr: købe, leje eller lease. I taler om den månedlige omkostning, ejerskab og aftalen."
+            },
+            "tags": [
+              "buy",
+              "rent",
+              "leasing"
+            ],
+            "items": [
+              {
+                "id": "item.level-3.lease.choice",
+                "order": 1,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": {
+                  "support": "On hésite entre acheter, louer ou prendre en leasing.",
+                  "target": "Vi er i tvivl om vi skal købe, leje eller lease."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "buy",
+                  "rent",
+                  "leasing"
+                ]
+              },
+              {
+                "id": "item.level-3.lease.own",
+                "order": 2,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": {
+                  "support": "Si on achète, on devient propriétaire.",
+                  "target": "Hvis vi køber, bliver vi ejere."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "buy",
+                  "ownership"
+                ],
+                "notes": {
+                  "grammar": {
+                    "support": "Dans « hvis vi køber », le sujet précède le verbe. « Ejer » = propriétaire.",
+                    "targetExample": "Hvis vi køber, bliver vi ejere."
+                  }
+                }
+              },
+              {
+                "id": "item.level-3.lease.rent",
+                "order": 3,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": {
+                  "support": "Louer, ça coûte moins au début.",
+                  "target": "Det er billigere at leje i starten."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "rent",
+                  "monthly-cost"
+                ]
+              },
+              {
+                "id": "item.level-3.lease.rent-out",
+                "order": 4,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": {
+                  "support": "On peut aussi vous louer l’ordinateur au mois.",
+                  "target": "Vi kan også udleje computeren til jer på månedsbasis."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "rent-out",
+                  "equipment"
+                ],
+                "notes": {
+                  "grammar": {
+                    "support": "« Leje » = louer (comme locataire). « Udleje » = mettre en location / louer à quelqu’un.",
+                    "targetExample": "Vi udlejer computeren."
+                  }
+                }
+              },
+              {
+                "id": "item.level-3.lease.meaning",
+                "order": 5,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": {
+                  "support": "Le leasing, c’est un loyer mensuel, sans être propriétaire.",
+                  "target": "Ved leasing betaler man en månedlig ydelse uden at eje."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "leasing",
+                  "ownership"
+                ],
+                "notes": {
+                  "cultural": {
+                    "support": "Le leasing est fréquent pour les voitures et le matériel. Les contrats varient ; l’app enseigne les mots, pas le choix à faire."
+                  }
+                }
+              },
+              {
+                "id": "item.level-3.lease.car",
+                "order": 6,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": {
+                  "support": "Quel est le coût mensuel pour la voiture ?",
+                  "target": "Hvad er den månedlige omkostning på bilen?"
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "car",
+                  "monthly-cost"
+                ]
+              },
+              {
+                "id": "item.level-3.lease.compare",
+                "order": 7,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": {
+                  "support": "Il faut comparer les trois solutions.",
+                  "target": "Vi skal sammenligne de tre løsninger."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "comparison",
+                  "decision"
+                ]
+              },
+              {
+                "id": "item.level-3.lease.agreement",
+                "order": 8,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": {
+                  "support": "Et lire l’accord avant de signer.",
+                  "target": "Og læse aftalen, før I underskriver."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "agreement",
+                  "comparison"
+                ]
+              },
+              {
+                "id": "item.level-3.lease.computer",
+                "order": 9,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": {
+                  "support": "L’ordinateur, on le prend plutôt en leasing.",
+                  "target": "Computeren tager vi hellere i leasing."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "leasing",
+                  "equipment"
+                ]
+              },
+              {
+                "id": "item.level-3.lease.prepare",
+                "order": 10,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": {
+                  "support": "D’accord, je prépare un accord pour le matériel.",
+                  "target": "Godt, jeg laver en aftale på udstyret."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "agreement",
+                  "equipment"
+                ]
+              }
+            ],
+            "quiz": {
+              "id": "quiz.level-3.lease",
+              "title": {
+                "support": "Mini-quiz — Achat et location",
+                "target": "Miniquiz — Køb og leje"
+              },
+              "questions": [
+                {
+                  "id": "question.level-3.lease-udleje",
+                  "order": 1,
+                  "type": "single-choice",
+                  "answerDisplayRole": "support",
+                  "prompt": {
+                    "support": "Que signifie « udleje » ?",
+                    "target": "Hvad betyder ‘udleje’?"
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.level-3.lease-udleje.correct",
+                      "text": {
+                        "support": "mettre en location",
+                        "target": "udleje"
+                      },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.level-3.lease-udleje.w1",
+                      "text": {
+                        "support": "acheter",
+                        "target": "købe"
+                      },
+                      "correct": false
+                    },
+                    {
+                      "id": "answer.level-3.lease-udleje.w2",
+                      "text": {
+                        "support": "facturer",
+                        "target": "fakturere"
+                      },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "« Udleje » = louer quelque chose à quelqu’un. « Leje » = louer comme utilisateur.",
+                    "target": "Man ‘udlejer’, når man stiller noget til rådighed mod betaling."
+                  },
+                  "tags": [
+                    "rent-out"
+                  ]
+                },
+                {
+                  "id": "question.level-3.lease-leasing",
+                  "order": 2,
+                  "type": "single-choice",
+                  "answerDisplayRole": "support",
+                  "prompt": {
+                    "support": "Que décrit le leasing dans cette leçon ?",
+                    "target": "Hvad beskriver leasing her?"
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.level-3.lease-leasing.correct",
+                      "text": {
+                        "support": "un loyer mensuel, sans être propriétaire",
+                        "target": "en månedlig ydelse uden at eje"
+                      },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.level-3.lease-leasing.w1",
+                      "text": {
+                        "support": "un salaire fixe",
+                        "target": "en fast løn"
+                      },
+                      "correct": false
+                    },
+                    {
+                      "id": "answer.level-3.lease-leasing.w2",
+                      "text": {
+                        "support": "une remise immédiate",
+                        "target": "en rabat med det samme"
+                      },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "Le leasing se paie souvent mois par mois, sans transfert immédiat de propriété.",
+                    "target": "Ved leasing betaler man løbende uden nødvendigvis at eje tingen."
+                  },
+                  "tags": [
+                    "leasing"
+                  ]
+                },
+                {
+                  "id": "question.level-3.lease-compare",
+                  "order": 3,
+                  "type": "single-choice",
+                  "answerDisplayRole": "target",
+                  "prompt": {
+                    "support": "Quelle phrase propose de comparer les solutions ?",
+                    "target": "Hvilken sætning handler om at sammenligne?"
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.level-3.lease-compare.correct",
+                      "text": {
+                        "support": "Il faut comparer les trois solutions.",
+                        "target": "Vi skal sammenligne de tre løsninger."
+                      },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.level-3.lease-compare.w1",
+                      "text": {
+                        "support": "On envoie l’avoir demain.",
+                        "target": "Vi sender kreditnotaen i morgen."
+                      },
+                      "correct": false
+                    },
+                    {
+                      "id": "answer.level-3.lease-compare.w2",
+                      "text": {
+                        "support": "Le paiement est en retard.",
+                        "target": "Betalingen er forsinket."
+                      },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "« Sammenligne » = comparer.",
+                    "target": "At ‘sammenligne’ er at se forskelle og ligheder."
+                  },
+                  "tags": [
+                    "comparison"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "id": "lesson.level-3.contract",
+            "moduleId": "module.level-3",
+            "order": 9,
+            "title": {
+              "support": "Contrat et conditions",
+              "target": "Kontrakt og betingelser"
+            },
+            "situation": {
+              "support": "Vous mettez l’accord par écrit : contrat, conditions, prix, paiement, livraison, délai, changement, annulation et confirmation. C’est du langage pratique, pas un conseil juridique.",
+              "target": "I får aftalen på skrift: kontrakt, betingelser, pris, betaling, levering, frist, ændring, afbestilling og bekræftelse. Det er praktisk sprog, ikke juridisk rådgivning."
+            },
+            "tags": [
+              "contract",
+              "terms",
+              "agreement"
+            ],
+            "items": [
+              {
+                "id": "item.level-3.contract.need",
+                "order": 1,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": {
+                  "support": "On a besoin d’un contrat écrit.",
+                  "target": "Vi har brug for en skriftlig kontrakt."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "contract",
+                  "agreement"
+                ],
+                "notes": {
+                  "cultural": {
+                    "support": "Un contrat écrit est courant. L’app n’explique pas ce qu’il faut signer ; elle enseigne les mots pour en parler."
+                  }
+                }
+              },
+              {
+                "id": "item.level-3.contract.price-pay",
+                "order": 2,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": {
+                  "support": "L’accord reprend le prix et le paiement.",
+                  "target": "Aftalen rummer prisen og betalingen."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "agreement",
+                  "price"
+                ]
+              },
+              {
+                "id": "item.level-3.contract.terms",
+                "order": 3,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": {
+                  "support": "Les conditions de livraison sont où ?",
+                  "target": "Hvor står betingelserne for levering?"
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "terms",
+                  "delivery"
+                ]
+              },
+              {
+                "id": "item.level-3.contract.deadline",
+                "order": 4,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": {
+                  "support": "Ici : le délai, la livraison et la date limite.",
+                  "target": "Her: fristen, leveringen og afleveringsdatoen."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "deadline",
+                  "delivery"
+                ]
+              },
+              {
+                "id": "item.level-3.contract.change",
+                "order": 5,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": {
+                  "support": "On peut changer quelque chose après signature ?",
+                  "target": "Kan man ændre noget, når kontrakten er underskrevet?"
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "change",
+                  "contract"
+                ]
+              },
+              {
+                "id": "item.level-3.contract.both",
+                "order": 6,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": {
+                  "support": "Seulement si les deux parties sont d’accord.",
+                  "target": "Kun hvis begge parter er enige."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "change",
+                  "agreement"
+                ],
+                "notes": {
+                  "cultural": {
+                    "support": "Cette réponse est une formulation courante, pas une règle de droit. Vérifiez toujours le contrat réel."
+                  }
+                }
+              },
+              {
+                "id": "item.level-3.contract.cancel",
+                "order": 7,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": {
+                  "support": "Et pour une annulation ?",
+                  "target": "Hvad gælder ved afbestilling?"
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "cancellation",
+                  "terms"
+                ]
+              },
+              {
+                "id": "item.level-3.contract.cancel-terms",
+                "order": 8,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": {
+                  "support": "Les conditions d’annulation sont dans le contrat.",
+                  "target": "Betingelserne for afbestilling står i kontrakten."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "cancellation",
+                  "contract"
+                ]
+              },
+              {
+                "id": "item.level-3.contract.accept",
+                "order": 9,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": {
+                  "support": "Je confirme que j’accepte les conditions.",
+                  "target": "Jeg bekræfter, at jeg accepterer betingelserne."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "confirmation",
+                  "terms"
+                ]
+              },
+              {
+                "id": "item.level-3.contract.confirm",
+                "order": 10,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": {
+                  "support": "Bien, je vous envoie la confirmation.",
+                  "target": "Godt, jeg sender bekræftelsen."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "confirmation",
+                  "follow-up"
+                ]
+              }
+            ],
+            "quiz": {
+              "id": "quiz.level-3.contract",
+              "title": {
+                "support": "Mini-quiz — Contrat",
+                "target": "Miniquiz — Kontrakt"
+              },
+              "questions": [
+                {
+                  "id": "question.level-3.contract-kontrakt",
+                  "order": 1,
+                  "type": "single-choice",
+                  "answerDisplayRole": "support",
+                  "prompt": {
+                    "support": "Que signifie « kontrakt » ?",
+                    "target": "Hvad betyder ‘kontrakt’?"
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.level-3.contract-kontrakt.correct",
+                      "text": {
+                        "support": "contrat",
+                        "target": "kontrakt"
+                      },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.level-3.contract-kontrakt.w1",
+                      "text": {
+                        "support": "reçu",
+                        "target": "kvittering"
+                      },
+                      "correct": false
+                    },
+                    {
+                      "id": "answer.level-3.contract-kontrakt.w2",
+                      "text": {
+                        "support": "budget",
+                        "target": "budget"
+                      },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "« Kontrakt » = contrat. « Aftale » est plus large : accord.",
+                    "target": "En ‘kontrakt’ er en (ofte skriftlig) aftale."
+                  },
+                  "tags": [
+                    "contract"
+                  ]
+                },
+                {
+                  "id": "question.level-3.contract-betingelser",
+                  "order": 2,
+                  "type": "single-choice",
+                  "answerDisplayRole": "support",
+                  "prompt": {
+                    "support": "Que signifie « betingelser » ?",
+                    "target": "Hvad betyder ‘betingelser’?"
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.level-3.contract-betingelser.correct",
+                      "text": {
+                        "support": "conditions",
+                        "target": "betingelser"
+                      },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.level-3.contract-betingelser.w1",
+                      "text": {
+                        "support": "chiffre d’affaires",
+                        "target": "omsætning"
+                      },
+                      "correct": false
+                    },
+                    {
+                      "id": "answer.level-3.contract-betingelser.w2",
+                      "text": {
+                        "support": "virement",
+                        "target": "bankoverførsel"
+                      },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "Les « betingelser » sont les conditions de l’accord.",
+                    "target": "‘Betingelser’ er de vilkår, der gælder for aftalen."
+                  },
+                  "tags": [
+                    "terms"
+                  ]
+                },
+                {
+                  "id": "question.level-3.contract-accept",
+                  "order": 3,
+                  "type": "single-choice",
+                  "answerDisplayRole": "target",
+                  "prompt": {
+                    "support": "Quelle phrase confirme l’acceptation des conditions ?",
+                    "target": "Hvilken sætning bekræfter, at man accepterer betingelserne?"
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.level-3.contract-accept.correct",
+                      "text": {
+                        "support": "Je confirme que j’accepte les conditions.",
+                        "target": "Jeg bekræfter, at jeg accepterer betingelserne."
+                      },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.level-3.contract-accept.w1",
+                      "text": {
+                        "support": "C’est trop cher pour nous.",
+                        "target": "Det er for dyrt for os."
+                      },
+                      "correct": false
+                    },
+                    {
+                      "id": "answer.level-3.contract-accept.w2",
+                      "text": {
+                        "support": "On paie en retard.",
+                        "target": "Vi betaler for sent."
+                      },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "« Accepterer betingelserne » = accepter les conditions.",
+                    "target": "At ‘acceptere betingelserne’ betyder, at man siger ja til vilkårene."
+                  },
+                  "tags": [
+                    "confirmation"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "id": "lesson.level-3.freelance",
+            "moduleId": "module.level-3",
+            "order": 10,
+            "title": {
+              "support": "Le travail indépendant au quotidien",
+              "target": "Freelancerens og den selvstændiges hverdag"
+            },
+            "situation": {
+              "support": "Une journée typique de freelance : demande d’un client, tâche, exigences, devis, prix, accord, travail, livraison, facture et paiement. La leçon rassemble le vocabulaire du niveau 3.",
+              "target": "En typisk freelancer-dag: henvendelse fra en kunde, opgave, krav, tilbud, pris, aftale, arbejde, levering, faktura og betaling. Lektionen samler niveau 3-ordforrådet."
+            },
+            "tags": [
+              "freelance",
+              "workflow",
+              "review"
+            ],
+            "items": [
+              {
+                "id": "item.level-3.freelance.enquiry",
+                "order": 1,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": {
+                  "support": "Un client m’a contacté au sujet d’une mission.",
+                  "target": "En kunde har kontaktet mig om en opgave."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "customer",
+                  "task"
+                ]
+              },
+              {
+                "id": "item.level-3.freelance.needs",
+                "order": 2,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": {
+                  "support": "Quels sont les besoins exactement ?",
+                  "target": "Hvad er behovene helt præcist?"
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "needs",
+                  "task"
+                ]
+              },
+              {
+                "id": "item.level-3.freelance.requirements",
+                "order": 3,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": {
+                  "support": "Je dois d’abord clarifier les exigences.",
+                  "target": "Jeg skal først afklare kravene."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "requirements",
+                  "task"
+                ]
+              },
+              {
+                "id": "item.level-3.freelance.offer",
+                "order": 4,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": {
+                  "support": "Ensuite j’envoie un devis.",
+                  "target": "Bagefter sender jeg et tilbud."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "offer",
+                  "follow-up"
+                ]
+              },
+              {
+                "id": "item.level-3.freelance.price",
+                "order": 5,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": {
+                  "support": "On a convenu d’un prix.",
+                  "target": "Vi har aftalt en pris."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "price",
+                  "agreement"
+                ]
+              },
+              {
+                "id": "item.level-3.freelance.work",
+                "order": 6,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": {
+                  "support": "L’accord est en place, je commence le travail.",
+                  "target": "Aftalen er på plads, så jeg går i gang med arbejdet."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "agreement",
+                  "work"
+                ],
+                "notes": {
+                  "grammar": {
+                    "support": "« Være på plads » = être en place / réglé. « Gå i gang med » = commencer.",
+                    "targetExample": "Aftalen er på plads."
+                  }
+                }
+              },
+              {
+                "id": "item.level-3.freelance.deliver",
+                "order": 7,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": {
+                  "support": "Je livre le travail vendredi.",
+                  "target": "Jeg leverer arbejdet på fredag."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "deliver",
+                  "deadline"
+                ]
+              },
+              {
+                "id": "item.level-3.freelance.invoice",
+                "order": 8,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": {
+                  "support": "Après la livraison, j’envoie la facture.",
+                  "target": "Efter leveringen sender jeg fakturaen."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "invoice",
+                  "delivery"
+                ]
+              },
+              {
+                "id": "item.level-3.freelance.payment",
+                "order": 9,
+                "type": "dialogue-turn",
+                "speaker": "B",
+                "text": {
+                  "support": "Le paiement est bien reçu.",
+                  "target": "Betalingen er modtaget."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "payment",
+                  "confirmation"
+                ]
+              },
+              {
+                "id": "item.level-3.freelance.salary",
+                "order": 10,
+                "type": "dialogue-turn",
+                "speaker": "A",
+                "text": {
+                  "support": "Je n’ai pas un salaire fixe. Je facture mes missions.",
+                  "target": "Jeg har ikke en fast løn. Jeg fakturerer mine opgaver."
+                },
+                "tts": {
+                  "role": "target",
+                  "locale": "da-DK",
+                  "enabled": true
+                },
+                "tags": [
+                  "salary",
+                  "invoice"
+                ],
+                "notes": {
+                  "cultural": {
+                    "support": "Un indépendant facture souvent ses missions plutôt que de recevoir un « løn » mensuel. Le mot « løn » reste utile pour en parler, ou si l’on embauche quelqu’un."
+                  }
+                }
+              }
+            ],
+            "quiz": {
+              "id": "quiz.level-3.freelance",
+              "title": {
+                "support": "Mini-quiz — Indépendant",
+                "target": "Miniquiz — Selvstændig"
+              },
+              "questions": [
+                {
+                  "id": "question.level-3.freelance-flow",
+                  "order": 1,
+                  "type": "single-choice",
+                  "answerDisplayRole": "support",
+                  "prompt": {
+                    "support": "Que fait-on souvent juste après s’être mis d’accord sur le prix ?",
+                    "target": "Hvad gør man ofte, når prisen er aftalt?"
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.level-3.freelance-flow.correct",
+                      "text": {
+                        "support": "on commence le travail",
+                        "target": "man går i gang med arbejdet"
+                      },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.level-3.freelance-flow.w1",
+                      "text": {
+                        "support": "on annule le client",
+                        "target": "man aflyser kunden"
+                      },
+                      "correct": false
+                    },
+                    {
+                      "id": "answer.level-3.freelance-flow.w2",
+                      "text": {
+                        "support": "on jette le devis",
+                        "target": "man smider tilbuddet ud"
+                      },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "Après l’accord, le travail peut commencer.",
+                    "target": "Når aftalen er på plads, kan arbejdet begynde."
+                  },
+                  "tags": [
+                    "workflow"
+                  ]
+                },
+                {
+                  "id": "question.level-3.freelance-invoice",
+                  "order": 2,
+                  "type": "single-choice",
+                  "answerDisplayRole": "support",
+                  "prompt": {
+                    "support": "Quand envoie-t-on souvent la facture dans cette leçon ?",
+                    "target": "Hvornår sender man ofte fakturaen her?"
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.level-3.freelance-invoice.correct",
+                      "text": {
+                        "support": "après la livraison",
+                        "target": "efter leveringen"
+                      },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.level-3.freelance-invoice.w1",
+                      "text": {
+                        "support": "avant le premier contact",
+                        "target": "før den første kontakt"
+                      },
+                      "correct": false
+                    },
+                    {
+                      "id": "answer.level-3.freelance-invoice.w2",
+                      "text": {
+                        "support": "sans devis",
+                        "target": "uden tilbud"
+                      },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "Ici, la facture suit la livraison.",
+                    "target": "I denne lektion kommer fakturaen efter leveringen."
+                  },
+                  "tags": [
+                    "invoice"
+                  ]
+                },
+                {
+                  "id": "question.level-3.freelance-salary",
+                  "order": 3,
+                  "type": "single-choice",
+                  "answerDisplayRole": "target",
+                  "prompt": {
+                    "support": "Que dit le freelance sur son salaire ?",
+                    "target": "Hvad siger freelanceren om løn?"
+                  },
+                  "answers": [
+                    {
+                      "id": "answer.level-3.freelance-salary.correct",
+                      "text": {
+                        "support": "Je n’ai pas un salaire fixe. Je facture mes missions.",
+                        "target": "Jeg har ikke en fast løn. Jeg fakturerer mine opgaver."
+                      },
+                      "correct": true
+                    },
+                    {
+                      "id": "answer.level-3.freelance-salary.w1",
+                      "text": {
+                        "support": "Je reçois un avoir chaque jour.",
+                        "target": "Jeg får en kreditnota hver dag."
+                      },
+                      "correct": false
+                    },
+                    {
+                      "id": "answer.level-3.freelance-salary.w2",
+                      "text": {
+                        "support": "Le leasing paie mon salaire.",
+                        "target": "Leasing betaler min løn."
+                      },
+                      "correct": false
+                    }
+                  ],
+                  "explanation": {
+                    "support": "« Løn » = salaire. Un indépendant parle souvent de facturation plutôt que d’un salaire fixe.",
+                    "target": "En selvstændig har ikke nødvendigvis fast løn; man fakturerer ofte sine opgaver."
+                  },
+                  "tags": [
+                    "salary"
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
