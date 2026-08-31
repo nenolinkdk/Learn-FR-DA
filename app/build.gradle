@@ -11,7 +11,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "dk.nenolink.learnfrda"
+        applicationId "dk.nenolink.learnfrda.gate3test"
         minSdk 23
         targetSdk 35
         versionCode 1
