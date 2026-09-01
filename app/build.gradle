@@ -2,6 +2,19 @@ plugins {
     id "com.android.application"
 }
 
+def signingValue = { String name ->
+    def envValue = System.getenv(name)
+    if (envValue != null && !envValue.trim().isEmpty()) return envValue
+    return project.findProperty(name)
+}
+
+def releaseKeystoreFile = signingValue("NENOLING_KEYSTORE_FILE")
+def releaseKeystorePassword = signingValue("NENOLING_KEYSTORE_PASSWORD")
+def releaseKeyAlias = signingValue("NENOLING_KEY_ALIAS")
+def releaseKeyPassword = signingValue("NENOLING_KEY_PASSWORD")
+def hasReleaseSigning = [releaseKeystoreFile, releaseKeystorePassword, releaseKeyAlias, releaseKeyPassword]
+        .every { it != null && !it.toString().trim().isEmpty() }
+
 android {
     namespace "dk.nenolink.learnfrda"
     compileSdk 35
@@ -14,9 +27,29 @@ android {
         applicationId "dk.nenolink.learnfrda"
         minSdk 23
         targetSdk 35
-        versionCode 1
-        versionName "0.3.3"
-        buildConfigField "String", "RELEASE_DATE", "\"29.08.2026\""
+        versionCode 7
+        versionName "0.5.2"
+        buildConfigField "String", "RELEASE_DATE", "\"31.08.2026\""
+    }
+
+    if (hasReleaseSigning) {
+        signingConfigs {
+            release {
+                storeFile file(releaseKeystoreFile)
+                storePassword releaseKeystorePassword
+                keyAlias releaseKeyAlias
+                keyPassword releaseKeyPassword
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            if (hasReleaseSigning) {
+                signingConfig signingConfigs.release
+            }
+        }
     }
 
     sourceSets {
@@ -29,14 +62,41 @@ android {
     }
 }
 
+dependencies {
+    testImplementation "junit:junit:4.13.2"
+    testImplementation "org.json:json:20240303"
+}
+
+def canonicalReleaseApkFileName = "Learn-FR-DA-${android.defaultConfig.versionName}.apk"
+def namedTestApkFileName = "Learn-FR-DA-${android.defaultConfig.versionName}-clean.apk"
+
 tasks.register("copyDebugApkForManualTesting", Copy) {
     from(layout.buildDirectory.file("outputs/apk/debug/app-debug.apk"))
     into(layout.buildDirectory.dir("outputs/manual-debug"))
     rename { "Learn-FR-DA-debug.apk" }
 }
 
+tasks.register("copyNamedTestApkToDist", Copy) {
+    from(layout.buildDirectory.file("outputs/apk/debug/app-debug.apk"))
+    into(rootProject.layout.projectDirectory.dir("dist"))
+    rename { namedTestApkFileName }
+}
+
+tasks.register("copySignedReleaseApkToDist", Copy) {
+    dependsOn("assembleRelease")
+    onlyIf {
+        if (!hasReleaseSigning) {
+            logger.lifecycle("Skipping canonical production APK copy: release signing is not configured.")
+        }
+        hasReleaseSigning
+    }
+    from(layout.buildDirectory.file("outputs/apk/release/app-release.apk"))
+    into(rootProject.layout.projectDirectory.dir("releases/${android.defaultConfig.versionName}"))
+    rename { canonicalReleaseApkFileName }
+}
+
 tasks.configureEach { task ->
     if (task.name == "assembleDebug") {
-        task.finalizedBy("copyDebugApkForManualTesting")
+        task.finalizedBy("copyDebugApkForManualTesting", "copyNamedTestApkToDist")
     }
 }

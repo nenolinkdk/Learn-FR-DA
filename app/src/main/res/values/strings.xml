@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Learn FR-DA</string>
+    <string name="app_intro">Une application simple pour apprendre le danois, pour débutants, touristes et visiteurs au Danemark.</string>
     <string name="app_version_line">Version %1$s · %2$s</string>
     <string name="modules_title">Choisissez un module</string>
     <string name="modules_intro">Apprendre hors ligne : français → danois</string>
@@ -23,8 +24,8 @@
     <string name="tts_unavailable">La voix %1$s n’est pas disponible sur cet appareil.</string>
     <string name="tts_failed">La lecture audio n’a pas pu démarrer.</string>
     <string name="footer_credit">© Nenolink · Henrik Nielsen</string>
-    <string name="footer_link_label">notaguidedtour.dk</string>
-    <string name="footer_link_url">https://notaguidedtour.dk</string>
+    <string name="footer_link_label">notaguidedtour.com</string>
+    <string name="footer_link_url">https://notaguidedtour.com</string>
     <string name="link_unavailable">Le lien n’a pas pu être ouvert.</string>
     <string name="practical_links_transport">Transport — liens pratiques</string>
     <string name="open_official_site">Ouvre le site officiel dans le navigateur.</string>

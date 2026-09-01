@@ -19,6 +19,12 @@ public final class ContentModels {
             this.support = support;
             this.target = target;
         }
+
+        public String forRole(String role) {
+            if ("support".equals(role)) return support;
+            if ("target".equals(role)) return target;
+            throw new IllegalArgumentException("role must be support or target: " + role);
+        }
     }
 
     public static final class Language {
@@ -178,20 +184,26 @@ public final class ContentModels {
         public final String id;
         public final int order;
         public final String type;
+        public final String answerDisplayRole;
         public final TextPair prompt;
         public final List<Answer> answers;
         public final TextPair explanation;
         public final List<String> tags;
 
-        public Question(String id, int order, String type, TextPair prompt, List<Answer> answers,
-                        TextPair explanation, List<String> tags) {
+        public Question(String id, int order, String type, String answerDisplayRole, TextPair prompt,
+                        List<Answer> answers, TextPair explanation, List<String> tags) {
             this.id = id;
             this.order = order;
             this.type = type;
+            this.answerDisplayRole = answerDisplayRole;
             this.prompt = prompt;
             this.answers = immutable(answers);
             this.explanation = explanation;
             this.tags = immutable(tags);
+        }
+
+        public String displayedAnswerText(Answer answer) {
+            return answer.text.forRole(answerDisplayRole);
         }
     }
 

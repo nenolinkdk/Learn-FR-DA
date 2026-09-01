@@ -52,7 +52,9 @@ public final class ContentRepository {
     }
 
     public Course loadProductionCourse() throws ContentContractException {
-        return loadCourse(PRODUCTION_ASSET);
+        Course course = loadCourse(PRODUCTION_ASSET);
+        QuizIntegrity.requireEveryLessonQuiz(course);
+        return course;
     }
 
     public Course loadCourse(String name) throws ContentContractException {
@@ -120,8 +122,8 @@ public final class ContentRepository {
             if (!MODULE_TYPES.contains(type)) fail(path + ".type", "unsupported module type");
             String audience = requiredString(json, "audience", path);
             Integer level = json.has("level") ? requiredPositiveInt(json, "level", path) : null;
-            if ("level".equals(type) && (level == null || (level != 1 && level != 2))) {
-                fail(path + ".level", "level modules require 1 or 2");
+            if ("level".equals(type) && (level == null || (level != 1 && level != 2 && level != 3))) {
+                fail(path + ".level", "level modules require 1, 2 or 3");
             }
             if ("children".equals(type) && (!"children".equals(audience) || level != null)) {
                 fail(path, "children requires children audience and no level");
@@ -233,17 +235,19 @@ public final class ContentRepository {
         for (int index = 0; index < questionArray.length(); index++) {
             String questionPath = path + ".questions[" + index + "]";
             JSONObject question = requiredArrayObject(questionArray, index, questionPath);
-            requireOnly(question, questionPath, "id", "order", "type", "prompt", "answers", "explanation", "tags");
+            requireOnly(question, questionPath, "id", "order", "type", "answerDisplayRole", "prompt", "answers", "explanation", "tags");
             String questionId = requiredId(question, "id", questionPath);
             int order = requiredPositiveInt(question, "order", questionPath);
             if (!orders.add(order)) fail(questionPath + ".order", "duplicate sibling order");
             String type = requiredString(question, "type", questionPath);
             if (!"single-choice".equals(type)) fail(questionPath + ".type", "only single-choice is supported");
+            String answerDisplayRole = requiredString(question, "answerDisplayRole", questionPath);
+            QuizIntegrity.requireAnswerDisplayRole(answerDisplayRole, questionPath);
             TextPair prompt = parseTextPair(requiredObject(question, "prompt", questionPath), questionPath + ".prompt");
             List<Answer> answers = parseAnswers(requiredArray(question, "answers", questionPath), questionPath + ".answers");
             TextPair explanation = parseTextPair(requiredObject(question, "explanation", questionPath), questionPath + ".explanation");
             List<String> tags = parseTags(requiredArray(question, "tags", questionPath), questionPath + ".tags");
-            questions.add(new Question(questionId, order, type, prompt, answers, explanation, tags));
+            questions.add(new Question(questionId, order, type, answerDisplayRole, prompt, answers, explanation, tags));
         }
         java.util.Collections.sort(questions, (a, b) -> Integer.compare(a.order, b.order));
         return new Quiz(id, title, questions);

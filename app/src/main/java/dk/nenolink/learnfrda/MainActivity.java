@@ -18,10 +18,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
+import dk.nenolink.learnfrda.content.AnswerOrder;
 import dk.nenolink.learnfrda.content.ContentContractException;
 import dk.nenolink.learnfrda.content.ContentModels.Answer;
 import dk.nenolink.learnfrda.content.ContentModels.Course;
@@ -32,6 +34,7 @@ import dk.nenolink.learnfrda.content.ContentModels.Note;
 import dk.nenolink.learnfrda.content.ContentModels.Question;
 import dk.nenolink.learnfrda.content.ContentModels.Quiz;
 import dk.nenolink.learnfrda.content.ContentRepository;
+import dk.nenolink.learnfrda.content.QuizIntegrity;
 import dk.nenolink.learnfrda.content.ResourceModels.ExternalResource;
 import dk.nenolink.learnfrda.content.ResourceModels.ResourceCollection;
 import dk.nenolink.learnfrda.content.ResourceRepository;
@@ -47,6 +50,8 @@ public final class MainActivity extends Activity implements SpeechController.Lis
     private ProgressStore progress;
     private SpeechController speech;
     private LinearLayout content;
+    private ScrollView scroll;
+    private View intro;
     private View footer;
     private Module selectedModule;
     private Lesson selectedLesson;
@@ -54,6 +59,8 @@ public final class MainActivity extends Activity implements SpeechController.Lis
     private int questionIndex;
     private int quizScore;
     private boolean questionAnswered;
+    private List<Question> quizQuestions = Collections.emptyList();
+    private List<Answer> displayedAnswers = Collections.emptyList();
     private Screen screen = Screen.MODULES;
     private Screen resourcesReturn = Screen.MODULES;
 
@@ -82,14 +89,13 @@ public final class MainActivity extends Activity implements SpeechController.Lis
         appTitle.setGravity(Gravity.CENTER);
         root.addView(appTitle, matchWrap());
 
-        TextView version = text(
-                getString(R.string.app_version_line, BuildConfig.VERSION_NAME, BuildConfig.RELEASE_DATE),
-                11, R.color.muted, false);
-        version.setGravity(Gravity.CENTER);
-        version.setPadding(0, dp(2), 0, dp(4));
-        root.addView(version, matchWrap());
+        TextView introText = text(getString(R.string.app_intro), 13, R.color.muted, false);
+        introText.setGravity(Gravity.CENTER);
+        introText.setPadding(dp(8), dp(4), dp(8), dp(6));
+        intro = introText;
+        root.addView(intro, matchWrap());
 
-        ScrollView scroll = new ScrollView(this);
+        scroll = new ScrollView(this);
         scroll.setFillViewport(true);
         content = new LinearLayout(this);
         content.setOrientation(LinearLayout.VERTICAL);
@@ -122,6 +128,13 @@ public final class MainActivity extends Activity implements SpeechController.Lis
         link.setFocusable(true);
         link.setOnClickListener(view -> openExternalUrl(getString(R.string.footer_link_url)));
         bar.addView(link, matchWrap());
+
+        TextView version = text(
+                getString(R.string.app_version_line, BuildConfig.VERSION_NAME, BuildConfig.RELEASE_DATE),
+                10, R.color.muted, false);
+        version.setGravity(Gravity.CENTER);
+        version.setPadding(0, dp(3), 0, 0);
+        bar.addView(version, matchWrap());
         return bar;
     }
 
@@ -139,10 +152,10 @@ public final class MainActivity extends Activity implements SpeechController.Lis
         screen = Screen.MODULES;
         selectedModule = null;
         selectedLesson = null;
+        if (intro != null) intro.setVisibility(View.VISIBLE);
         footer.setVisibility(View.VISIBLE);
         clear();
         heading(getString(R.string.modules_title));
-        centered(getString(R.string.modules_intro));
 
         for (Module module : orderedModules()) {
             String progressText = moduleProgress(module);
@@ -159,11 +172,8 @@ public final class MainActivity extends Activity implements SpeechController.Lis
         return ordered;
     }
 
-    /** Level modules by number, then children, then other types, grammar last. */
     private int moduleHomeOrder(Module module) {
-        if ("level".equals(module.type)) {
-            return module.level == null ? 50 : module.level;
-        }
+        if ("level".equals(module.type)) return module.level == null ? 50 : module.level;
         if ("children".equals(module.type)) return 80;
         if ("grammar".equals(module.type)) return 100;
         return 90;
@@ -187,7 +197,6 @@ public final class MainActivity extends Activity implements SpeechController.Lis
         backButton(this::showModules);
         heading(module.title.support);
         targetLabel(module.title.target);
-
         for (Lesson lesson : module.lessons) {
             int completed = progress.countCompleted(course.id, module.id, lesson.id);
             Button lessonButton = primaryButton(lesson.title.support + "\n" + lesson.title.target
@@ -205,14 +214,11 @@ public final class MainActivity extends Activity implements SpeechController.Lis
         heading(lesson.title.support);
         targetLabel(lesson.title.target);
         panel(lesson.situation.support + "\n" + lesson.situation.target, R.color.panel);
-
         int completed = progress.countCompleted(course.id, selectedModule.id, lesson.id);
         status(completed + "/" + lesson.items.size() + " éléments terminés");
-
         Button start = primaryButton("Commencer la leçon");
         start.setOnClickListener(view -> showItem(0));
         content.addView(start, matchWrapWithTop());
-
         if (lesson.quiz != null) {
             Button quiz = accentButton(getString(R.string.open_quiz) + quizSavedSuffix(lesson.quiz));
             quiz.setOnClickListener(view -> startQuiz());
@@ -240,11 +246,8 @@ public final class MainActivity extends Activity implements SpeechController.Lis
         resourcesReturn = returnTo;
         screen = Screen.RESOURCES;
         clear();
-        if (returnTo == Screen.LESSON && selectedLesson != null) {
-            backButton(() -> showLessonOverview(selectedLesson));
-        } else {
-            backButton(this::showModules);
-        }
+        if (returnTo == Screen.LESSON && selectedLesson != null) backButton(() -> showLessonOverview(selectedLesson));
+        else backButton(this::showModules);
         heading(transportResources.title.support);
         targetLabel(transportResources.title.target);
         panel(transportResources.intro.support + "\n" + transportResources.intro.target, R.color.panel);
@@ -269,38 +272,29 @@ public final class MainActivity extends Activity implements SpeechController.Lis
         Item item = selectedLesson.items.get(itemIndex);
         String progressId = progress.progressId(course.id, selectedModule.id, selectedLesson.id, item.id);
         progress.saveLastPosition(progressId);
-
         clear();
         backButton(() -> showLessonOverview(selectedLesson));
         status("Élément " + (itemIndex + 1) + " sur " + selectedLesson.items.size());
         if (!item.speaker.isEmpty()) status("Personnage " + item.speaker);
-
         content.addView(dialogueBlock(item), matchWrapWithTop());
         content.addView(itemNavBar(), matchWrapWithTop());
         content.addView(ttsRow(item), matchWrapWithTop());
-
         boolean complete = progress.isItemComplete(progressId);
         Button completion = accentButton(complete ? getString(R.string.completed) : getString(R.string.mark_complete));
         completion.setEnabled(!complete);
-        completion.setOnClickListener(view -> {
-            progress.markItemComplete(progressId);
-            showItem(itemIndex);
-        });
+        completion.setOnClickListener(view -> { progress.markItemComplete(progressId); showItem(itemIndex); });
         content.addView(completion, matchWrapWithTop());
-
         addNotes(item.notes);
     }
 
     private View dialogueBlock(Item item) {
         LinearLayout block = new LinearLayout(this);
         block.setOrientation(LinearLayout.VERTICAL);
-
         TextView target = text(item.text.target, 22, R.color.text, true);
         target.setGravity(Gravity.CENTER);
         target.setPadding(dp(12), dp(10), dp(12), dp(10));
         target.setBackground(panelBackground(R.color.panel));
         block.addView(target, matchWrap());
-
         TextView support = text(item.text.support, 15, R.color.muted, false);
         support.setGravity(Gravity.CENTER);
         support.setPadding(dp(8), dp(4), dp(8), dp(2));
@@ -311,48 +305,30 @@ public final class MainActivity extends Activity implements SpeechController.Lis
     }
 
     private RoundNavBar itemNavBar() {
-        RoundNavBar nav = new RoundNavBar(
-                this,
-                color(R.color.primary),
-                color(R.color.panel),
-                color(R.color.primary_dark),
-                color(R.color.muted));
+        RoundNavBar nav = new RoundNavBar(this, color(R.color.primary), color(R.color.panel),
+                color(R.color.primary_dark), color(R.color.muted));
         boolean hasNextItem = itemIndex + 1 < selectedLesson.items.size();
         String nextDescription = hasNextItem ? getString(R.string.next) : getString(R.string.open_quiz);
         if (!hasNextItem && selectedLesson.quiz == null) nextDescription = getString(R.string.back);
-        nav.bind(
-                itemIndex > 0,
-                true,
-                getString(R.string.previous),
-                nextDescription,
-                new RoundNavBar.Actions() {
-                    @Override
-                    public void onPrevious() {
-                        showItem(itemIndex - 1);
-                    }
-
-                    @Override
-                    public void onNext() {
-                        if (itemIndex + 1 < selectedLesson.items.size()) showItem(itemIndex + 1);
-                        else if (selectedLesson.quiz != null) startQuiz();
-                        else showLessonOverview(selectedLesson);
-                    }
-                });
+        nav.bind(itemIndex > 0, true, getString(R.string.previous), nextDescription, new RoundNavBar.Actions() {
+            @Override public void onPrevious() { showItem(itemIndex - 1); }
+            @Override public void onNext() {
+                if (itemIndex + 1 < selectedLesson.items.size()) showItem(itemIndex + 1);
+                else if (selectedLesson.quiz != null) startQuiz();
+                else showLessonOverview(selectedLesson);
+            }
+        });
         return nav;
     }
 
     private View ttsRow(Item item) {
         LinearLayout row = row();
         Button french = compactTtsButton(getString(R.string.listen_french));
-        french.setOnClickListener(view ->
-                speech.speak(item.text.support, course.speech.supportLocale, this));
+        french.setOnClickListener(view -> speech.speak(item.text.support, course.speech.supportLocale, this));
         Button danish = compactTtsButton(getString(R.string.listen_danish));
-        danish.setOnClickListener(view ->
-                speech.speak(item.text.target, course.speech.targetLocale, this));
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-                ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        LinearLayout.LayoutParams danishParams = new LinearLayout.LayoutParams(
-                ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        danish.setOnClickListener(view -> speech.speak(item.text.target, course.speech.targetLocale, this));
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        LinearLayout.LayoutParams danishParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         danishParams.leftMargin = dp(8);
         row.addView(french, params);
         row.addView(danish, danishParams);
@@ -376,29 +352,31 @@ public final class MainActivity extends Activity implements SpeechController.Lis
 
     private void startQuiz() {
         if (selectedLesson == null || selectedLesson.quiz == null) return;
+        List<Question> questions = QuizIntegrity.questionsForLesson(selectedLesson);
+        if (questions.isEmpty()) { showFatalError(selectedLesson.id + ": quiz has no questions"); return; }
+        quizQuestions = new ArrayList<>(questions);
+        Collections.shuffle(quizQuestions);
         questionIndex = 0;
         quizScore = 0;
         questionAnswered = false;
+        displayedAnswers = Collections.emptyList();
         showQuestion();
     }
 
     private void showQuestion() {
         Quiz quiz = selectedLesson.quiz;
-        if (questionIndex >= quiz.questions.size()) {
-            showQuizResult();
-            return;
-        }
+        if (questionIndex >= quizQuestions.size()) { showQuizResult(); return; }
         screen = Screen.QUIZ;
         questionAnswered = false;
-        Question question = quiz.questions.get(questionIndex);
+        Question question = quizQuestions.get(questionIndex);
         clear();
         backButton(() -> showLessonOverview(selectedLesson));
         heading(quiz.title.support);
-        status("Question " + (questionIndex + 1) + " sur " + quiz.questions.size());
+        status("Question " + (questionIndex + 1) + " sur " + quizQuestions.size());
         panel(question.prompt.support + "\n" + question.prompt.target, R.color.panel);
-
-        for (Answer answer : question.answers) {
-            Button option = primaryButton(answer.text.target + "\n" + answer.text.support);
+        displayedAnswers = AnswerOrder.shuffleAnswers(question.answers);
+        for (Answer answer : displayedAnswers) {
+            Button option = primaryButton(question.displayedAnswerText(answer));
             option.setOnClickListener(view -> handleAnswer(answer, question));
             content.addView(option, matchWrapWithTop());
         }
@@ -407,17 +385,14 @@ public final class MainActivity extends Activity implements SpeechController.Lis
     private void handleAnswer(Answer answer, Question question) {
         if (questionAnswered) return;
         questionAnswered = true;
-        if (answer.correct) quizScore++;
+        if (AnswerOrder.scoresCorrect(answer)) quizScore++;
         clear();
         backButton(() -> showLessonOverview(selectedLesson));
         feedback(answer.correct ? getString(R.string.correct) : getString(R.string.incorrect), answer.correct);
         panel(question.explanation.support + "\n" + question.explanation.target,
                 answer.correct ? R.color.primary : R.color.panel);
         Button next = primaryButton(getString(R.string.next_question));
-        next.setOnClickListener(view -> {
-            questionIndex++;
-            showQuestion();
-        });
+        next.setOnClickListener(view -> { questionIndex++; showQuestion(); });
         content.addView(next, matchWrapWithTop());
     }
 
@@ -425,9 +400,9 @@ public final class MainActivity extends Activity implements SpeechController.Lis
         screen = Screen.QUIZ_RESULT;
         Quiz quiz = selectedLesson.quiz;
         String progressId = progress.progressId(course.id, selectedModule.id, selectedLesson.id, quiz.id);
-        progress.saveQuizResult(progressId, quizScore, quiz.questions.size());
+        progress.saveQuizResult(progressId, quizScore, quizQuestions.size());
         clear();
-        heading(getString(R.string.quiz_result, quizScore, quiz.questions.size()));
+        heading(getString(R.string.quiz_result, quizScore, quizQuestions.size()));
         status(getString(R.string.quiz_saved));
         Button repeat = primaryButton(getString(R.string.repeat_quiz));
         repeat.setOnClickListener(view -> startQuiz());
@@ -437,49 +412,27 @@ public final class MainActivity extends Activity implements SpeechController.Lis
         content.addView(lesson, matchWrapWithTop());
     }
 
-    @Override
-    public void onUnavailable(String localeTag) {
+    @Override public void onUnavailable(String localeTag) {
         Toast.makeText(this, getString(R.string.tts_unavailable, localeTag), Toast.LENGTH_LONG).show();
     }
+    @Override public void onFailure() { Toast.makeText(this, R.string.tts_failed, Toast.LENGTH_LONG).show(); }
 
-    @Override
-    public void onFailure() {
-        Toast.makeText(this, R.string.tts_failed, Toast.LENGTH_LONG).show();
-    }
-
-    @Override
-    @SuppressWarnings("deprecation")
-    public void onBackPressed() {
+    @Override @SuppressWarnings("deprecation") public void onBackPressed() {
         switch (screen) {
-            case MODULES:
-                super.onBackPressed();
-                break;
-            case LESSONS:
-                showModules();
-                break;
-            case LESSON:
-                showLessons(selectedModule);
-                break;
+            case MODULES: super.onBackPressed(); break;
+            case LESSONS: showModules(); break;
+            case LESSON: showLessons(selectedModule); break;
             case ITEM:
             case QUIZ:
-            case QUIZ_RESULT:
-                showLessonOverview(selectedLesson);
-                break;
+            case QUIZ_RESULT: showLessonOverview(selectedLesson); break;
             case RESOURCES:
-                if (resourcesReturn == Screen.LESSON && selectedLesson != null) {
-                    showLessonOverview(selectedLesson);
-                } else {
-                    showModules();
-                }
+                if (resourcesReturn == Screen.LESSON && selectedLesson != null) showLessonOverview(selectedLesson);
+                else showModules();
                 break;
         }
     }
 
-    @Override
-    protected void onDestroy() {
-        speech.shutdown();
-        super.onDestroy();
-    }
+    @Override protected void onDestroy() { speech.shutdown(); super.onDestroy(); }
 
     private void showFatalError(String detail) {
         LinearLayout error = new LinearLayout(this);
@@ -493,7 +446,15 @@ public final class MainActivity extends Activity implements SpeechController.Lis
 
     private void clear() {
         content.removeAllViews();
-        if (footer != null && screen != Screen.MODULES) footer.setVisibility(View.GONE);
+        if (intro != null) intro.setVisibility(screen == Screen.MODULES ? View.VISIBLE : View.GONE);
+        if (footer != null) footer.setVisibility(screen == Screen.MODULES ? View.VISIBLE : View.GONE);
+        resetScrollToTop();
+    }
+
+    private void resetScrollToTop() {
+        if (scroll == null) return;
+        scroll.scrollTo(0, 0);
+        scroll.post(() -> { if (scroll != null) scroll.scrollTo(0, 0); });
     }
 
     private void heading(String value) {
@@ -502,136 +463,40 @@ public final class MainActivity extends Activity implements SpeechController.Lis
         heading.setPadding(0, dp(6), 0, dp(4));
         content.addView(heading, matchWrap());
     }
-
-    private void targetLabel(String value) {
-        TextView target = text(value, 16, R.color.text, true);
-        target.setGravity(Gravity.CENTER);
-        content.addView(target, matchWrap());
-    }
-
-    private void centered(String value) {
-        TextView view = text(value, 14, R.color.muted, false);
-        view.setGravity(Gravity.CENTER);
-        view.setPadding(0, dp(2), 0, dp(4));
-        content.addView(view, matchWrap());
-    }
-
-    private void status(String value) {
-        TextView view = text(value, 12, R.color.muted, false);
-        view.setGravity(Gravity.CENTER);
-        view.setPadding(0, dp(1), 0, dp(2));
-        content.addView(view, matchWrap());
-    }
-
-    private void feedback(String value, boolean positive) {
-        TextView view = text(value, 13, positive ? R.color.primary_dark : R.color.accent, true);
-        view.setGravity(Gravity.CENTER);
-        view.setPadding(0, dp(4), 0, dp(4));
-        content.addView(view, matchWrap());
-    }
-
-    private void panel(String value, int colorResource) {
-        TextView panel = text(value, 14, R.color.text, false);
-        panel.setPadding(dp(12), dp(8), dp(12), dp(8));
-        panel.setBackground(panelBackground(colorResource));
-        content.addView(panel, matchWrapWithTop());
-    }
-
-    private void backButton(Runnable action) {
-        Button back = secondaryButton(getString(R.string.back));
-        back.setOnClickListener(view -> action.run());
-        content.addView(back, wrapWithBottom());
-    }
+    private void targetLabel(String value) { TextView target = text(value, 16, R.color.text, true); target.setGravity(Gravity.CENTER); content.addView(target, matchWrap()); }
+    private void status(String value) { TextView view = text(value, 12, R.color.muted, false); view.setGravity(Gravity.CENTER); view.setPadding(0, dp(1), 0, dp(2)); content.addView(view, matchWrap()); }
+    private void feedback(String value, boolean positive) { TextView view = text(value, 13, positive ? R.color.primary_dark : R.color.accent, true); view.setGravity(Gravity.CENTER); view.setPadding(0, dp(4), 0, dp(4)); content.addView(view, matchWrap()); }
+    private void panel(String value, int colorResource) { TextView panel = text(value, 14, R.color.text, false); panel.setPadding(dp(12), dp(8), dp(12), dp(8)); panel.setBackground(panelBackground(colorResource)); content.addView(panel, matchWrapWithTop()); }
+    private void backButton(Runnable action) { Button back = secondaryButton(getString(R.string.back)); back.setOnClickListener(view -> action.run()); content.addView(back, wrapWithBottom()); }
 
     private TextView text(String value, int sp, int colorResource, boolean bold) {
         TextView view = new TextView(this);
-        view.setText(value);
-        view.setTextSize(sp);
-        view.setTextColor(color(colorResource));
-        view.setLineSpacing(0, 1.06f);
+        view.setText(value); view.setTextSize(sp); view.setTextColor(color(colorResource)); view.setLineSpacing(0, 1.06f);
         if (bold) view.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
         return view;
     }
-
-    private Button primaryButton(String label) {
-        return button(label, R.color.primary, R.color.primary_dark);
-    }
-
-    private Button secondaryButton(String label) {
-        return button(label, R.color.panel, R.color.primary_dark);
-    }
-
-    private Button accentButton(String label) {
-        return button(label, R.color.accent, android.R.color.white);
-    }
-
+    private Button primaryButton(String label) { return button(label, R.color.primary, R.color.primary_dark); }
+    private Button secondaryButton(String label) { return button(label, R.color.panel, R.color.primary_dark); }
+    private Button accentButton(String label) { return button(label, R.color.accent, android.R.color.white); }
     private Button button(String label, int backgroundColor, int textColor) {
         Button button = new Button(this);
-        button.setText(label);
-        button.setTextSize(14);
-        button.setTextColor(color(textColor));
-        button.setAllCaps(false);
-        button.setGravity(Gravity.CENTER);
-        button.setMinHeight(dp(44));
-        button.setMinimumHeight(dp(44));
-        button.setPadding(dp(10), dp(6), dp(10), dp(6));
-        button.setStateListAnimator(null);
-        button.setBackground(panelBackground(backgroundColor));
+        button.setText(label); button.setTextSize(14); button.setTextColor(color(textColor)); button.setAllCaps(false);
+        button.setGravity(Gravity.CENTER); button.setMinHeight(dp(44)); button.setMinimumHeight(dp(44));
+        button.setPadding(dp(10), dp(6), dp(10), dp(6)); button.setStateListAnimator(null); button.setBackground(panelBackground(backgroundColor));
         return button;
     }
-
     private Button compactTtsButton(String label) {
         Button button = button(label, R.color.primary, R.color.primary_dark);
-        button.setTextSize(13);
-        button.setMinHeight(dp(40));
-        button.setMinimumHeight(dp(40));
-        button.setMinWidth(0);
-        button.setMinimumWidth(0);
-        button.setSingleLine(true);
-        button.setPadding(dp(12), dp(6), dp(12), dp(6));
-        return button;
+        button.setTextSize(13); button.setMinHeight(dp(40)); button.setMinimumHeight(dp(40)); button.setMinWidth(0); button.setMinimumWidth(0);
+        button.setSingleLine(true); button.setPadding(dp(12), dp(6), dp(12), dp(6)); return button;
     }
+    private GradientDrawable panelBackground(int colorResource) { GradientDrawable background = new GradientDrawable(); background.setColor(color(colorResource)); background.setCornerRadius(dp(12)); return background; }
+    private LinearLayout row() { LinearLayout row = new LinearLayout(this); row.setOrientation(LinearLayout.HORIZONTAL); row.setGravity(Gravity.CENTER); return row; }
+    private int color(int resource) { return getResources().getColor(resource, getTheme()); }
+    private int dp(int value) { return Math.round(value * getResources().getDisplayMetrics().density); }
+    private LinearLayout.LayoutParams matchWrap() { return new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT); }
+    private LinearLayout.LayoutParams matchWrapWithTop() { LinearLayout.LayoutParams params = matchWrap(); params.topMargin = dp(SPACE); return params; }
+    private LinearLayout.LayoutParams wrapWithBottom() { LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT); params.bottomMargin = dp(SPACE); return params; }
 
-    private GradientDrawable panelBackground(int colorResource) {
-        GradientDrawable background = new GradientDrawable();
-        background.setColor(color(colorResource));
-        background.setCornerRadius(dp(12));
-        return background;
-    }
-
-    private LinearLayout row() {
-        LinearLayout row = new LinearLayout(this);
-        row.setOrientation(LinearLayout.HORIZONTAL);
-        row.setGravity(Gravity.CENTER);
-        return row;
-    }
-
-    private int color(int resource) {
-        return getResources().getColor(resource, getTheme());
-    }
-
-    private int dp(int value) {
-        return Math.round(value * getResources().getDisplayMetrics().density);
-    }
-
-    private LinearLayout.LayoutParams matchWrap() {
-        return new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-    }
-
-    private LinearLayout.LayoutParams matchWrapWithTop() {
-        LinearLayout.LayoutParams params = matchWrap();
-        params.topMargin = dp(SPACE);
-        return params;
-    }
-
-    private LinearLayout.LayoutParams wrapWithBottom() {
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-                ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        params.bottomMargin = dp(SPACE);
-        return params;
-    }
-
-    private enum Screen {
-        MODULES, LESSONS, LESSON, ITEM, QUIZ, QUIZ_RESULT, RESOURCES
-    }
+    private enum Screen { MODULES, LESSONS, LESSON, ITEM, QUIZ, QUIZ_RESULT, RESOURCES }
 }
