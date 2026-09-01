@@ -67,6 +67,7 @@ dependencies {
     testImplementation "org.json:json:20240303"
 }
 
+def canonicalReleaseApkFileName = "Learn-FR-DA-${android.defaultConfig.versionName}.apk"
 def namedTestApkFileName = "Learn-FR-DA-${android.defaultConfig.versionName}-clean.apk"
 
 tasks.register("copyDebugApkForManualTesting", Copy) {
@@ -79,6 +80,19 @@ tasks.register("copyNamedTestApkToDist", Copy) {
     from(layout.buildDirectory.file("outputs/apk/debug/app-debug.apk"))
     into(rootProject.layout.projectDirectory.dir("dist"))
     rename { namedTestApkFileName }
+}
+
+tasks.register("copySignedReleaseApkToDist", Copy) {
+    dependsOn("assembleRelease")
+    onlyIf {
+        if (!hasReleaseSigning) {
+            logger.lifecycle("Skipping canonical production APK copy: release signing is not configured.")
+        }
+        hasReleaseSigning
+    }
+    from(layout.buildDirectory.file("outputs/apk/release/app-release.apk"))
+    into(rootProject.layout.projectDirectory.dir("releases/${android.defaultConfig.versionName}"))
+    rename { canonicalReleaseApkFileName }
 }
 
 tasks.configureEach { task ->
